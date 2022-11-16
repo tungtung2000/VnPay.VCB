@@ -4,7 +4,7 @@
     <x:Property Name="giftDT" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>390,361</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,819</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="28">
@@ -78,7 +78,7 @@
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="KhoHandle" sap:VirtualizedContainerService.HintSize="400,296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="KhoHandle" sap:VirtualizedContainerService.HintSize="376,256" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="giftDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="topupDT" />
@@ -90,7 +90,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="totalMoneyM = 0;&#xD;&#xA;totalMoneyP = 0;&#xD;&#xA;if(!dt.Columns.Contains(&quot;KhoReference&quot;)) {&#xD;&#xA;&#x9;dt.Columns.Add(&quot;KhoReference&quot;, typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in dt.Rows) {&#xD;&#xA;&#x9;if(!string.IsNullOrEmpty(row[&quot;ID&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;KhoReference&quot;] = row[&quot;TRACE-&quot;].ToString() + row[&quot;BENNE&quot;].ToString() + row[&quot;ATM-&quot;].ToString();&#xD;&#xA;&#x9;&#x9;totalMoneyM += Convert.ToInt64(row[&quot;TRACE-&quot;].ToString()); //co the sai&#xD;&#xA;&#x9;&#x9;totalMoneyP += Convert.ToInt64(row[&quot;TRACE+&quot;].ToString()); //co the sai&#xD;&#xA;&#x9;&#x9;if(row[&quot;MERCHANT&quot;].ToString() == &quot;6615&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;giftDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;} else if (row[&quot;MERCHANT&quot;].ToString() == &quot;6215&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;topupDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,174" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="totalMoneyM = 0;&#xD;&#xA;totalMoneyP = 0;&#xD;&#xA;if(!dt.Columns.Contains(&quot;KhoReference&quot;)) {&#xD;&#xA;&#x9;dt.Columns.Add(&quot;KhoReference&quot;, typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in dt.Rows) {&#xD;&#xA;&#x9;if(!string.IsNullOrEmpty(row[&quot;ID&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;KhoReference&quot;] = row[&quot;TRACE-&quot;].ToString() + row[&quot;BENNE&quot;].ToString() + row[&quot;ATM-&quot;].ToString();&#xD;&#xA;&#x9;&#x9;totalMoneyM += Convert.ToInt64(row[&quot;TRACE-&quot;].ToString()); //co the sai&#xD;&#xA;&#x9;&#x9;totalMoneyP += Convert.ToInt64(row[&quot;TRACE+&quot;].ToString()); //co the sai&#xD;&#xA;&#x9;&#x9;if(row[&quot;MERCHANT&quot;].ToString() == &quot;6615&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;giftDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;} else if (row[&quot;MERCHANT&quot;].ToString() == &quot;6215&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;topupDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="334,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dt" />
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="giftDT">
