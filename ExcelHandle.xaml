@@ -4,7 +4,7 @@
     <x:Property Name="in_folderLastMonth" Type="InArgument(upr:ILocalResource)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1148,2157</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1148,2281</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -117,13 +117,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExcelHandle" sap:VirtualizedContainerService.HintSize="520,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExcelHandle" sap:VirtualizedContainerService.HintSize="520,2216" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="478,2000" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="478,2124" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="soPhuTable" />
         <Variable x:TypeArguments="x:String" Name="sheetName" />
@@ -801,6 +801,13 @@
           </InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
+      <Sequence DisplayName="đối chiếu" sap:VirtualizedContainerService.HintSize="436,84" sap2010:WorkflowViewState.IdRef="Sequence_30">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Sequence>
     </Sequence>
   </Sequence>
 </Activity>
