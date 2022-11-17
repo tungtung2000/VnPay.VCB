@@ -4,7 +4,7 @@
     <x:Property Name="in_folderLastMonth" Type="InArgument(upr:ILocalResource)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1148,1102</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1148,2157</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -117,13 +117,13 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExcelHandle" sap:VirtualizedContainerService.HintSize="418,1037" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExcelHandle" sap:VirtualizedContainerService.HintSize="520,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376,945" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="478,2000" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="soPhuTable" />
         <Variable x:TypeArguments="x:String" Name="sheetName" />
@@ -136,6 +136,7 @@
         <Variable x:TypeArguments="sd:DataTable" Name="vcbHoantraTable" />
         <Variable x:TypeArguments="sd:DataTable" Name="khoGiftDT" />
         <Variable x:TypeArguments="sd:DataTable" Name="khoTopupDT" />
+        <Variable x:TypeArguments="x:Int64" Name="outlookMoney" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,11 +144,11 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
-      <Sequence DisplayName="create datatable for later use" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
+      <Sequence DisplayName="create datatable for later use" sap:VirtualizedContainerService.HintSize="436,771" sap2010:WorkflowViewState.IdRef="Sequence_25">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -195,7 +196,7 @@
           </ui:ClearDataTable.DataTable>
         </ui:ClearDataTable>
       </Sequence>
-      <ui:ForEachFolderX DisplayName="For Each Folder in Folder SP VCB" sap:VirtualizedContainerService.HintSize="334,81" sap2010:WorkflowViewState.IdRef="ForEachFolderX_1" IncludeSubFolders="False" OrderBy="NameAscFirst" SkipFoldersWithoutPermission="False">
+      <ui:ForEachFolderX DisplayName="For Each Folder in Folder SP VCB" sap:VirtualizedContainerService.HintSize="436,81" sap2010:WorkflowViewState.IdRef="ForEachFolderX_1" IncludeSubFolders="False" OrderBy="NameAscFirst" SkipFoldersWithoutPermission="False">
         <ui:ForEachFolderX.Body>
           <ActivityAction x:TypeArguments="si:DirectoryInfo, x:Int32">
             <ActivityAction.Argument1>
@@ -383,7 +384,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachFolderX>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,251" sap2010:WorkflowViewState.IdRef="CommentOut_5">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,173" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
@@ -563,12 +564,12 @@
         </ui:CommentOut.Body>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,52" sap2010:WorkflowViewState.IdRef="CommentOut_6">
         <ui:CommentOut.Body>
           <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="704,1719" sap2010:WorkflowViewState.IdRef="Sequence_28">
             <sap:WorkflowViewStateService.ViewState>
@@ -764,7 +765,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:CommentOut>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VcbTableHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VcbTableHandle.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VcbTableHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VcbTableHandle.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_soPhuTable">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">soPhuTable</CSharpReference>
@@ -777,7 +778,7 @@
           </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KhoHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="KhoHandle.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="KhoHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="KhoHandle.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_khoTable">
             <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">khoTable</CSharpValue>
@@ -788,6 +789,16 @@
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_topupDT">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">khoTopupDT</CSharpReference>
           </OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OutlookTableHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="436,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="OutlookTableHandle.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:Int64" x:Key="out_totalMoney">
+            <CSharpValue x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">outlookMoney</CSharpValue>
+          </InArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inout_outlookTable">
+            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">outlookTable</CSharpReference>
+          </InOutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
