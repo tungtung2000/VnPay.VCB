@@ -6,7 +6,7 @@
     <x:Property Name="inout_outlookDt" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1148,1696</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1170,1753</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -119,74 +119,85 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="compareTopupAndOutlook" sap:VirtualizedContainerService.HintSize="839,1631" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="compareTopupAndOutlook" sap:VirtualizedContainerService.HintSize="917,1688" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="875,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Tong tien outlook la: " + in_outlookTopupMoney + " va tong tien kho Vnpay: " + in_khoTopupMoney</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <If DisplayName="Kiem tra tong tien" sap:VirtualizedContainerService.HintSize="797,522" sap2010:WorkflowViewState.IdRef="If_1">
-      <If.Condition>
-        <InArgument x:TypeArguments="x:Boolean">
-          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">in_khoTopupMoney == in_outlookTopupMoney</CSharpValue>
-        </InArgument>
-      </If.Condition>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="875,688" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="839,610" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
-            <ui:LogMessage.Message>
-              <InArgument x:TypeArguments="x:Object">
-                <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">"tong tien trong kho va outlook la bang nhau"</CSharpValue>
+          <If DisplayName="Kiem tra tong tien" sap:VirtualizedContainerService.HintSize="797,518" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Condition>
+              <InArgument x:TypeArguments="x:Boolean">
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">in_khoTopupMoney == in_outlookTopupMoney</CSharpValue>
               </InArgument>
-            </ui:LogMessage.Message>
-          </ui:LogMessage>
+            </If.Condition>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+                  <ui:LogMessage.Message>
+                    <InArgument x:TypeArguments="x:Object">
+                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">"tong tien trong kho va outlook la bang nhau"</CSharpValue>
+                    </InArgument>
+                  </ui:LogMessage.Message>
+                </ui:LogMessage>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,361" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ss:SecureString" Name="a" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Beep sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Beep_1" />
+                <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="Tổng tiền giao dịch Topup Kho và Outlook trong tháng trước không bằng nhau vui lòng check lại dữ liệu" DisplayName="Send SMTP Mail Message" Email="saitama01693@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="bsaedbzwmkdynsbb" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Tổng tiền giao dịch Topup Kho và Outlook không bằng nhau" To="saitama01693@gmail.com">
+                  <ui:SendMail.Files>
+                    <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                  </ui:SendMail.Files>
+                </ui:SendMail>
+                <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="tong tien trong kho va outlook KHONG bang nhau">
+                  <TerminateWorkflow.Exception>
+                    <InArgument x:TypeArguments="s:Exception">
+                      <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">new BusinessRuleException()</CSharpValue>
+                    </InArgument>
+                  </TerminateWorkflow.Exception>
+                </TerminateWorkflow>
+              </Sequence>
+            </If.Else>
+          </If>
         </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,364" sap2010:WorkflowViewState.IdRef="Sequence_3">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="ss:SecureString" Name="a" />
-          </Sequence.Variables>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:Beep sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Beep_1" />
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="Tổng tiền giao dịch Topup Kho và Outlook trong tháng trước không bằng nhau vui lòng check lại dữ liệu" DisplayName="Send SMTP Mail Message" Email="saitama01693@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="bsaedbzwmkdynsbb" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Tổng tiền giao dịch Topup Kho và Outlook không bằng nhau" To="saitama01693@gmail.com">
-            <ui:SendMail.Files>
-              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
-            </ui:SendMail.Files>
-          </ui:SendMail>
-          <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="tong tien trong kho va outlook KHONG bang nhau">
-            <TerminateWorkflow.Exception>
-              <InArgument x:TypeArguments="s:Exception">
-                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">new BusinessRuleException()</CSharpValue>
-              </InArgument>
-            </TerminateWorkflow.Exception>
-          </TerminateWorkflow>
-        </Sequence>
-      </If.Else>
-    </If>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="HashSet&lt;string&gt; outlookHashSet = in_outlookDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;HashSet&lt;string&gt; khoHashSet = in_khoTopupDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;&#xD;&#xA;if(! in_outlookDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9; in_outlookDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;if(!in_khoTopupDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9;in_khoTopupDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in  in_outlookDt.Rows){&#xD;&#xA;&#x9;if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_khoTopupDt.Rows){&#xD;&#xA;&#x9;if(outlookHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="797,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="HashSet&lt;string&gt; outlookHashSet = in_outlookDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xA;HashSet&lt;string&gt; khoHashSet = in_khoTopupDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xA;&#xA;if(! in_outlookDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xA;&#x9; in_outlookDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xA;}&#xA;if(!in_khoTopupDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xA;&#x9;in_khoTopupDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xA;}&#xA;foreach(DataRow row in  in_outlookDt.Rows){&#xA;&#x9;if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;}&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;foreach(DataRow row in in_khoTopupDt.Rows){&#xA;&#x9;if(outlookHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;}&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="875,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_outlookDt">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">inout_outlookDt</CSharpReference>
@@ -196,7 +207,7 @@
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="797,242" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="875,242" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="count" />
         <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -486,7 +497,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ueab:ExcelProcessScopeX>
     </Sequence>
-    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="797,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="875,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
       <ui:FilterDataTable.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">inout_khoTopupDt</CSharpValue>
@@ -519,38 +530,55 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="797,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
-      <ui:FilterDataTable.DataTable>
-        <InArgument x:TypeArguments="sd:DataTable">
-          <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">inout_outlookDt</CSharpValue>
-        </InArgument>
-      </ui:FilterDataTable.DataTable>
-      <ui:FilterDataTable.Filters>
-        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">"Check doi chieu"</CSharpValue>
+    <ui:CommentOut DisplayName="loc outlook khongtontai(chua can dung)" sap:VirtualizedContainerService.HintSize="875,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,252" sap2010:WorkflowViewState.IdRef="Sequence_26">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
+            <ui:FilterDataTable.DataTable>
+              <InArgument x:TypeArguments="sd:DataTable">
+                <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">inout_outlookDt</CSharpValue>
               </InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">"Khong ton tai"</CSharpValue>
-              </InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-        </scg:List>
-      </ui:FilterDataTable.Filters>
-      <ui:FilterDataTable.OutputDataTable>
-        <OutArgument x:TypeArguments="sd:DataTable">
-          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">inout_outlookDt</CSharpReference>
-        </OutArgument>
-      </ui:FilterDataTable.OutputDataTable>
-      <ui:FilterDataTable.SelectColumns>
-        <scg:List x:TypeArguments="InArgument" Capacity="4">
-          <x:Null />
-        </scg:List>
-      </ui:FilterDataTable.SelectColumns>
-    </ui:FilterDataTable>
+            </ui:FilterDataTable.DataTable>
+            <ui:FilterDataTable.Filters>
+              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                  <ui:FilterOperationArgument.Column>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">"Check doi chieu"</CSharpValue>
+                    </InArgument>
+                  </ui:FilterOperationArgument.Column>
+                  <ui:FilterOperationArgument.Operand>
+                    <InArgument x:TypeArguments="x:String">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">"Khong ton tai"</CSharpValue>
+                    </InArgument>
+                  </ui:FilterOperationArgument.Operand>
+                </ui:FilterOperationArgument>
+              </scg:List>
+            </ui:FilterDataTable.Filters>
+            <ui:FilterDataTable.OutputDataTable>
+              <OutArgument x:TypeArguments="sd:DataTable">
+                <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">inout_outlookDt</CSharpReference>
+              </OutArgument>
+            </ui:FilterDataTable.OutputDataTable>
+            <ui:FilterDataTable.SelectColumns>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <x:Null />
+              </scg:List>
+            </ui:FilterDataTable.SelectColumns>
+          </ui:FilterDataTable>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

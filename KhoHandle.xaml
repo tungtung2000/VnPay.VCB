@@ -7,7 +7,7 @@
     <x:Property Name="out_khoMoney" Type="OutArgument(x:Int64)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1148,2299</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1170,2299</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -398,7 +398,7 @@
         </InOutArgument>
       </ui:ClearDataTable.DataTable>
     </ui:ClearDataTable>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xD;&#xA;totalMoneyM = 0;&#xD;&#xA;if(!dt.Columns.Contains(&quot;Tham chieu&quot;)) {&#xD;&#xA;&#x9;dt.Columns.Add(&quot;Tham chieu&quot;, typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in dt.Rows) {&#xD;&#xA;&#x9;if(!string.IsNullOrEmpty(row[&quot;ID&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Tham chieu&quot;] = '\''+row[&quot;TRACE-&quot;].ToString() + row[&quot;BENNE&quot;].ToString() + row[&quot;ATM-&quot;].ToString();&#xD;&#xA;&#x9;&#x9;totalMoneyM += Convert.ToInt64(row[&quot;ATM-&quot;].ToString()); //co the sai&#xD;&#xA;&#x9;&#x9;if(row[&quot;MERCHANT&quot;].ToString() == &quot;6615&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;giftDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;} else if (row[&quot;MERCHANT&quot;].ToString() == &quot;6215&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;topupDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;out_GDCount = topupDT.RowCount();" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="&#xD;&#xA;totalMoneyM = 0;&#xD;&#xA;if(!dt.Columns.Contains(&quot;Tham chieu&quot;)) {&#xD;&#xA;&#x9;dt.Columns.Add(&quot;Tham chieu&quot;, typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in dt.Rows) {&#xD;&#xA;&#x9;if(!string.IsNullOrEmpty(row[&quot;ID&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Tham chieu&quot;] = '\''+row[&quot;TRACE-&quot;].ToString().TrimStart('0') + row[&quot;BENNE&quot;].ToString() + row[&quot;ATM-&quot;].ToString();&#xD;&#xA;&#x9;&#x9;totalMoneyM += Convert.ToInt64(row[&quot;ATM-&quot;].ToString()); //co the sai&#xD;&#xA;&#x9;&#x9;if(row[&quot;MERCHANT&quot;].ToString() == &quot;6615&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;giftDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;} else if (row[&quot;MERCHANT&quot;].ToString() == &quot;6215&quot;) {&#xD;&#xA;&#x9;&#x9;&#x9;topupDT.Rows.Add(row.ItemArray);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;out_GDCount = topupDT.RowCount();" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="436,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">in_khoTable</CSharpValue>
