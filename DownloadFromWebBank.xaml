@@ -1,13 +1,14 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="DownloadFromWebBank" this:DownloadFromWebBank.password="Langha123@" this:DownloadFromWebBank.account="3004016A49" this:DownloadFromWebBank.khoFolderPath="D:\\" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:sc1="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadFromWebBank" this:DownloadFromWebBank.password="Langha123@" this:DownloadFromWebBank.account="3004016A49" this:DownloadFromWebBank.khoFolderPath="D:\\" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:sc1="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="password" Type="InArgument(x:String)" />
     <x:Property Name="account" Type="InArgument(x:String)" />
     <x:Property Name="khoFolderPath" Type="InArgument(x:String)" />
     <x:Property Name="bankAccounts" Type="InArgument(s:String[])" />
     <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="argument1" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>861.6,6767.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1109,8657</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="53">
@@ -31,7 +32,6 @@
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Windows.Markup</x:String>
-
       <x:String>UiPath.Activities.System</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
@@ -63,6 +63,8 @@
       <x:String>UiPath.Platform.Triggers</x:String>
       <x:String>UiPath.Platform.Triggers.Scope</x:String>
       <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -142,7 +144,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadFromWebBank" sap:VirtualizedContainerService.HintSize="835.2,6702.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadFromWebBank" sap:VirtualizedContainerService.HintSize="974,8592" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="captchaCode" />
       <Variable x:TypeArguments="x:String" Name="userProfilePath" />
@@ -154,14 +156,14 @@
       <Variable x:TypeArguments="x:Int32" Name="dayBegin" />
       <Variable x:TypeArguments="x:Int32" Name="dayEnd" />
       <Variable x:TypeArguments="x:Int32" Name="loopIndexMaxLength" />
-      <Variable x:TypeArguments="x:Int32" Name="frequency" />
+      <Variable x:TypeArguments="x:Int32" Name="daysPerFile" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="792,72" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_2" SpecialFolder="UserProfile">
+    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="912,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_2" SpecialFolder="UserProfile">
       <ui:GetEnvironmentFolder.FolderPath>
         <OutArgument x:TypeArguments="x:String">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">userProfilePath</CSharpReference>
@@ -174,7 +176,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetEnvironmentFolder>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="792,62.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="912,234" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -226,23 +228,23 @@
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:Int32">
-                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">frequency</CSharpReference>
+                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">daysPerFile</CSharpReference>
               </OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">6</InArgument>
+              <InArgument x:TypeArguments="x:Int32">5</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="792,562.4" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="912,624" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
       <ui:IfElseIf.ConditionBlocks>
         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
           <ui:IfElseIfBlock BlockType="If">
@@ -252,13 +254,13 @@
               </InArgument>
             </ui:IfElseIfBlock.Condition>
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,160.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,192" sap2010:WorkflowViewState.IdRef="Sequence_45">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="356.8,69.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">
                       <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">loopIndexMaxLength</CSharpReference>
@@ -273,13 +275,13 @@
           </ui:IfElseIfBlock>
           <ui:IfElseIfBlock BlockType="Else">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,160.8" sap2010:WorkflowViewState.IdRef="Sequence_46">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,192" sap2010:WorkflowViewState.IdRef="Sequence_46">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="356.8,69.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">
                       <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_35">loopIndexMaxLength</CSharpReference>
@@ -295,20 +297,20 @@
         </sc:BindingList>
       </ui:IfElseIf.ConditionBlocks>
     </ui:IfElseIf>
-    <Sequence DisplayName="Đăng nhập" sap:VirtualizedContainerService.HintSize="792,5794.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="Đăng nhập" sap:VirtualizedContainerService.HintSize="912,7421" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Vietcombank - IB@nking - Ngân hàng trực tuyến" sap:VirtualizedContainerService.HintSize="729.6,5671.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="IfNotOpen" ScopeGuid="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Vietcombank - IB@nking - Ngân hàng trực tuyến" sap:VirtualizedContainerService.HintSize="850,7299" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="False" OpenMode="IfNotOpen" ScopeGuid="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V2" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="696,5444.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="816,7073" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Default="True" Name="isNotLogin" />
                 <Variable x:TypeArguments="x:Int32" Name="count" />
@@ -318,14 +320,14 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DisplayName="CV Screen Scope" sap:VirtualizedContainerService.HintSize="652.8,590.4" sap2010:WorkflowViewState.IdRef="CVScope_6" SendOnPremData="False" Version="V5">
+              <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DisplayName="CV Screen Scope" sap:VirtualizedContainerService.HintSize="754,61" sap2010:WorkflowViewState.IdRef="CVScope_6" SendOnPremData="False" Version="V5">
                 <p:CVScope.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                     </ActivityAction.Argument>
                     <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,231.2" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_6" InformativeScreenshot="e5500dcedbdeaed8cec579de9142b777" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
+                      <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,229" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_6" InformativeScreenshot="e5500dcedbdeaed8cec579de9142b777" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
                         <p:CvGetTextWithDescriptor.Descriptor>
                           <InArgument x:TypeArguments="uc:CvDescriptor">
                             <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18" xml:space="preserve">"Target: AnyWordGroup (1400,522,91,18)" +
@@ -349,6 +351,12 @@
                             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">captchaCode</CSharpReference>
                           </OutArgument>
                         </p:CvGetTextWithDescriptor.Result>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </p:CvGetTextWithDescriptor>
                     </Sequence>
                   </ActivityAction>
@@ -708,19 +716,19 @@
                 </p:CVScope.UseLocalServer>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </p:CVScope>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="652.8,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="754,101" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info">
                 <ui:LogMessage.Message>
                   <InArgument x:TypeArguments="x:Object">
                     <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">captchaCode</CSharpValue>
                   </InArgument>
                 </ui:LogMessage.Message>
               </ui:LogMessage>
-              <Sequence DisplayName="Type Login Info" sap:VirtualizedContainerService.HintSize="652.8,92.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Type Login Info" sap:VirtualizedContainerService.HintSize="754,90" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -782,30 +790,30 @@
                   </uix:NTypeInto.Text>
                 </uix:NTypeInto>
               </Sequence>
-              <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="Nhập đến khi thành công" sap:VirtualizedContainerService.HintSize="652.8,62.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="Nhập đến khi thành công" sap:VirtualizedContainerService.HintSize="754,61" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                 <ui:InterruptibleWhile.Body>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,153.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,183" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NCheckState DisplayName="Check App State 'Nhập không đúng dãy số!'" sap:VirtualizedContainerService.HintSize="356.8,62.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V3">
+                    <uix:NCheckState DisplayName="Check App State 'Nhập không đúng dãy số!'" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NCheckState_1" Timeout="30" Version="V3">
                       <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,1252.8" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="496,1282" sap2010:WorkflowViewState.IdRef="Sequence_11">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DisplayName="CV Screen Scope" sap:VirtualizedContainerService.HintSize="400,62.4" sap2010:WorkflowViewState.IdRef="CVScope_7" SendOnPremData="False" Version="V5">
+                          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DisplayName="CV Screen Scope" sap:VirtualizedContainerService.HintSize="400,61" sap2010:WorkflowViewState.IdRef="CVScope_7" SendOnPremData="False" Version="V5">
                             <p:CVScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                                 </ActivityAction.Argument>
                                 <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                  <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,231.2" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="e5500dcedbdeaed8cec579de9142b777" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
+                                  <p:CvGetTextWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DesignTimeCacheId="99df1a2f-138d-4cdc-8174-862b6c279f9f" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,229" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="e5500dcedbdeaed8cec579de9142b777" NumberOfScrolls="2" RefreshBefore="True" ScrollDirection="None" Version="V5">
                                     <p:CvGetTextWithDescriptor.Descriptor>
                                       <InArgument x:TypeArguments="uc:CvDescriptor">
                                         <CSharpValue x:TypeArguments="uc:CvDescriptor" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30" xml:space="preserve">"Target: AnyWordGroup (1400,522,91,18)" +
@@ -1193,21 +1201,21 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </p:CVScope>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,101" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
                             <ui:LogMessage.Message>
                               <InArgument x:TypeArguments="x:Object">
                                 <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">captchaCode</CSharpValue>
                               </InArgument>
                             </ui:LogMessage.Message>
                           </ui:LogMessage>
-                          <Sequence DisplayName="Type Login Info" sap:VirtualizedContainerService.HintSize="400,887.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                          <Sequence DisplayName="Type Login Info" sap:VirtualizedContainerService.HintSize="400,885" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngân hàng trực tuyến VCB'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="337.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngân hàng trực tuyến VCB'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/Ibanking20/default.aspx?cc=99F8151074F54AB32C69F5A56089FC03" DesignTimeRectangle="1174, 445, 340, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ctl00_Content_Log…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control' placeholder='Tên truy cập' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control' placeholder='Tên truy cập' aaname='' /&gt;" Guid="68d6e133-e92d-4e1b-88c5-ee9f658964d2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVgAAAAqCAYAAAD28UM+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOmSURBVHhe7dq7TuNAGEBhOh5nC0TLM2yDRE29XbQV2o4O0dCmoEAoLRWKRAGUdEiIZ4jgARBUs/nnYs/NznUSxzqfNFoltseTFIfB7J4CABRBYAGgkCSwt8/36ujsVO0fH6q9378YDAaD0TKkldJMaWcsCOzg+lIdDE7U3cuj+vr5tu8CAJpIK6WZ0k5pqK8KrNRXTiCsALA4aac01N/JVoGVLa5UGACwHGmotNSpAivPEdi9AsDypKHSUqcKrDysBQCsxm8pgQWANSKwAFAIgQWAQggsABRCYAGgEAILAIWsLbCvN//Un7/t4/zh055tVNfcvNt3VvWuhhdPamJfddLHkzq338fwzb4HoJcK7WA/1fiiPZyTh6tpZEbqVaKYie8ydLA7HVjve3kbTT//lRp/2EMAemd7gf0Igzp5e185jLsQ2EkQ1Pg1gD7ZWmDDRwrxTs7saofT6Mq/1XmN89n7Vefa+WSXOA3u2N1Lx9fNba40wvXmQz3HTtv79b++n0fvWr3jwefOf+Z17OwBbMdWAmviKo8HLBueOnouMl6AknNSSRhd0IJ1zA6suS6Kfu49X2Z9wXoy14ffQx3Wag4bbCIL7KbNB9ZGIw5lGEcTmzAs7dEW+cDGUZwjsJn7J3NH9PFZa4uPB+uzgY3OqZ9VA9g1Gw9sYzB0bMLdXHsEU/nAxveab+5wrjS4oVnHQ3puiakeYWDjHzzmB1LLzhlAZ20psH5g/NGdwAZhy+6EfQ1x9Ok53OfMzUtggb7pzg420IHA2vdkV5rMmzBzNu9gG9Y+T2Bnxh1AV208sE3B0OGNfiUvGdgwhua9eG6zppEa2tA2m7W2fDzNo4IwsPk1tMUdQFdtPrBTJixe+JI/fJUMrJ3HO8+sJzO3XddcO0h9r3DN9W49vac7v77GBtafI/leAOySrQRWVFGLo6ItF9g6iPbabGBFHTMZ1WOAZO5MGNt49zfDv3d4T33Mnm92x+b4+cNTcB5xBXZXocD2hYvefP87YDWbvBeATSCwbRp3wKtoCimBBfqGwOYs8ux1bQgs0DcEFgAKIbAAUAiBBYBCCCwAFEJgAaAQAgsAhWQDu398qL5+vu0rAMCipKHSUqcK7NHZqbp7ebSvAACLkoZKS50qsLfP9+pgcMIuFgCWIO2UhkpLnSqwYnB9qU+QChNaAJhNWinNlHZKQ31BYIXUV7a48hxBHtYyGAwGo3lIK6WZ/s7VSQILAFgPAgsARSj1H+uX22T93+X1AAAAAElFTkSuQmCC" InformativeScreenshot="ac2a97308f3c2be3a11140c2d3c6a830.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -1229,7 +1237,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </uix:NTypeInto>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngân hàng trực tuyến VCB'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="337.6,227.2" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngân hàng trực tuyến VCB'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/Ibanking20/default.aspx?cc=99F8151074F54AB32C69F5A56089FC03" DesignTimeRectangle="1174, 499, 340, 38" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT ctl00_Content_Log…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' placeholder='Mật khẩu' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' placeholder='Mật khẩu' aaname='' /&gt;" Guid="6f97d2cd-b724-4279-9ec1-48e2e49dcba5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVgAAAAqCAYAAAD28UM+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOWSURBVHhe7do/S+RAHIdxO1/OFWLra7hGsLa+brESOzuxsbWwWMTWSgQLtbRbkH0Noi9AtJrLd/5kZyYTTXI7xx08Hxi4zSbZ2Dz+ds4NAwCogsACQCWdwF4+3pidw32zubttNn7+YLFYLNYXS61UM9XOXBLY2cWp2Zrtmeune/P++eGPAgD6qJVqptqphsbawKq+OoGwAsB4aqcaGk+ybWA14qrCAIBp1FC1NGgDq30EplcAmE4NVUuDNrDarAUA/Jm4pQQWANaIwAJAJQQWACohsABQCYHt8XJ3Zo7v3vwrABiPwAJAJWsM7Ju5PTkyvw7OzO2rP1SwmOucK7Pwr1uvD+b4QO8dmfNnfyyymH9136U5b67rnzjdsw2dSDW96jmKzwkAA60/sCfNV+u+MD1f9YTLXztf+nOymJaOJdYYWB96Rd7+Mjh5MC/+LQAYY/2BnV/Z2HWnUL1/Zs6bSbQU2JckntnrvxrY5rP9P638NQAMVCGwSzf5aRqNaTJspsGF/fqdBbadbMNaxXT1dd2tciS7gQ3XuWMhsEv3jOF+henUbWH0nVMONZMugJIqgXXBTCMa/lfehS96rzCddvZpR06wIa6rKdo/W3zMbwXEseyG0t139cuCwAIYrk5gfZjSwLlA5oG1ccqn3TyoYwJrz823KOJnW0nDmD+zk55DYAEMVymwWdAUPR+gzgQbsaHSxGjXhMA2Ede1eQDHh9FPrmERWAATVAqsD6mPjgIUolTeIggx8xHNgzowsDauNrL5ucPCmAQ+enYCC2CKaoF1e5wKneK3Cl4a2OyaYGJgXfj8PZPgDQhj9OdZMQILYKp6gY2/tkfxSQPrzilGbXJgG/b8fA/4mzDaa/KtC3ffPLDpLwR/jMACyFQMbAhlGrbiBBvHyccxCeTYwDbcZ6ef82Vg+/6qwD7LKrzpfcPPE90HALyqgS2FsbMHG6bEdjXvdWLn76338+0EqxvYEEx3/oDAShT38FnueeOfIXqW+BwCCyCzxsACAGL/UGALUygA/MeYYAGgEgILAJUQWACohMACQCUEFgAqIbAAUAmBBYBKioHd3N02758f/hUAYCw1VC0N2sDuHO6b66d7/woAMJYaqpYGbWAvH2/M1myPKRYAJlA71VC1NGgDK7OLU3uCKkxoAeB7aqWaqXaqobEksKL6asTVPoI2a1ksFovVv9RKNTOeXINOYAEA60FgAaAKY34DRUEBLqAGmIcAAAAASUVORK5CYII=" InformativeScreenshot="c6288f30ad133e869cb4e9d891732edb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -1245,7 +1253,7 @@
                                 </InArgument>
                               </uix:NTypeInto.Text>
                             </uix:NTypeInto>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DIV'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="337.6,227.2" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DIV'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_12" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/Ibanking20/default.aspx?cc=99F8151074F54AB32C69F5A56089FC03" DesignTimeRectangle="1174, 553, 194, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ctl00_Content_Log…'" FullSelectorArgument="&lt;webctrl name='ctl00$Content$Login$ImgStr' tag='INPUT' type='text' class='form-control' placeholder='Nhập số bên' /&gt;" FuzzySelectorArgument="&lt;webctrl name='ctl00$Content$Login$ImgStr' tag='INPUT' type='text' class='form-control' placeholder='Nhập số bên' aaname='' /&gt;" Guid="94e2b940-2bce-47f0-be37-f435a7e495c5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMYAAAAqCAYAAADoHSSkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO2SURBVHhe7Z2xbtswEIaz9XE6FF37DF0KdO6cLchUZMsWdMnqoUNQZO1UGMhQd+wWwPAzGPEDFO3E8sg76kQeZdm1VMf6P+CQWKBIuvo/UkKB6MwBAAogBgAGhRhffnxzbz5+cC/evXZnb1+iUCdblHHKOmU+pyXGxedP7tXFe/f153f3689vPgrAaUIZp6xT5in7miQGWUMNIASYGpR5yr7eOZIYtKWQPQBMEco+OSAkMeh+C7sFmCqUfXJASGLQwwgAU0Y7ADEAYCAGAAYQAwADiAGAAcTYysrNLq/cbMkfwSSAGAAYHFSMx7srd3556+ZPfEDztHDXeuVd3vu29+6RP3YTV+1zX9cPGz42DvE7+bpb8ZEacY5957d+uI393izcmo+B42EAMSoX+x/ECP1Sn3kfAxPDS3PsE/odxAjfnRaQjZvf9JEOjM0wYlgB2VuMjReCf2XWPlBjkI+zXq46Vvf+YhTz9/322znBWBxeDL+yz4MgWehrYoSfjVDFbsDn1dqEMf2Kq6XsdXuSjWud0+rTV/dOJWIswk85xxIl3UZxtfuN/cy8LLof7CrjMogYa764rYtpiiHtIzGISijj1imGqnmOSeFNY/HtSZccYWz9LJTf0vBnPReeb12OJsipDc9fy5HPv2wj/ag2W8cGh2YgMZpVMQ9J+lyE05O1CX3kAc/aFDIR+VgZcW7ZORprbh79/UqMxcDTHiu2yXeR7W3wLDI2g4lRrLqmGP0DLaJJtcQoAhPHtm5jAjxObRWuilMRJhIDXfQXxuJzaufrNmY/EGNsBhTDIwGkC5qHvo8Ycj5XOJ612UuMAK/wqZrABjGsneEgYugxdUGMY2JYMTxx9fUXfbm7GFZ//cSI4eoWQyOSxPl07xjG8UBFDC1Tp1gCxDgGBhcjXdQQvF3EsFd9uaVqiWH2sy2AGcXKXp5vfz/BlrElWSZ1ovVvATGOgRHE8HAgdhPDCL3qRwIY2/hKodkeImtHaM9dZFZtwnyNUCdk11FteL5alrSDJulyoSDGMTCOGB4J8C5iNAGVokBxADkkMmb8vxOuHgGSnaepbC6eJF2obTuQBLoRhMoSKR+7vctAjGPgoGL8D7pkBGBfnokY9RUTYoAhwI4BgMGzFwOAIYAYABhADAAMIAYABhADAAOIAYCBKQb+qDOYMtU/6ozXAIApU30NAF4cA6YKZb764hgCrxoDU4IyTlmnzFdfNSaQNbSl0P0WPYygUKdalHHKut4phEIMAADEAMDAub/zHfgTqWIvHQAAAABJRU5ErkJggg==" InformativeScreenshot="af1f649cb12592e4849f06eeb99a4046.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -1311,170 +1319,123 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InterruptibleWhile>
-              <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="652.8,4344" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
-                <ui:InterruptibleWhile.Body>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="617.6,4167.2" sap2010:WorkflowViewState.IdRef="Sequence_42">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="574.4,141.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Int32">
-                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">dayBegin</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Int32">
-                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">loopIndex * frequency+ 1</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Int32">
-                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">dayEnd</CSharpReference>
-                              </OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Int32">
-                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">dayBegin + frequency - 1</CSharpValue>
-                              </InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
-                    <If DisplayName="If Is The Last Frequence" sap:VirtualizedContainerService.HintSize="574.4,62.4" sap2010:WorkflowViewState.IdRef="If_8">
-                      <If.Condition>
-                        <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">dayEnd &gt; daysInMonth</CSharpValue>
-                        </InArgument>
-                      </If.Condition>
+              <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="754,3238" sap2010:WorkflowViewState.IdRef="ForEach`1_7">
+                <ui:ForEach.Body>
+                  <ActivityAction x:TypeArguments="x:String">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="718,3103" sap2010:WorkflowViewState.IdRef="Sequence_36">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,160.8" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="656,101" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace">
+                        <ui:LogMessage.Message>
+                          <InArgument x:TypeArguments="x:Object">
+                            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">"phan tu thu" + count +": " + bankAccounts[count]</CSharpValue>
+                          </InArgument>
+                        </ui:LogMessage.Message>
+                      </ui:LogMessage>
+                      <Sequence DisplayName="Sequence Xuat File" sap:VirtualizedContainerService.HintSize="656,2838" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Default="File\\Tháng 10\\DQ" Name="doiQuaFolderPath" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If DisplayName="If Not The 1st Time" sap:VirtualizedContainerService.HintSize="594,61" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If.Condition>
+                            <InArgument x:TypeArguments="x:Boolean">
+                              <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">count &gt; 0</CSharpValue>
+                            </InArgument>
+                          </If.Condition>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="356.8,69.6" sap2010:WorkflowViewState.IdRef="Assign_5">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">
-                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">dayEnd</CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">
-                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">daysInMonth</CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <If DisplayName="If Not The 1st Time" sap:VirtualizedContainerService.HintSize="574.4,62.4" sap2010:WorkflowViewState.IdRef="If_6">
-                      <If.Condition>
-                        <InArgument x:TypeArguments="x:Boolean">
-                          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_108">loopIndex &gt; 0</CSharpValue>
-                        </InArgument>
-                      </If.Condition>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,258.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="356.8,167.2" sap2010:WorkflowViewState.IdRef="NClick_34" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=8F4287BC59965A9350832EC0122EED8A" DesignTimeRectangle="275, 199, 50, 52" DesignTimeScaleFactor="1" FriendlyName="'A'" FullSelectorArgument="&lt;webctrl parentid='v-pills-tab' tag='A' aaname='Trang chủ' href='/IbankingCorp/Accounts/ListAccounts.aspx?&amp;amp;cc=8F4287BC59965A93515E2EDE7633906D' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='v-pills-tab' tag='A' aaname='Trang chủ' href='/IbankingCorp/Accounts/ListAccounts.aspx?&amp;amp;cc=8F4287BC59965A93515E2EDE7633906D' type='' class='nav-link' /&gt;" Guid="5207e246-380f-46b3-9546-063f2e01b45e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAA4CAYAAAC2TwutAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPeSURBVGhD5VhbTxNBFPafCUaejJqY+GC8YOIPUOOT0Qd9QiixAROFkCKJJjUYjWIMJmJAaLnILYI25RIrrYSroAWBWPU4Z7pnd2Z32u5uIem0X3LyceY7M+Wbb7sYD6V3tqEcq/KMzaxG4e18ENonzkNwqAYCkcPQGLWqVHuCw1hqcxZ65psgOHhU2qhLESRjaOpF7CYfCBiDujFBMoZJodgYrdKWCaYx/E7dZY8fPqvoXlcmmMbwReHmRkqdCaaxEHv7ubmRUmeCaSw4WGM4z1ZA+FmnnmAa447LoAiWMYyTO7czlR46oRISE93rWwTTWIPh+CC4L/GAf9jHpS5oGj7mep8fJgiPouF6H7ll9DTEVnvgz78MPJm+Ar//7sHy1gx0frrmar8fJtgSq9o3fha7Dhs7KZjfGJTWZ9b7+Ae//9qq3FcsEw4ksUiynR/+7kuzUu+eq+d6fL0X7n84lfMcP0yQEmtgYjHcNnaWJ5TeW4HQ+AWHLnJoohaWt2dhc3cRnsduOHS/TBCMZV375ZfxW7CT+QlTy69dzRMPpR7zX2Qo9cjVfCEmKBKjct+PLnbyw7rit5V6oR4vZS+zBYnNUWgdO+PQvfSEohLrmLwEi+nPsLQVh+bh4673qbht/BzMfY/AbiYNr4wLcrPPzgTL2IDtBgr0ofFafgA+Sirdbx9NdvBzw1OXlXqhniAl5rXC7G8Tcl+ihb0MLjp0L4X738wF+M90rp8iCImpB83Koyd/TEJk4aFSM6vA+bgfz1FpvFz+foQciVV76rmxpGjM0puHT7CXy1M+M/ItDPdGTko6zeN+y5i3zxd7gmmsnjk2iw2IPW4Qe7tOian0JfZPqLVfCa4jY686H/UFdg5fU+hin08nFPUdo3Imli38w4sQv38IfL2Lc1hyYv6LICfGBD+MN80Ts63jL8tTENZxDtfFOVp3JOaDCbbE6Fn1xlZi8nqEvbqzKVjrOIfr4hytW4nJ53hhgvo75rHMxGzrUgrCmttZP0WwjDHH9cwxMjr30lNidh2TwV9WnKfExP2o4zo3JuzP9Xn5ekIlJIau/RU3xlIIT1+VihITZ3HN7ayfIpjG7hiO7UyVT59e6TaOcwL/a0CcH2DJ5EJ8rVd5vtgX0gnCo2i41pwJORKr1rYnVEZiVmVvQMeeIBgzXBula0+wJYYDejPBkZjuTLCM9RvONWeClFg5FEFIzBDtTKWJTij/xOrQMSvObEDXnlAZidUxQboBG5e6jkywJXZEeybIiZVBEeSXB3OMcXPWtCdURmJ1/AbweRVvxOpLXUcmVFBi/dlb0LXPAuA/zcZwGz4/1RgAAAAASUVORK5CYII=" InformativeScreenshot="e491b6d6892e164c2b3f4615d87fa0eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target DesignTimeRectangle="287, 261, 25, 25" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl idx='2' parentid='v-pills-tab' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='v-pills-tab' tag='I' class='icons icon-print' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHkSURBVEhLxVaxTsNQDMyvQUb+gA9gYqEbMw0MSEyMSFCFgR3B3BYkhAQ0FRtIqF3YUPsHwWc/py+tX9SoaXvS6XKx8+xLS0V02tvJT/u7+SY1wsUZjMd1e0rqzAaVk4b4+HWRP41vahPPWecpowQbEBO8c9aZB/ojOohYRwHrPPWVSYHb4ZFZCxH9gFVTekk9pQIUSDMaGqgv3CeiHwjVoS5pXGzhe0CS2nXL20nL/Zw0RACbW7UQ/aQhuj+ZOD9/3st/Jm/8QNP4/nvhYQtJU3oto8mgtFFTHE8y/larjxKeHsvQKQ11HkXWBvx4KkPVbykpLmgDGZpJwW2a9Jyu6DWp+m0lpem0WTpsuaTiZSvHFb0k7RQ+arvp+nrVQz9+7/keNq2jeM4/B/c1KbwkJZaSOgJp1uLa0qR+wD9Hhi4knX2R1EMB+UUS33Y680K/rr9Ifl2T6vNF0svXfW5GgxLA5tqzDDXp/Dl3n8dFT9Tuuo1Ir94PeCMlgM21voxqUv+c68FhqY9er0y3FNCkVX2+atKqPpeUjKGAJLXrlhafaUVfKalSPeAnna9b3k9q1UFJ2iVjKCCfS6eWAlXnctIQH+i/OjmoPq3zlJSULognTplUKHlik/XKpOtihA02yzj/B3GwBpMkWJLwAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                                <uix:TargetAnchorable.PointOffset>
-                                  <uix:PointOffset Position="TopRight" X="-25" Y="27" />
-                                </uix:TargetAnchorable.PointOffset>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                        </Sequence>
-                      </If.Then>
-                      <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </Sequence>
-                      </If.Else>
-                    </If>
-                    <ui:ForEach x:TypeArguments="x:String" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="574.4,3580" sap2010:WorkflowViewState.IdRef="ForEach`1_6">
-                      <ui:ForEach.Body>
-                        <ActivityAction x:TypeArguments="x:String">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539.2,3445.6" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace">
-                              <ui:LogMessage.Message>
-                                <InArgument x:TypeArguments="x:Object">
-                                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_97">"phan tu thu" + count +": " + bankAccounts[count]</CSharpValue>
-                                </InArgument>
-                              </ui:LogMessage.Message>
-                            </ui:LogMessage>
-                            <Sequence DisplayName="Sequence Xuat File" sap:VirtualizedContainerService.HintSize="496,3212" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                              <Sequence.Variables>
-                                <Variable x:TypeArguments="x:String" Name="doiQuaFolderPath">
-                                  <Variable.Default>
-                                    <Literal x:TypeArguments="x:String">File\\Tháng 10\\DQ</Literal>
-                                  </Variable.Default>
-                                </Variable>
-                              </Sequence.Variables>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="400,288" sap2010:WorkflowViewState.IdRef="Sequence_38">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <If DisplayName="If Not The 1st Time" sap:VirtualizedContainerService.HintSize="433.6,62.4" sap2010:WorkflowViewState.IdRef="If_4">
+                              <uix:NClick ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_33" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=8F4287BC59965A9350832EC0122EED8A" DesignTimeRectangle="275, 199, 50, 52" DesignTimeScaleFactor="1" FriendlyName="'A'" FullSelectorArgument="&lt;webctrl parentid='v-pills-tab' tag='A' aaname='Trang chủ' href='/IbankingCorp/Accounts/ListAccounts.aspx?&amp;amp;cc=8F4287BC59965A93515E2EDE7633906D' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='v-pills-tab' tag='A' aaname='Trang chủ' href='/IbankingCorp/Accounts/ListAccounts.aspx?&amp;amp;cc=8F4287BC59965A93515E2EDE7633906D' type='' class='nav-link' /&gt;" Guid="5207e246-380f-46b3-9546-063f2e01b45e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAA4CAYAAAC2TwutAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPeSURBVGhD5VhbTxNBFPafCUaejJqY+GC8YOIPUOOT0Qd9QiixAROFkCKJJjUYjWIMJmJAaLnILYI25RIrrYSroAWBWPU4Z7pnd2Z32u5uIem0X3LyceY7M+Wbb7sYD6V3tqEcq/KMzaxG4e18ENonzkNwqAYCkcPQGLWqVHuCw1hqcxZ65psgOHhU2qhLESRjaOpF7CYfCBiDujFBMoZJodgYrdKWCaYx/E7dZY8fPqvoXlcmmMbwReHmRkqdCaaxEHv7ubmRUmeCaSw4WGM4z1ZA+FmnnmAa447LoAiWMYyTO7czlR46oRISE93rWwTTWIPh+CC4L/GAf9jHpS5oGj7mep8fJgiPouF6H7ll9DTEVnvgz78MPJm+Ar//7sHy1gx0frrmar8fJtgSq9o3fha7Dhs7KZjfGJTWZ9b7+Ae//9qq3FcsEw4ksUiynR/+7kuzUu+eq+d6fL0X7n84lfMcP0yQEmtgYjHcNnaWJ5TeW4HQ+AWHLnJoohaWt2dhc3cRnsduOHS/TBCMZV375ZfxW7CT+QlTy69dzRMPpR7zX2Qo9cjVfCEmKBKjct+PLnbyw7rit5V6oR4vZS+zBYnNUWgdO+PQvfSEohLrmLwEi+nPsLQVh+bh4673qbht/BzMfY/AbiYNr4wLcrPPzgTL2IDtBgr0ofFafgA+Sirdbx9NdvBzw1OXlXqhniAl5rXC7G8Tcl+ihb0MLjp0L4X738wF+M90rp8iCImpB83Koyd/TEJk4aFSM6vA+bgfz1FpvFz+foQciVV76rmxpGjM0puHT7CXy1M+M/ItDPdGTko6zeN+y5i3zxd7gmmsnjk2iw2IPW4Qe7tOian0JfZPqLVfCa4jY686H/UFdg5fU+hin08nFPUdo3Imli38w4sQv38IfL2Lc1hyYv6LICfGBD+MN80Ts63jL8tTENZxDtfFOVp3JOaDCbbE6Fn1xlZi8nqEvbqzKVjrOIfr4hytW4nJ53hhgvo75rHMxGzrUgrCmttZP0WwjDHH9cwxMjr30lNidh2TwV9WnKfExP2o4zo3JuzP9Xn5ekIlJIau/RU3xlIIT1+VihITZ3HN7ayfIpjG7hiO7UyVT59e6TaOcwL/a0CcH2DJ5EJ8rVd5vtgX0gnCo2i41pwJORKr1rYnVEZiVmVvQMeeIBgzXBula0+wJYYDejPBkZjuTLCM9RvONWeClFg5FEFIzBDtTKWJTij/xOrQMSvObEDXnlAZidUxQboBG5e6jkywJXZEeybIiZVBEeSXB3OMcXPWtCdURmJ1/AbweRVvxOpLXUcmVFBi/dlb0LXPAuA/zcZwGz4/1RgAAAAASUVORK5CYII=" InformativeScreenshot="e491b6d6892e164c2b3f4615d87fa0eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="287, 261, 25, 25" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl idx='2' parentid='v-pills-tab' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='v-pills-tab' tag='I' class='icons icon-print' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHkSURBVEhLxVaxTsNQDMyvQUb+gA9gYqEbMw0MSEyMSFCFgR3B3BYkhAQ0FRtIqF3YUPsHwWc/py+tX9SoaXvS6XKx8+xLS0V02tvJT/u7+SY1wsUZjMd1e0rqzAaVk4b4+HWRP41vahPPWecpowQbEBO8c9aZB/ojOohYRwHrPPWVSYHb4ZFZCxH9gFVTekk9pQIUSDMaGqgv3CeiHwjVoS5pXGzhe0CS2nXL20nL/Zw0RACbW7UQ/aQhuj+ZOD9/3st/Jm/8QNP4/nvhYQtJU3oto8mgtFFTHE8y/larjxKeHsvQKQ11HkXWBvx4KkPVbykpLmgDGZpJwW2a9Jyu6DWp+m0lpem0WTpsuaTiZSvHFb0k7RQ+arvp+nrVQz9+7/keNq2jeM4/B/c1KbwkJZaSOgJp1uLa0qR+wD9Hhi4knX2R1EMB+UUS33Y680K/rr9Ifl2T6vNF0svXfW5GgxLA5tqzDDXp/Dl3n8dFT9Tuuo1Ir94PeCMlgM21voxqUv+c68FhqY9er0y3FNCkVX2+atKqPpeUjKGAJLXrlhafaUVfKalSPeAnna9b3k9q1UFJ2iVjKCCfS6eWAlXnctIQH+i/OjmoPq3zlJSULognTplUKHlik/XKpOtihA02yzj/B3GwBpMkWJLwAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                    <uix:TargetAnchorable.PointOffset>
+                                      <uix:PointOffset Position="TopRight" X="-25" Y="27" />
+                                    </uix:TargetAnchorable.PointOffset>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="594,2613" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                          <ui:InterruptibleWhile.Body>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="558,2438" sap2010:WorkflowViewState.IdRef="Sequence_42">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="496,141" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:Int32">
+                                          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">dayBegin</CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:Int32">
+                                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_113">loopIndex * daysPerFile+ 1</CSharpValue>
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:Int32">
+                                          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">dayEnd</CSharpReference>
+                                        </OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:Int32">
+                                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_116">dayBegin + daysPerFile - 1</CSharpValue>
+                                        </InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <If DisplayName="If Is The Last Frequence" sap:VirtualizedContainerService.HintSize="496,61" sap2010:WorkflowViewState.IdRef="If_8">
                                 <If.Condition>
                                   <InArgument x:TypeArguments="x:Boolean">
-                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_109">count &gt; 0</CSharpValue>
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">dayEnd &gt; daysInMonth</CSharpValue>
                                   </InArgument>
                                 </If.Condition>
                                 <sap:WorkflowViewStateService.ViewState>
@@ -1484,30 +1445,28 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="400,258.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="400,192" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NClick ClickType="Single" DisplayName="Click 'I'" sap:VirtualizedContainerService.HintSize="356.8,167.2" sap2010:WorkflowViewState.IdRef="NClick_33" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                      <uix:NClick.Target>
-                                        <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=8F4287BC59965A9350832EC0122EED8A" DesignTimeRectangle="275, 199, 50, 52" DesignTimeScaleFactor="1" FriendlyName="'A'" FullSelectorArgument="&lt;webctrl parentid='v-pills-tab' tag='A' aaname='Trang chủ' href='/IbankingCorp/Accounts/ListAccounts.aspx?&amp;amp;cc=8F4287BC59965A93515E2EDE7633906D' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='v-pills-tab' tag='A' aaname='Trang chủ' href='/IbankingCorp/Accounts/ListAccounts.aspx?&amp;amp;cc=8F4287BC59965A93515E2EDE7633906D' type='' class='nav-link' /&gt;" Guid="5207e246-380f-46b3-9546-063f2e01b45e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAA4CAYAAAC2TwutAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPeSURBVGhD5VhbTxNBFPafCUaejJqY+GC8YOIPUOOT0Qd9QiixAROFkCKJJjUYjWIMJmJAaLnILYI25RIrrYSroAWBWPU4Z7pnd2Z32u5uIem0X3LyceY7M+Wbb7sYD6V3tqEcq/KMzaxG4e18ENonzkNwqAYCkcPQGLWqVHuCw1hqcxZ65psgOHhU2qhLESRjaOpF7CYfCBiDujFBMoZJodgYrdKWCaYx/E7dZY8fPqvoXlcmmMbwReHmRkqdCaaxEHv7ubmRUmeCaSw4WGM4z1ZA+FmnnmAa447LoAiWMYyTO7czlR46oRISE93rWwTTWIPh+CC4L/GAf9jHpS5oGj7mep8fJgiPouF6H7ll9DTEVnvgz78MPJm+Ar//7sHy1gx0frrmar8fJtgSq9o3fha7Dhs7KZjfGJTWZ9b7+Ae//9qq3FcsEw4ksUiynR/+7kuzUu+eq+d6fL0X7n84lfMcP0yQEmtgYjHcNnaWJ5TeW4HQ+AWHLnJoohaWt2dhc3cRnsduOHS/TBCMZV375ZfxW7CT+QlTy69dzRMPpR7zX2Qo9cjVfCEmKBKjct+PLnbyw7rit5V6oR4vZS+zBYnNUWgdO+PQvfSEohLrmLwEi+nPsLQVh+bh4673qbht/BzMfY/AbiYNr4wLcrPPzgTL2IDtBgr0ofFafgA+Sirdbx9NdvBzw1OXlXqhniAl5rXC7G8Tcl+ihb0MLjp0L4X738wF+M90rp8iCImpB83Koyd/TEJk4aFSM6vA+bgfz1FpvFz+foQciVV76rmxpGjM0puHT7CXy1M+M/ItDPdGTko6zeN+y5i3zxd7gmmsnjk2iw2IPW4Qe7tOian0JfZPqLVfCa4jY686H/UFdg5fU+hin08nFPUdo3Imli38w4sQv38IfL2Lc1hyYv6LICfGBD+MN80Ts63jL8tTENZxDtfFOVp3JOaDCbbE6Fn1xlZi8nqEvbqzKVjrOIfr4hytW4nJ53hhgvo75rHMxGzrUgrCmttZP0WwjDHH9cwxMjr30lNidh2TwV9WnKfExP2o4zo3JuzP9Xn5ekIlJIau/RU3xlIIT1+VihITZ3HN7ayfIpjG7hiO7UyVT59e6TaOcwL/a0CcH2DJ5EJ8rVd5vtgX0gnCo2i41pwJORKr1rYnVEZiVmVvQMeeIBgzXBula0+wJYYDejPBkZjuTLCM9RvONWeClFg5FEFIzBDtTKWJTij/xOrQMSvObEDXnlAZidUxQboBG5e6jkywJXZEeybIiZVBEeSXB3OMcXPWtCdURmJ1/AbweRVvxOpLXUcmVFBi/dlb0LXPAuA/zcZwGz4/1RgAAAAASUVORK5CYII=" InformativeScreenshot="e491b6d6892e164c2b3f4615d87fa0eb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                          <uix:TargetAnchorable.Anchors>
-                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                              <uix:Target DesignTimeRectangle="287, 261, 25, 25" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl idx='2' parentid='v-pills-tab' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='v-pills-tab' tag='I' class='icons icon-print' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAYAAABWk2cPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHkSURBVEhLxVaxTsNQDMyvQUb+gA9gYqEbMw0MSEyMSFCFgR3B3BYkhAQ0FRtIqF3YUPsHwWc/py+tX9SoaXvS6XKx8+xLS0V02tvJT/u7+SY1wsUZjMd1e0rqzAaVk4b4+HWRP41vahPPWecpowQbEBO8c9aZB/ojOohYRwHrPPWVSYHb4ZFZCxH9gFVTekk9pQIUSDMaGqgv3CeiHwjVoS5pXGzhe0CS2nXL20nL/Zw0RACbW7UQ/aQhuj+ZOD9/3st/Jm/8QNP4/nvhYQtJU3oto8mgtFFTHE8y/larjxKeHsvQKQ11HkXWBvx4KkPVbykpLmgDGZpJwW2a9Jyu6DWp+m0lpem0WTpsuaTiZSvHFb0k7RQ+arvp+nrVQz9+7/keNq2jeM4/B/c1KbwkJZaSOgJp1uLa0qR+wD9Hhi4knX2R1EMB+UUS33Y680K/rr9Ifl2T6vNF0svXfW5GgxLA5tqzDDXp/Dl3n8dFT9Tuuo1Ir94PeCMlgM21voxqUv+c68FhqY9er0y3FNCkVX2+atKqPpeUjKGAJLXrlhafaUVfKalSPeAnna9b3k9q1UFJ2iVjKCCfS6eWAlXnctIQH+i/OjmoPq3zlJSULognTplUKHlik/XKpOtihA02yzj/B3GwBpMkWJLwAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                                            </scg:List>
-                                          </uix:TargetAnchorable.Anchors>
-                                          <uix:TargetAnchorable.PointOffset>
-                                            <uix:PointOffset Position="TopRight" X="-25" Y="27" />
-                                          </uix:TargetAnchorable.PointOffset>
-                                        </uix:TargetAnchorable>
-                                      </uix:NClick.Target>
-                                    </uix:NClick>
+                                    <Assign sap:VirtualizedContainerService.HintSize="338,70" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">
+                                          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">dayEnd</CSharpReference>
+                                        </OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">
+                                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_118">daysInMonth</CSharpValue>
+                                        </InArgument>
+                                      </Assign.Value>
+                                    </Assign>
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1516,226 +1475,265 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <Delay DisplayName="Delay 15s" Duration="00:00:15" sap:VirtualizedContainerService.HintSize="433.6,98.4" sap2010:WorkflowViewState.IdRef="Delay_13" />
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Bộ lọc'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=96CC1F68D7C9ECD4E58E4F7BACE18074" DesignTimeRectangle="1498, 338, 126, 41" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Bộ lọc'" FullSelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' type='' class='btnFilter d-flex align-items-center border-0 btn bnt-link' aaname='                         Bộ lọc                     ' check:innerText='Bộ lọc' /&gt;" Guid="798529ef-1394-47a4-91db-48345c625c41" ImageBase64="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" InformativeScreenshot="78fbe6427121198a414dffd85f134e36.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target DesignTimeRectangle="655, 343, 232, 23" ElementType="Text" FriendlyName="'Tài khoản thanh toán'" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='boxTitle float-left' aaname='                     Tài khoản thanh toán                 ' check:innerText='Tài khoản thanh toán' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số tài khoản'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NTypeInto.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=96CC1F68D7C9ECD4E58E4F7BACE18074" DesignTimeRectangle="1311, 432, 298, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Tất cả'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='BUTTON' type='button' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='BUTTON' type='button' class='btn dropdown-toggle btn-light' aaname='Tất cả' check:innerText='Tất cả' /&gt;" Guid="659dcfe5-1355-4524-b582-29a3d96ed407" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAS4AAAAqCAYAAAANprbhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7doxaxRBGIfxg3wQP4KcjR8hhY3EImBxtWnTKBKQFPbGNDapUsRGsEkpXB+7oKWNpYUgiEISRv7Hvut7k93sXXI7s3M8PxhyuzOXS5qHmeVGAQAKQ7gAFOdauA5PT8J4dztsbI3D6PF9BoPByDLUILVITYrNhWtysBc293fC9PwsXFxdVncBID01SC1Sk9Qmrw6XqqYFADA0apPfedXh0pZMdQOAoVGb1ChTh0vnSY6HAIZIbVKjTB0uPQwDgKHyjSJcAIpAuAAUh3ABKE7WcP349TM8fDGZDb0GgEVkDdfRp4/h6ZuX4fffP9UdAOiWNVx9sx3d6MkDAgmskZWF696zR7NAtI34OPj1+7f6PdMvn6u7/73+cDRbswoWsKbPAVCeXnZcCoSi1BYe7Xy0A3p+/LZxbdf7l8FzNGD9ZAuXj0h8vcpwAVg/WcKleX+M9Gv1wN7P6bpN11rt6Pw8z7mA9ZA8XE1zCow/yi2y44rfo5+6tnhp3ofK5nUfQBqv3r+b2zw0Da1ZVvJwKRxxPOL1XeGyCGldk7b5OGYA+ndTvG4TLUkeLk8hsX9gmXAt+vvFImafQ7iA9JriddtoSfJwac7+cFsTr18kXIqRotTGR9FixY4LyMfH6y7RkqThUjAUjrseFbvmdV/zWucRLmA9JA3XTc+elglXW5iM7sc7MvtswgWUL8uOy8dDa237aCFqe7+n2Pk4+d2chc1/PUL39RldR0wAw5c0XGI7H4uVXtt6C41FSPMKTpv4e1x+rQ+izWl9VxABDF8v4QKAPhEuAMUhXACKQ7gAFIdwASgO4QJQHMIFoDiEC0BxCBeA4jSGa2NrHC6uLqsrABgOtUmNMnW4xrvbYXp+Vl0BwHCoTWqUqcN1eHoSNvd3qisAGA61SY0ydbhkcrA3W6C6cWwEkJMapBapSWqTNxcuUdW0JdN5Ug/DGAwGI8dQg9Qiv9My18IFAENHuAAUJoR/6Jh7wksokz4AAAAASUVORK5CYII=" InformativeScreenshot="5c75175c77e01402afc500d500bf634c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
-                                        <uix:Target DesignTimeRectangle="1311, 405, 89, 23" ElementType="Text" FriendlyName="'Số tài khoản'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='                                         Số tài khoản                                     ' check:innerText='Số tài khoản' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAbCAYAAAAecIOyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJISURBVGhD7ZXLjQIxEAXJiCwgFCIgAQIgCkLhzhVygCvXWT1Ead80PT+GxXtwSS3AbtvtsmdYNJWvU6UXoEovQJVegFnS7/d7s9lsmsVi0RyPx2drZYhZ0iW6Cp9Ofb1MZLfbPS7acrlszufzs3UaL9I1kSbUxIr1et1cr9dn7y/kzVlcsInsaenrE4fD4dGvzwxq1CtQr8JPwWv13Se8JT0KJ6J4fVebpCi6DsZRodvtNj0gzZGJ+a/S9/v9rIvWks4mtFmB3L6Nj4F55j4VkVLS55JKH7q5fhiKPpkxV8Gh6iC9XeGHO/WmMx/1uPTT6fT4rv5sf8xFUCPwSvEcP0yvhbpjDvS+XrIBMccjk9MlvWseFzJFOvMp9F3QtlqtXtbyvbmkqTlaW1BLFuTAyx8pt8VDCwKLZ6ecHZJAvAuJZDljpeu/Aqmei3Rvp43DzXL8ogytjRt+Z5fG/YkX6cAAQpNKqMS6GDEkta/fN6jwnLHSs7FC39XmIliPNs2tsVFMlApxTfqz/K65O6WDBjDwk9IRwtOR5bD2WOnUCXEN8a70WEvs57c+YVA6Qn1i0bW4b4Qcb3OYOxNKkQh6R7o+s/rHSCfHx5FDGzmMEdSGF68FNNZzoHXTGZhF3EhfTsSFKFRE11rvShdRcvwtonTBOjEY54cQY7Z0QaJH3HQswkV14ZK1mdvt1joI9cfCp0oXjFHbWOmCuYgoyr1o7OVyac2T1TJaeuXvqdILUKUXoEovQJVegCq9AFV6Aar0AlTpX6dpfgBgQRS3bSo3sQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
-                                        <uix:Target DesignTimeRectangle="1498, 338, 126, 41" ElementType="Text" FriendlyName="'Bộ lọc'" FullSelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' type='' class='btnFilter d-flex align-items-center border-0 btn bnt-link active' aaname='                         Bộ lọc                     ' check:innerText='Bộ lọc' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NTypeInto.Target>
-                                <uix:NTypeInto.Text>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">bankAccounts[count] + "[k(enter)]"</CSharpValue>
+                              <If DisplayName="If Is The 1st Time" sap:VirtualizedContainerService.HintSize="496,61" sap2010:WorkflowViewState.IdRef="If_6">
+                                <If.Condition>
+                                  <InArgument x:TypeArguments="x:Boolean">
+                                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_127">loopIndex == 0</CSharpValue>
                                   </InArgument>
-                                </uix:NTypeInto.Text>
-                              </uix:NTypeInto>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Áp dụng'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=96CC1F68D7C9ECD4E58E4F7BACE18074" DesignTimeRectangle="1470, 825, 120, 38" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Áp dụng'" FullSelectorArgument="&lt;webctrl id='submitFilter1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='submitFilter1' tag='A' type='' class='btnFilterSubmit btn w120 btnPrimary mb-2' aaname='                                     Áp dụng                                 ' check:innerText='Áp dụng' /&gt;" Guid="a3574a5b-eaf8-4130-ae8d-2196db8fc017" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAqCAYAAABxyT9UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALSSURBVHhe7ZwxS1xBFIX9Z7H3F+RnpE9rZyrLNEmbIiAEO8uNWGiRBIQgBA0JggqSYKFIRs+S8zhe76yru/vGN3MPfOw6b97M2/vNzrrFvqUUaSohvLHcE773+2N6u/syvRktp7XRi2CAwB0cwqXNHeEb+6/T+s6KO0gwPOASTjWdcKyGkF0fcKrv9E44tgDvhGD4wC3TCY/P7HqBW6YT7nUM6oEJ4Y3AhPBGYEJ4IzDPQviHb6/S38uT8XV8Of7k9glmg3kWwiEZCdmLg4ktvRGY4sJ1O0dOL364/ebJ4fnueC7Mi/m9PrXBFBe+/fN9uv539f8qUrq8vkib31fdvvMihN/G69QHWnzIRhb9WR7Cb+N1WjT2v3Ns54jd1rkLgIOz0Z0dYZrFwXERzPfrz9fuOa5Bx8dzex6vRxfK/snW+DlizwO6c+ER19nXgvZgigpnUbiNoxCI3da1eF4mFVBl2zxVuBe9ZjxSrpdmhdutVQulRVHhLL7uDmyz6HiYy7bNIpzXx0WKsI39dBF45/YJU0y4CqMMYIsMckJYbC2skjvO4j9VOM9Dmy4giuR5+rq8fn3CFBPOIueiktjXisu1k5xwti9CeG4ha3uTwlm8SWHBckJyQkluQVhxfQi3/djeF0wR4bmiEBbaCkFYfB2DbRYtMufRNm98yvDmnEa49kM7jmsb0pzw3DuKoCAIj2vxbXJjEC20DcXp4vHyWOHaxuBvvobmhHvvAEULhr66QPR7+EOyiUqHLPs9HH2sJEgGfK7jPCQc6CLF8c9H79x+fcEU+wx/DCp8GsGl4cLQ6y39GpgQbpjHXBzDi+4OfcKEcMO85vKkl5INmEEID2aHCeGNwITwRmBCeCMwIbwRmBDeCEwnPH5MWC/ujwnj58L14v5cOG4IUCfZGwIgccuPuoDL7C0/GKwGbAHxmT5c4A4O9Z3N3BMeqTshvKmkdANvoRBkAdG7ZAAAAABJRU5ErkJggg==" InformativeScreenshot="691a238ced8dcf226a14f61f35432f54.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                              <Delay DisplayName="Delay 10s" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="433.6,98.4" sap2010:WorkflowViewState.IdRef="Delay_14" />
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Tài khoản thanh toán'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_28" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=2158EBA6EB59262AC621AC85ED8121FA" DesignTimeRectangle="655, 430, 213, 68" DesignTimeScaleFactor="1" FriendlyName="'0451000237317'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='text-primary font-weight-bold' aaname='' /&gt;" Guid="c1dfb3ec-a957-435b-96b5-2d06cde184e6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARcAAAAxCAYAAADwUe1LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANzSURBVHhe7dw9bttAEIZh3yhXCXQN9TqBW/e+gFtXPoNr+wIpUsQwfAhGFHf2Z3Z2uQw0pgK8DzAILHL/BM1HW0XupuDu5w+KoqjrVcgW+yJFUdS/VsgWALgqwgWAC8IFgAvCBYALwgWAC8IFgAvCBYALwgWAC8IFgAvCBYALwgWAC8IFgAvCBYALwgWAC8IFgAvCBYCLbeHy+Twdsv8M5vDyFS7UXh/te+T1oh7fw9Xk4+Vojp+mr+nplI09PU8f4Ur09pCun+v+LbwuBs4h67fmKK8fp6fPcEHvr6jOfdY5AnnP0h5G1wD2syFc3qd748NcNe4sa+6ycRtNocMla/7N4aSCY6m84dbPoYOlukeF11Kyxljjm+dYCUrCBf+T4XCJDSeNLB/6qiHKD34ZDtLYD9NreKWiGrcYH4NDxst8ddPKOL3v9XOk/UszxyAIY/Qa+metWrPad32OmQ45M8iDeg1gX8PhIg2UPuB2UMiH/HAK/+YNZz3x82aI14/n8ct1c3w2ptyXBEPWpBJIITxWz1EF2Jmxbq6eM2PNV6nfyxQs6b1ohsvQGsD3GgwXo2l7jXxuwhgyWTjoJ7FUvGduYhUC1vj2a1bg5a8NnkNph4fMfS4zeGTuTjBkgZvfcznXZc61OQbWAHZwxXCRn5fGtoKgCozYWPUT91bCReY3vw+JvzE0xst1a2wQ52/eJ/trhMfAGsAerhYu0iTSAFYQ1KTx68a8hXBJjV+HX0FCUjW4dYaW9r39cNmyBvCdrvSdS2oAsy5NZwXJtnCxvvso92UEhXqy98+RtIOld4783vbZzDAyzrbohUtnDWBnw+ESm00+/EWDjIRLamx7jpIZLvHPEGniurn0OL3v/jkCec1s2nTWuDdrjt6fK/Ec7X0nnXDhTyLcsOFwSQ1RVv00XUgT2+GwPofdbI0Qy5/2MRjyykJidQ8SWEbpQFJVnEPuyfeWiUFblP4tadYJl5U1gD2Nh8tMNWb9lE3McJmpxmyF08iT/FLWU3ttjd45GsFxqU6I6TWa58+UAWMFy6wdLiNrAHvZFi4AMIhwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHgIobLr99/KIqirlb85gLAwTT9BXQUOB4tzjcRAAAAAElFTkSuQmCC" InformativeScreenshot="c371d2f8db0d443dcfdf6bee33f832bf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target DesignTimeRectangle="655, 338, 970, 51" FriendlyName="'Tài khoản thanh toán'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='vcbMainContent' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='vcbMainContent' tag='DIV' class='boxHeading clearfix' aaname='                                               ' check:innerText='Tài khoản thanh toán &amp;#xD;&amp;#xA;Bộ lọc' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                    <uix:TargetAnchorable.PointOffset>
-                                      <uix:PointOffset Position="BottomLeft" X="55" Y="-37" />
-                                    </uix:TargetAnchorable.PointOffset>
-                                  </uix:TargetAnchorable>
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                              <Delay DisplayName="Delay 10s" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="433.6,98.4" sap2010:WorkflowViewState.IdRef="Delay_15" />
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày giao dịch'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NTypeInto.Target>
-                                  <uix:TargetAnchorable Accuracy="0.4" BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=0AE8A1D9D6E485D2198090D7253ECF78" DesignTimeRectangle="695, 762, 111, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ctl00_Content_Tra…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='startDate dateTimeTransaction form-control mb-3 d-inline-block' aaname='' /&gt;" Guid="629adcb6-90af-46ec-90f6-72e376d6fbb9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVHhe7duxCcJQFIXhdI4jCHYOYSO2biDYOYI7WLiBuEBqJ9Joc+UUCdHn63MP/w+nS/fxkiaveb67YB4D02gF5qW9xeq4i9lmGc16ziY2uchHTr92X5j78ykWh21c7208Xl3Q9JKLfOQkr7HfgClpPQBijuQkr/EJHTB1dCVOeZKX3ApMvYs5lbmSl9wKTH1cKV9yA9MkMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCN+ovJH+35qv7Rzl2TfFXvmnALLFdyqt4C07ifOf3kIh85Ve9n9pO0jq7exfq4smlNLvIZn8h+BSbLOzBt1sUHg37m5+Z1M7AAAAAASUVORK5CYII=" InformativeScreenshot="b4eb7963f2d857bec1ad0460560ee764.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target DesignTimeRectangle="695, 824, 130, 42" ElementType="Text" FriendlyName="'Ngày giao dịch'" FullSelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' aaname='Ngày giao dịch' colName='Ngày giao dịch' innertext='Ngày giao dịch' rowName='Ngày giao dịch' visibleinnertext='NGÀY GIAO DỊCH' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' aaname='Ngày giao dịch' colName='Ngày giao dịch' innertext='Ngày giao dịch' rowName='Ngày giao dịch' visibleinnertext='NGÀY GIAO DỊCH' class='' check:text='Ngày giao dịch' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAAuCAYAAADtNmESAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMKSURBVHhe7ZbLbeQwDIbT0V6mkNQRV+I0MikkmCYCTA2+bbAXr0TJMkX99CsHe7H/4QMyepP8ZOXl95/vkRALxSCQIsYwDIQUKAaBUAwCoRgEQjEIhGIQCMUgEIpBIBSDQCgGgVAMAqEYBHK6GM+Pbrzd+vEB+sh5XOKLEeXoPp6wj5wDnxIC2SXG4/0GP/vyHLw/qrbhsw9j4/gJ/7lA66YnphvvX/XYYXiO97cw3u6nSHPV3m/38anHyNmcOOCeE4+x1+uuPIHNOTL9px6X1qzb2rnVF/XrPnbonF77AQ6IYQ4ZkCBUoVCC/aTHxPRjH9a2yZH9jACyji20AknWtEExonBdOIfzrEnSzRmz/PbcE/CszZxWjDaGNKac65JihOTZzSsxUAKFdNM9qWAS7VprgUvSPfnUOkiM2Bb3R33O2SNLonp9dbs5mxejPpc3Zi0/O9gvRihiEmQOeCpu+dtJVEtKuCTFCUqvN+2v+zVr/QVQ/Dg3Fb69wYsJX+hzc1HtX++3KX9XFQMGkwuyuTgRCWQu0FwcPS7f1vClam+yxr/VDY0YMZ45oToePF4DRMq4Ra4KWM/flD+ZH8ZBThUj/FbJWhTDBqESFedVhYxrujcMJ38GiJHnFcDZy+/mzKb/cmIAAbz2AxwXIxci/tZiuMlo+lJCqsJlmiRvDHgpqZ7UJQ5wjiLZ0v4LfW4uqv1rMZbyV7i2GIF8kPiffGmXtg03KCYHJAAWd2vAknA8zhVD1m6/BnWB/GdqqZBen5yltJsvjherbt8yRrcf4GdiBCT4eMNUe2ozB5RizAmJa8H/B6rblNkRsJzRzG/OqPaQPitixO4pv43wOSZ0CSJQjGZO+xS1McxfZ/n9L4hRngTbnhMpBcms3gohrVdJszfgScKCmVvEaIsyY4oh5FgLRmBDEbLCxoHPYOduysdZYpD/B4pxAdxn9UQoBoFQDAKhGARCMQiEYhAIxSAQikEgFINAKAaBUAwCoRgEQjEIhGIQSBHj5fUXITMUg0AmMQjRUAwC+B7/Aog8D7u+crM5AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NTypeInto.Target>
-                                <uix:NTypeInto.Text>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">dayBegin + "/" + currentMonth + "/" + currentYear</CSharpValue>
-                                  </InArgument>
-                                </uix:NTypeInto.Text>
+                                </If.Condition>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="400,1378" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Delay DisplayName="Delay 15s" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="Delay_16" />
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Bộ lọc'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_35" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=96CC1F68D7C9ECD4E58E4F7BACE18074" DesignTimeRectangle="1498, 338, 126, 41" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Bộ lọc'" FullSelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' type='' class='btnFilter d-flex align-items-center border-0 btn bnt-link' aaname='                         Bộ lọc                     ' check:innerText='Bộ lọc' /&gt;" Guid="798529ef-1394-47a4-91db-48345c625c41" ImageBase64="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" InformativeScreenshot="78fbe6427121198a414dffd85f134e36.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="655, 343, 232, 23" ElementType="Text" FriendlyName="'Tài khoản thanh toán'" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='boxTitle float-left' aaname='                     Tài khoản thanh toán                 ' check:innerText='Tài khoản thanh toán' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số tài khoản'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=96CC1F68D7C9ECD4E58E4F7BACE18074" DesignTimeRectangle="1311, 432, 298, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Tất cả'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='BUTTON' type='button' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='BUTTON' type='button' class='btn dropdown-toggle btn-light' aaname='Tất cả' check:innerText='Tất cả' /&gt;" Guid="659dcfe5-1355-4524-b582-29a3d96ed407" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAS4AAAAqCAYAAAANprbhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALlSURBVHhe7doxaxRBGIfxg3wQP4KcjR8hhY3EImBxtWnTKBKQFPbGNDapUsRGsEkpXB+7oKWNpYUgiEISRv7Hvut7k93sXXI7s3M8PxhyuzOXS5qHmeVGAQAKQ7gAFOdauA5PT8J4dztsbI3D6PF9BoPByDLUILVITYrNhWtysBc293fC9PwsXFxdVncBID01SC1Sk9Qmrw6XqqYFADA0apPfedXh0pZMdQOAoVGb1ChTh0vnSY6HAIZIbVKjTB0uPQwDgKHyjSJcAIpAuAAUh3ABKE7WcP349TM8fDGZDb0GgEVkDdfRp4/h6ZuX4fffP9UdAOiWNVx9sx3d6MkDAgmskZWF696zR7NAtI34OPj1+7f6PdMvn6u7/73+cDRbswoWsKbPAVCeXnZcCoSi1BYe7Xy0A3p+/LZxbdf7l8FzNGD9ZAuXj0h8vcpwAVg/WcKleX+M9Gv1wN7P6bpN11rt6Pw8z7mA9ZA8XE1zCow/yi2y44rfo5+6tnhp3ofK5nUfQBqv3r+b2zw0Da1ZVvJwKRxxPOL1XeGyCGldk7b5OGYA+ndTvG4TLUkeLk8hsX9gmXAt+vvFImafQ7iA9JriddtoSfJwac7+cFsTr18kXIqRotTGR9FixY4LyMfH6y7RkqThUjAUjrseFbvmdV/zWucRLmA9JA3XTc+elglXW5iM7sc7MvtswgWUL8uOy8dDa237aCFqe7+n2Pk4+d2chc1/PUL39RldR0wAw5c0XGI7H4uVXtt6C41FSPMKTpv4e1x+rQ+izWl9VxABDF8v4QKAPhEuAMUhXACKQ7gAFIdwASgO4QJQHMIFoDiEC0BxCBeA4jSGa2NrHC6uLqsrABgOtUmNMnW4xrvbYXp+Vl0BwHCoTWqUqcN1eHoSNvd3qisAGA61SY0ydbhkcrA3W6C6cWwEkJMapBapSWqTNxcuUdW0JdN5Ug/DGAwGI8dQg9Qiv9My18IFAENHuAAUJoR/6Jh7wksokz4AAAAASUVORK5CYII=" InformativeScreenshot="5c75175c77e01402afc500d500bf634c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                              <uix:Target DesignTimeRectangle="1311, 405, 89, 23" ElementType="Text" FriendlyName="'Số tài khoản'" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='                                         Số tài khoản                                     ' check:innerText='Số tài khoản' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF0AAAAbCAYAAAAecIOyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJISURBVGhD7ZXLjQIxEAXJiCwgFCIgAQIgCkLhzhVygCvXWT1Ead80PT+GxXtwSS3AbtvtsmdYNJWvU6UXoEovQJVegFnS7/d7s9lsmsVi0RyPx2drZYhZ0iW6Cp9Ofb1MZLfbPS7acrlszufzs3UaL9I1kSbUxIr1et1cr9dn7y/kzVlcsInsaenrE4fD4dGvzwxq1CtQr8JPwWv13Se8JT0KJ6J4fVebpCi6DsZRodvtNj0gzZGJ+a/S9/v9rIvWks4mtFmB3L6Nj4F55j4VkVLS55JKH7q5fhiKPpkxV8Gh6iC9XeGHO/WmMx/1uPTT6fT4rv5sf8xFUCPwSvEcP0yvhbpjDvS+XrIBMccjk9MlvWseFzJFOvMp9F3QtlqtXtbyvbmkqTlaW1BLFuTAyx8pt8VDCwKLZ6ecHZJAvAuJZDljpeu/Aqmei3Rvp43DzXL8ogytjRt+Z5fG/YkX6cAAQpNKqMS6GDEkta/fN6jwnLHSs7FC39XmIliPNs2tsVFMlApxTfqz/K65O6WDBjDwk9IRwtOR5bD2WOnUCXEN8a70WEvs57c+YVA6Qn1i0bW4b4Qcb3OYOxNKkQh6R7o+s/rHSCfHx5FDGzmMEdSGF68FNNZzoHXTGZhF3EhfTsSFKFRE11rvShdRcvwtonTBOjEY54cQY7Z0QaJH3HQswkV14ZK1mdvt1joI9cfCp0oXjFHbWOmCuYgoyr1o7OVyac2T1TJaeuXvqdILUKUXoEovQJVegCq9AFV6Aar0AlTpX6dpfgBgQRS3bSo3sQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                              <uix:Target DesignTimeRectangle="1498, 338, 126, 41" ElementType="Text" FriendlyName="'Bộ lọc'" FullSelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='vcbMainContent' tag='A' type='' class='btnFilter d-flex align-items-center border-0 btn bnt-link active' aaname='                         Bộ lọc                     ' check:innerText='Bộ lọc' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NTypeInto.Target>
+                                      <uix:NTypeInto.Text>
+                                        <InArgument x:TypeArguments="x:String">
+                                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_128">bankAccounts[count] + "[k(enter)]"</CSharpValue>
+                                        </InArgument>
+                                      </uix:NTypeInto.Text>
+                                    </uix:NTypeInto>
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Áp dụng'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_36" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=96CC1F68D7C9ECD4E58E4F7BACE18074" DesignTimeRectangle="1470, 825, 120, 38" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Áp dụng'" FullSelectorArgument="&lt;webctrl id='submitFilter1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='submitFilter1' tag='A' type='' class='btnFilterSubmit btn w120 btnPrimary mb-2' aaname='                                     Áp dụng                                 ' check:innerText='Áp dụng' /&gt;" Guid="a3574a5b-eaf8-4130-ae8d-2196db8fc017" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAqCAYAAABxyT9UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALSSURBVHhe7ZwxS1xBFIX9Z7H3F+RnpE9rZyrLNEmbIiAEO8uNWGiRBIQgBA0JggqSYKFIRs+S8zhe76yru/vGN3MPfOw6b97M2/vNzrrFvqUUaSohvLHcE773+2N6u/syvRktp7XRi2CAwB0cwqXNHeEb+6/T+s6KO0gwPOASTjWdcKyGkF0fcKrv9E44tgDvhGD4wC3TCY/P7HqBW6YT7nUM6oEJ4Y3AhPBGYEJ4IzDPQviHb6/S38uT8XV8Of7k9glmg3kWwiEZCdmLg4ktvRGY4sJ1O0dOL364/ebJ4fnueC7Mi/m9PrXBFBe+/fN9uv539f8qUrq8vkib31fdvvMihN/G69QHWnzIRhb9WR7Cb+N1WjT2v3Ns54jd1rkLgIOz0Z0dYZrFwXERzPfrz9fuOa5Bx8dzex6vRxfK/snW+DlizwO6c+ER19nXgvZgigpnUbiNoxCI3da1eF4mFVBl2zxVuBe9ZjxSrpdmhdutVQulRVHhLL7uDmyz6HiYy7bNIpzXx0WKsI39dBF45/YJU0y4CqMMYIsMckJYbC2skjvO4j9VOM9Dmy4giuR5+rq8fn3CFBPOIueiktjXisu1k5xwti9CeG4ha3uTwlm8SWHBckJyQkluQVhxfQi3/djeF0wR4bmiEBbaCkFYfB2DbRYtMufRNm98yvDmnEa49kM7jmsb0pzw3DuKoCAIj2vxbXJjEC20DcXp4vHyWOHaxuBvvobmhHvvAEULhr66QPR7+EOyiUqHLPs9HH2sJEgGfK7jPCQc6CLF8c9H79x+fcEU+wx/DCp8GsGl4cLQ6y39GpgQbpjHXBzDi+4OfcKEcMO85vKkl5INmEEID2aHCeGNwITwRmBCeCMwIbwRmBDeCEwnPH5MWC/ujwnj58L14v5cOG4IUCfZGwIgccuPuoDL7C0/GKwGbAHxmT5c4A4O9Z3N3BMeqTshvKmkdANvoRBkAdG7ZAAAAABJRU5ErkJggg==" InformativeScreenshot="691a238ced8dcf226a14f61f35432f54.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <Delay DisplayName="Delay 10s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="Delay_17" />
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'Tài khoản thanh toán'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_37" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/ListAccounts.aspx?&amp;cc=2158EBA6EB59262AC621AC85ED8121FA" DesignTimeRectangle="655, 430, 213, 68" DesignTimeScaleFactor="1" FriendlyName="'0451000237317'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='text-primary font-weight-bold' aaname='' /&gt;" Guid="c1dfb3ec-a957-435b-96b5-2d06cde184e6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARcAAAAxCAYAAADwUe1LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANzSURBVHhe7dw9bttAEIZh3yhXCXQN9TqBW/e+gFtXPoNr+wIpUsQwfAhGFHf2Z3Z2uQw0pgK8DzAILHL/BM1HW0XupuDu5w+KoqjrVcgW+yJFUdS/VsgWALgqwgWAC8IFgAvCBYALwgWAC8IFgAvCBYALwgWAC8IFgAvCBYALwgWAC8IFgAvCBYALwgWAC8IFgAvCBYCLbeHy+Twdsv8M5vDyFS7UXh/te+T1oh7fw9Xk4+Vojp+mr+nplI09PU8f4Ur09pCun+v+LbwuBs4h67fmKK8fp6fPcEHvr6jOfdY5AnnP0h5G1wD2syFc3qd748NcNe4sa+6ycRtNocMla/7N4aSCY6m84dbPoYOlukeF11Kyxljjm+dYCUrCBf+T4XCJDSeNLB/6qiHKD34ZDtLYD9NreKWiGrcYH4NDxst8ddPKOL3v9XOk/UszxyAIY/Qa+metWrPad32OmQ45M8iDeg1gX8PhIg2UPuB2UMiH/HAK/+YNZz3x82aI14/n8ct1c3w2ptyXBEPWpBJIITxWz1EF2Jmxbq6eM2PNV6nfyxQs6b1ohsvQGsD3GgwXo2l7jXxuwhgyWTjoJ7FUvGduYhUC1vj2a1bg5a8NnkNph4fMfS4zeGTuTjBkgZvfcznXZc61OQbWAHZwxXCRn5fGtoKgCozYWPUT91bCReY3vw+JvzE0xst1a2wQ52/eJ/trhMfAGsAerhYu0iTSAFYQ1KTx68a8hXBJjV+HX0FCUjW4dYaW9r39cNmyBvCdrvSdS2oAsy5NZwXJtnCxvvso92UEhXqy98+RtIOld4783vbZzDAyzrbohUtnDWBnw+ESm00+/EWDjIRLamx7jpIZLvHPEGniurn0OL3v/jkCec1s2nTWuDdrjt6fK/Ec7X0nnXDhTyLcsOFwSQ1RVv00XUgT2+GwPofdbI0Qy5/2MRjyykJidQ8SWEbpQFJVnEPuyfeWiUFblP4tadYJl5U1gD2Nh8tMNWb9lE3McJmpxmyF08iT/FLWU3ttjd45GsFxqU6I6TWa58+UAWMFy6wdLiNrAHvZFi4AMIhwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHggnAB4IJwAeCCcAHgIobLr99/KIqirlb85gLAwTT9BXQUOB4tzjcRAAAAAElFTkSuQmCC" InformativeScreenshot="c371d2f8db0d443dcfdf6bee33f832bf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target DesignTimeRectangle="655, 338, 970, 51" FriendlyName="'Tài khoản thanh toán'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='vcbMainContent' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='vcbMainContent' tag='DIV' class='boxHeading clearfix' aaname='                                               ' check:innerText='Tài khoản thanh toán &amp;#xD;&amp;#xA;Bộ lọc' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABOYAAAA3CAYAAACo0UWzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABGrSURBVHhe7d3/U1X3ncfx/BH7g53Z/SE/7HSdtpOmbSBuw06DpjF3E0PsELJMcJJFTZXaiqTBxAlxqthGIZFBJS1E/DIYI0FlowRbCLO6MEU2jt7M4NBkwayCy8gukdrgzTLz2vM5X+49XO7lcuHCVff5mHnPwOd+zjmfe7n+4Gs+X+4TAAAAAAAAgAVHMAcAAAAAAACkAcEcAAAAAAAAkAYEcwAAAAAAAEAaEMwBAAAAAAAAaUAwBwAAAAAAAKQBwRwAAAAAAACQBgRzAAAAAAAAQBoQzAEAAAAAAABpQDAHAAAAAAAApIETzE3c1ujNsZnXSJ8+Olqtitpq7Tl7zb7F3Iyp93y32k0Fr2ncbY3LP96v3bZ50H+21nmPbf2JxzSPxm95n/1ttyUNFugzn5OJazp92Ple1nXO4HsEAAAAAACQRk4wd7FS9+U8kEQVqWGgX3VvPGL9nKH896cGV9dPFYX7b7/oNsZ1Sdu9e79yXNfd1rh841156obbOA++HtPocJuKzPsddtsW3A01vOJ+NjmV6nJbF9xCfeazdcv6Pr6aYY3vERWeSG+QCgAAAAAAMBNOMPdFmz3LyF9bXg3IC2IefHVH1OtH1XXTum5iTF21eVqUk6Hs2m6NTth3s90TwZxu6HT5Ui0uOqgLvvc2L3oPKntdnl0lbf73dC8Gc5e0x32v2TvbEv+9E7nZre1rM3Rfbp62dN6BoSEAAAAAAEAMcfeY8wdr8z9D6k4N5sbUdcINIedb3Pd0bwZzSf2971EDw4O6OvJf7m8AAAAAAMzeiY8btf6tl3T6XIvbkn6h4QENDI25vyGWpIO50f5utbcdjZpBd1AN5/snzZgbDUb6nP7CbYxrmqDm5iU1eM850KJes7+ZLyTK/pV5bYcK161R0d5q1bVd1vVYs9u+vqYLZ49rj3cvM+azVt/o/dJG+9V+vkV14X5O7TnVrd5Rt4/PuNW/a9J9rfqgRRdmuvTVfp71mb6/SeH3tLfFaes3X15/MFekksPV2lK+Rtmv71DF4eNq/yLqCz5f45/NZz6Ft5fgQRW697pvXaWa7Dbr++P2MsaHLuv0qYORMVnv9XTfNY1Pes5tXQ92T+5n11E19cUID7++od7gOTW4+9BN23eeHev8vbzP0/wMAAAAAMBsbah6Xvl1TyinPKDlFU+quGqz+8ocjQbV+GaZSl8rnVRlO2rU0NSqzt4RheLkASMXG1T8o0xlZq5WTZfVz21PLKSBjgZVVder9fN7P9RLOpjrb14Tbo+uRWtrdcHd3CslS1mH2lRU6LY/t0lNQ267LyRyKkOLV5n97tzfC3eo3ZfyjPfWKpDr7++r3AJV9PoOVRhpUX6sfqZy86z34vW9pIpVZk+zGP3sekSFH83gYIwp78VX71yyOviDObeeW6rF4feTocAH/c69jPkaf5KfeWy+v/OU8mYD3taFAwVaFLOP9R0rtr5jt+yOtq7q2P1M3f9GS/i7dOHA0rj3NGX69s8oXJw7fyjnFeEcAAAAAGCm/njpDyre/6jW/3apVu95TGvfX673Wg/Zr715aJey31qpH/7yaT20cYUeXBfQdwof0+KCR/W3zz6i+3Me1l8Hvq9FSx/QX2V9S81npplhN9yh8oAJ1+LX6n2dGolK3cKh3LPFKi3MsvrlqapjcGbh3MSYgvsKrGue0a6uEbfx3pX8UlZzIMLNsUkzl0bP7giHHl7fOQdzQy0qfM5tM6GP/2/hC4lWNkfCo/FPKvWg2/7g/stuo3XvVe59fl6rC96y1JuXtccLvHKt+/vCnvHok0dvdWuLd491R+XEYL4xF1tt3udhfYFOV3qBV4HqEmVz3mmn1mfoXGO9pw8uO212yBm1lDX8nGu+9k1q8geR4WtdqRh/Mp/5NOyx3TynLe415tm9dpsTGI5bz/HuFzhwKTwLc/Szg1rpti+qPBc53GE8cq2n90iBc++cjPB3r+sd93k5a1Tnm8Hp/+4GTiT6Y82dP5R7/cheu7zfCecAAAAAADPxx+AftKn+URX9bqlW731MLx17IhzM7Ty0S0tNMPdKjjI2rtD31vuCubws3f/Mw/qbwA/0jWXfnXkwt75BfV+5bcZESCOfNqs834RzearpjoQ24VCusEqdQyF71l1DSRLhHMGcI24wF8vw8XBo4szymkMwZ5Y2nq1VvjcjrLBy6h5v/pBo0tj893EDKKuvF7zkfzT5fYx3RsKwoo7ppkfG2ufN96zo5be+8WW/75vNNp247yn+HnP+z7ikc3I4NVkKxp/MZ55Q/Gd3veOFgkVqmvTv77baK91rcjbr9HT7/sUYaySYiz5hdzbjnx1/KFd6aLfbKm0+VBVuJ5wDAAAAACTLWcq6XE+XB/R4xT+quKrUfWWO4gVztpAGW0qVlZmpoiN9SSxVTYBgzhE3mJu4resXj2tP5SbnVM3o5ZBzDeb8VTR52WJY3JDomhqKveudAGracQxFAsVFtc64bcOX1HDY7KFmvb+10UsgZxBsxQgqE5pFMKdP4lwzH+NP4jNPLN6zp3mvlsgy6gxtD7qN1j/Y3rNHnX33rPe7xJtl6ZY31vjB3PTPTBV/KFe8f5fbGrFpf0X4dcI5AAAAAECy9ja+be8xt/9fDrgtKTBtMCcNninTMhPMHRuIBHPW/9P7ztSrfG1A4SWvz5aq6mRwypLXmOIEc6GrPWrcXao8756Zy7R6W706+qImWo30qXWfv59VOatVuqNencMpiw9TJslg7oaa3vD2FcvQ4rV5ziEE1UXh5YcpDeZyi9Tg7Svnl0SINe04YgRQZinlErdt0Srr/a3bpJLaHcr3loLONthKZDbBXIxrpo7fHNCQgvHPZnxxzS6Ym/K3HL+kirVeMPyIlqzL08rySlWUe0tZI2NNZzDnD+V+9rtfu61Tbaj9Tbgf4RwAAAAAYC4+Pn9W/7R1nV7ctlGX/+NPbmuSpgvmQoPq2PGMMjMD2nXODdBMqHZgtR2GZRWUqupwoxr2lasoxwnI8io6NJgoG4sRzIWutqr8KecegfXlqjlQr12vFdiz9TKzrP/nf+qGc18NqNFeNmv127hL9cca1XisXlXbSlW6rcZZWjtDW9+rUe7Ol93f4jN9TN/ZSi6Y66uNvZ9YjCBn1sGc2XNsuFvbvUMfzFLW6FlzSYRE/uWqU5Z7BqvDs8mcJZv9qlvnuz68j16s8OZODObmcfwLEsz5l6vuULt/nzzLhVovhMuz94kb7djs/v6ACtt8CXmMsaYrmPOHci/t2+a2xvfTmu3h/oRzAAAAAIDZ6LvyJ/39b3L13ZKn9O2fLdffFS7Vf3/5P+6rSfCCuUCxao40qvlksxqbGlW/u0zFBU4AllXaKG/SWuhKs4qzrP5rG8JtttGg6gtNsFag+otRM9yiRQdz1u891Xn2s1a/G9RYOOsIafBMuQImhNvmBH5jn9arwIR1Gxs1EGOGXzL+d2JCK3b8Ytpwzrxm+pi+s5VcMOcPPHwHAKQ0mPOCmqHj4X3mok/iTCokunZUAbdv9OEEo22b3L7eIQHWOLy97VZZz7R7GSkIthKZTfA15Zp5HP9sxhdX/Gf3n/BmuwVU0es22sbU9IZ7Ta71HOs77/+ObfnE7WbEGGs6gjl/KPdidZnbmtg/V78Rvo5wDgAAAAAQzT6VtT5yKmvB2z/WszudPeae2Pqksl9bYR/+4PlmYXbUqaw/0KJlqTmVNVDaoKA9sc0EZWVx9pwLaaCp2O5fdCzBfnTRwdxYUDUvWM9aVqbWq1FXjvSo6lnrtZxd6hyxnv9hqf2M1YdTs+fdn8f/oh9v/WnMcM60mddMn7lILpi72aai8KEMW1V3tltNH1Rry6/yIvuYpSqYs0xalvnq8cjJoUmFRGYWVmS548q9x3X6vDXuI5uV7b0X65nOvW+r652A2zdDgdoWtbcdVUXtVgW8vrMNthL54qiy3WsWFVeryXrult+bWXzJBHPzOP6UBnO+mX25Bdre1qK6vS2yc7hb51TijfW5Ndp+6pzaz7doj+87Fg6FPzsY+X6Yz+z8OTUcrlbJy95y68hYFzqYa73Q6d7zAT3/9mtu68yZa7zrP+z5V7cVAAAAAICpp7IWvP248nY+Ye8xZwdzW6KCuV887juVdcncT2VVSCNXetT8pgnQMvVMRadGJkLqO2yWsWaptGXq6asjXbvs2W151T2+WW8xRAdz3hgKahSMnmxnlq5usF7LKlbzlT+7z89U6YczOP11hm6MjeofXntxUjhnfjZt5rW5Svrwh/HPjqskvK+XV2a/uTUq2n9c7dec5aKpCOaMfus+XiCz5J1ujZo/XrIh0cQNte/fNOVggPtylypQeVy9/tl4E9fUVFmg+/39TD2XY+9fVtfWL+djT3EwZ0K1Wl/AaZVzimwywZxlvsaf0mDOhK7VkWDU1KstkTEMd6vi9Zwp72HRqgKVnOqXf4Xr6Ce1Whn9d7X3m9ukkg9a1OssR1/wYK6+vdm+Z17FK25L8sy15h4VJw+6LQAAAAAAJGaWsi75tVnK+qS+tWG5Fs91KWucwx/CM9Z+UqWeES+YW6ayM4Nuh4iR7io9Y0K83T0amU0w90KMYC40oOYS67XMYjV+7gVzWfbzUxXMGddGhvXQy/l2IGfK/GzaUiFuMJfQ+JhGb5qK2rftTueN+1aCcU/cdt/fmMan+8KkmvvcOT8zXeNP0rgZY9Recn7266a+dhviGL/l9kv0d10gY1/9RR2f9ri/zZ65x63bc1wYDwAAAAD4f8c5/GH9/B3+YIz1OXvHBcrVMRxZSlp80ndKq2ukw9kPruC3/n3iYogO5kaDqsp3ntEZnYVZz29Ya14rU8dQSAPHiuznFzVNff5cfX79P/Xtn//ELvNzqsw+mAMAAAAAAMAdYe+xt+095t5t3u+2pECCYM6cllr6I+v1/Br1jCp8+IKztNXtZBtzT2uNvcx1kuhgLjSo1q3LnN+9019doSF3fBucwx688C9vd/Tz71wEcwAAAAAAAHexDVXPK7/O2WNuecWTKq7a7L4yR+H93arUerFPfX1u9fao42S9ys2hDGaG2pE+2atMzZ5vpVnKzCpSTVufRkwCNzGmga4GlZr7xDrAIVp0MGcxy2DzrOdkPlWmxu4BjXwlhYaDat1t+i1TWYszQy401Kqyx81zitXQPaiQCees+w1+3qeecz0amPuWcClHMAcAAAAAAHAXsU9l3R85lXXt+8v1Xush+7Wdh3Yp+62V+uEvn9ZDG1fowXUBfafwsahTWb+vRUtTcSrrMhW/26lB32y60NUOVZnlrVP6FqiqYwZ7v8UI5uy2pjJ7Nlz0fVfvs54fvmlIAy3l9l520f0yM4vU0Jfw6QuOYA4AAAAAAOAuEn0q60vHnpgUzC01wdwrOcrYuELfW+8L5uxTWR+e+ams7myz8Ey5STWgwejDGDzmuk871XqyUY1NzWo9F9TA6MxDsbErQfV0W9fYU+4iQsN96jnTbN2zUc0tHQpejT0Afz/v+X1XRpwZdHcYgjkAAAAAAIC7mLOUdbm9x1xKl7LOxcSYBs61qrkt6CxpTZHQUFCtH7aq80q8VPDuQjAHAAAAAABwlzvxcaPWv/WSPvq3j9yWNAsNqtnsN/dCjYIpzNDG/t3sN5elsjMzWBZ7FyCYAwAAAAAAQGrZM+aamTGXAMEcAAAAAAAAkAYEcwAAAAAAAEAaEMwBAAAAAAAAaUAwBwAAAAAAAKQBwRwAAAAAAACQBgRzAAAAAAAAQBoQzAEAAAAAAABpQDAHAAAAAAAApAHBHAAAAAAAAJAGBHMAAAAAAABAGhDMAQAAAAAAAGlAMAcAAAAAAACkAcEcAAAAAAAAkAYEcwAAAAAAAEAaEMwBAAAAAAAAaUAwBwAAAAAAAKQBwRwAAAAAAACQBgRzAAAAAAAAQBoQzAEAAAAAAABpQDAHAAAAAAAApEE4mPvyyy8piqIoiqIoiqIoiqIoiprn8hDMURRFURRFURRFURRFUdQClodgjqIoiqIoiqIoiqIoiqIWsBzS/wGdWkXv/bh7BAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                          <uix:TargetAnchorable.PointOffset>
+                                            <uix:PointOffset Position="BottomLeft" X="55" Y="-37" />
+                                          </uix:TargetAnchorable.PointOffset>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <Delay DisplayName="Delay 10s" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="338,97" sap2010:WorkflowViewState.IdRef="Delay_18" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <Sequence sap:VirtualizedContainerService.HintSize="496,1823" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                              </uix:NTypeInto>
-                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số tham chiếu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,228" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NTypeInto.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=0AE8A1D9D6E485D2198090D7253ECF78" DesignTimeRectangle="824, 762, 111, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ctl00_Content_Tra…'" FullSelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$TxtToDate' tag='INPUT' type='text' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$TxtToDate' tag='INPUT' type='text' class='endDate dateTimeTransaction form-control mb-3 d-inline-block' aaname='' /&gt;" Guid="20b2850e-9967-4392-87a4-ba163e117723" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVHhe7duxCcJQFIXhdI4jCHYOYSO2biDYOYI7WLiBuEBqJ9Joc+UUCdHn63MP/w+nS/fxkiaveb67YB4D02gF5qW9xeq4i9lmGc16ziY2uchHTr92X5j78ykWh21c7208Xl3Q9JKLfOQkr7HfgClpPQBijuQkr/EJHTB1dCVOeZKX3ApMvYs5lbmSl9wKTH1cKV9yA9MkMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCN+ovJH+35qv7Rzl2TfFXvmnALLFdyqt4C07ifOf3kIh85Ve9n9pO0jq7exfq4smlNLvIZn8h+BSbLOzBt1sUHg37m5+Z1M7AAAAAASUVORK5CYII=" InformativeScreenshot="2cd4ee37d593b90531adf6437a4edf94.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target DesignTimeRectangle="825, 824, 120, 42" ElementType="Text" FriendlyName="'Số tham chiếu'" FullSelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl aaname='Số tham chiếu' tableRow='1' tag='TH' colName='Số tham chiếu' innertext='Số tham chiếu' visibleinnertext='SỐ THAM CHIẾU' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl aaname='Số tham chiếu' type='' tag='TH' colName='Số tham chiếu' innertext='Số tham chiếu' visibleinnertext='SỐ THAM CHIẾU' class='' check:text='Số tham chiếu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAuCAYAAADqWH1CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK/SURBVHhe7ZzLccMgEIbdUS4uJHVYlciN2IV41ERmVINvyeRCYAGJx4Lek8T7H76ZGGHY3W9BPuX0+f2lgBwgXBin5/OpgBwgXBgQLgwIFwaECwPChQHhwoBwYUC4MCBcGBAuDAgXxuHC+3ujzudWdcwzkPBoda0adftgnu3EocK761kncFbtg38OAki2rte145/vxHHCTQKXm+o/bqrBCZ+gUy2d7F7dLscekMXC7RVtT265I00CwZzaNeU7m8U2Ct0UzD78uNu7NF8/ywvq4524Tql57RqEaejhuV2jtPYwTvn6A5DWKcCvTXsycZXGJ1gknHsfZ0V3RYkSd1InOzcqxsgi4WaNa6sLya/TXHQO3Heo0NONGeZA+w/S1wuv1uU3hbMFpo19AvZKau59PEdDzRKdCIbNwv2VyMdBwnUzpK8YE5sdLxWwlFco7AWFT/7irgUxJ8CtwoPm4xqMhN+75D1pZOq4Hhtjf0XhvtOz94ynIMwyI7macL9nSiCcJA+fzX5xQazwPp5nCmfyqBWwmpfH5sfGqKkJr87/XeEBtKEL0BfvSOHhSWbH3UllBGefvWQ9NsjfSXieXzLOCK/W5M8I9zjxFHQtiDkBbhFO39WfM8b1xgYwhTax2Btrl9iPEl6aMyumnAXCfZG4cR9Q6ccN/07N2CB8lBnOiYsVzqG/wx9w1QKW8grHS/KS8b2EF2o1xaITTgVONiGR4RgVLgnQnb56YprVwk1ReFnhd0myl+ZiGtadOjFMDnHuRwnn6m4bjavJFIuvdJukCcDBnlqbyDgvl8iyUnj19qA1rchIeFrsOVeka2Y+9/XCxzqFxHWw0gNWyDZsf4eDfwWECwPChQHhwoBwYUC4MCBcGBAuDAgXBoQLA8KFAeHCgHBhQLgwIFwYp9P7mwKCYAfB68L9e0bwukC4KL7UD4GoU6H7O/ZvAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NTypeInto.Target>
-                                <uix:NTypeInto.Text>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">dayEnd + "/" + currentMonth + "/" + currentYear</CSharpValue>
-                                  </InArgument>
-                                </uix:NTypeInto.Text>
-                              </uix:NTypeInto>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Excel'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=5B9D82B19046D0962D0A3043CA67E9C63214FFEA3E54B43E1CFBF3168CBC44E5C4B694DB3114EB639C7FB071FAAB27A7&amp;cc=5B81C4943D8CF8C4600A5CB6F22736DD" DesignTimeRectangle="1344, 762, 111, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Excel'" FullSelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' class='btn dropdown-toggle btn-light' aaname='Excel' check:innerText='Excel' /&gt;" Guid="801d0b16-405f-44d1-800e-9aba71b3b6c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAqCAYAAACAwmTZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJXSURBVHhe7du9bhNBFAVgSzwQCe+AaCMjQQE9SpEi6UyDC9eWS5QWUlBZCnKLUqWIKBzBO1iW3GPxo8ue+dnM7uxYwra8O5dzpFtMZuy19vPcnRTu/fi5FpaOIqaiijAnnz/K8cVLedQ/lt7JY1bHCi7wgVPdroL5evJWng1P5eb7V/n157cw3Qtc4AMneIV+JSaksYDJJ/AKd2iJia0LcSafwAtuESZ6MVtrXoEX3CJMPFyZ/AI3YioJMRWFmIpCTEUhpqIQU1H2inl7+UR6z9PVn63cygNkPi6uOZZbN/wfsn/MwVQWbtxqiEnMnNMC5r2M0HYr61ZyNUArDm++W1dWHaY2X78uMQ+0M5dT6RcAo7kdLmZnxY0/k6ulHfv58Blr13gcB3l5b0aIfV4HeB3HHH56X3w+90VsKMz/a/aP2fDBbAVYRUqcFNyGL0UV1scCl++Twc5MgW4DibSzM02CNtnUcoNdV0163lzf/z2TNlsH3RYSaRHT77CHdmtjsdL/xvjna6Iyw0Q86C6QSHuYrr1ahPCmb78zK+EB6FCYDsSsTRxmNrxP83xtRxPzQJjmRgcHIjMO2m3Doaj6mvgLEB2KiLkHTNM2EwVo315rbdK+NjzxBgckU9XTcDxfgyPmbphMuyGmohBTUYipKMRUFGIqCjEVhZiKQkxFacTkD4fyS/KHQ0fnL+TLtzu3jMkh8IJbhDm+/iBP371xy5gcAi+4RZioV+OBWQBxttxuBi7wgRO8Qr8KJgrS2LroxXi4srpVcIFPuCN9RZisfIuYamotfwEgLM+46I7b8QAAAABJRU5ErkJggg==" InformativeScreenshot="f78d1d24c702fd3cee13e04973599d84.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target DesignTimeRectangle="1357, 769, 72, 24" ElementType="Text" FriendlyName="'Excel'" FullSelectorArgument="&lt;webctrl class='filter-option-inner-inner' parentid='bdsdList' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='filter-option-inner-inner' parentid='bdsdList' tag='DIV' type='' aaname='Excel' check:innerText='Excel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAcCAYAAADLGVncAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVGhD7ZbBDcIwDEWZiVHKHAzQO2cG4N5zT12hZzoFQmIHk8RJcZKmyByARv9JOZikjfyIne4IqIAwJRCmBMKUQJgSCFMCYUoiYeNlT7tDeTTDw6/8Atez2fNMow//hVxY29PNxz8FwpTUI2yiky3RaN2DutaWrUzQr5tHmnwyn+5b1Qm799SYJE9XDm/D0SR3pO7OcZiXPY/XBAFe1mVykYX7pxC0GWHhH8+GEGKYBZTkrIiP5QVY4vye+nqYKKml8hSnJ6Y87/YPv9fY9PmkvEqTYSHlT5DQ7wqjWmG+FDlRmdjnJyyiLmE+abe20MBX3rM8n5zMqoS5ZMQl4GJRmgsXQfxMLjm7CDYjzJVYYViZoRSTkuJn5U0qLgU34ls2n0/kbEEYeA+EKYEwJRCmBMKUQJgSCFMCYUogTAXRExgY64MzJ0o5AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                              <uix:NClick ClickType="Single" DisplayName="Click 'Excel FDB'" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="NClick_30" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=89D40A66B060966B2140467FD0AD61C8" DesignTimeRectangle="1369, 922, 61, 42" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Excel FDB'" FullSelectorArgument="&lt;webctrl tag='SPAN' innertext='Excel FDB' parentclass='dropdown-item' aaname='Excel FDB' visibleinnertext='Excel FDB' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' innertext='Excel FDB' parentclass='dropdown-item' aaname='Excel FDB' visibleinnertext='Excel FDB' type='' class='text' check:text='Excel FDB' /&gt;" Guid="b5d13abc-f242-45d3-809d-5f77c79bfd20" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAAuCAYAAAB3VXTKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHZSURBVGhD7ZhBSsNQEIa9igsX3sGF4AUURdeC4FIQ3AniUsQziLhTvId6BfUKXdblOH/oPIbXl5cKsZnY/4PQNDN5zXyZvCZZEyKUoFCCQgkKJSiUoFCCQglKkjCdfsvZ+YWsb2wWl9e391lm/0wmE9k7OPrT36gxJ2GIAxmVhI/PL9na3pGn55fZFmnWUQAKATe3d6l7/HaAXIthHIwHRtcJiFtxKGJ3/zAVgyIxBsbKv+cxP044CXam/OLPqOVdXl03nygO1ApB7PjkNMky0DXYP5yERQ7ELgt/ZvOu8Fh+SfDoJfgO6ZLQFgOjk2B59w+PzSdaGtQK6SpydBL8BGcdYfvUJj/EbB34wsNJKF23WHDGcZBY9webF+f/Iv3fIPAxP04YCasMJSiUoFCCQgkKJSiUoFCCQgkKJShJQu222W6L7bY5X/zzAlg0LwpzEmr374iVCsEzgd9eyrPx7akzEr1IsH3xMAXa8hD/txKAL7CUh3W8kmt7sTIknXOCfxyuSfAxrOfj2IJYNHrrhFxCKS+fO6KwtMsBoKNq7xqHYqkTI4rHq3d7CxWFXiTkbV7Ls26JxK8llCa7vLC2vJKYCCQJqwwlKJSgUIJCCQolKJSgUIKI/AClWc+S6hUHSQAAAABJRU5ErkJggg==" InformativeScreenshot="96ec699e11cc723f869dfef7abebc812.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target DesignTimeRectangle="1344, 762, 111, 38" ElementType="Button" FriendlyName="'Excel'" FullSelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' class='btn dropdown-toggle btn-light' aaname='Excel' check:innerText='Excel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAqCAYAAACAwmTZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJHSURBVHhe7dsxTgJBGIZhr2Jh4WkMiYcgwcIYL0DCKSQcwWgHFRQuSCf2isfQ2Pzut7O7zuzMUCCys3++4i1wdoDwMLNjwcnn95cwHRFTUR7m9mMr2TKT2Wwm0+mUJRZc4AOnpp2DuXndyGq1kvV6LYvFQubzOUssuMAHTvCy/WpMSOOC0BOwNIOXvUJrTCxdiIcmsTSDF9w8TOzF3Fq7Fbzg5mHi5hqawNIObsRUEjEVRUxFEVNRxFQUMRV1UMzx4FxOz+JdjB6D8/6lu6v8Na9kHBpT2uExeyN5CIwdPWISs8u1gDmRPrZd57pHGfawFdsffnldXROmMd58XWIeaWXej+QiB+jfmccPo8v8g7+U4b07bt9jzTUVTgk5mNTj5n5t4SWOeX1zm7+/8osYCOOhebs6PGbgjZksrLwaJwa340vhwlYZ4Pp5OrAyY6D7QKJ2VmaRtU2Gtlxr1bnFx4vXr/7ekW22CbovJGoRs1phv9utyWDF/42p7q+ROoaJKtC/QKL2MMvt1SDYH/r+K9OJB6BjYZYgxbWRw8yO5wmPN1Y0MY+EWXzQ1oGoeGxtt4FDkTvH/wJ4hyJiHgCz2DYjAbraXhvbpJlrn3itA1KRexr2xxtwxPwbJms3YiqKmIoipqKIqShiKoqYiiKmooipqCAmfzjUvaI/HHrKMnlePwcnsTSDF9w8zLftu2TLZXASSzN4wc3DRC+bl+ICiHPLTTO4wAdO8LL9HEwEaSxd7MW4ubK0ggt87BVZ5WGy7kZMNX3JDwpLaJw07U86AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                              <ui:GetLastDownloadedFile DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="433.6,526.4" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_6" IgnoreFiles="crdownload" Timeout="14400000">
-                                <ui:GetLastDownloadedFile.Body>
-                                  <ActivityAction>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,258.4" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <uix:NClick ClickType="Single" DisplayName="Click 'Xuất file'" sap:VirtualizedContainerService.HintSize="356.8,167.2" sap2010:WorkflowViewState.IdRef="NClick_31" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
-                                        <uix:NClick.Target>
-                                          <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=D4F162E15BEEA37ACE6F89A642DE6FE02316DE5F47855A58558AD16E2BE42A8399EB206A5B155ABE29C6E4FC7E452939&amp;cc=CB9726F846E02DA031BA7DF7F5BFF069" DesignTimeRectangle="1473, 705, 111, 35" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Xuất file'" FullSelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$ExportButton' tag='INPUT' type='submit' aaname='Xuất file' /&gt;" FuzzySelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$ExportButton' tag='INPUT' type='submit' aaname='Xuất file' class='btn btnPrimary fs-16 mb-3 d-inline-block font-weight-normal' check:text='Xuất file' /&gt;" Guid="f602af83-330e-4ec4-a442-ac1009b0e1dc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJISURBVHhe7ZvNTgIxEIB9Mz37BD6Lz6AnEw4+ggdPPAAXEmPkwsErkHghcRMSIm7kMHa67e70Z2ENG7Ydp8kXaAvVzLcz7YFefP+UIPBAZDIikPn68QSPbzdwP72Cu+mlkBjoBf2gJ9+dI/P5/RYeXq6jiwhpgZ7QF/VXy0TTIjIv0BfN0Fompm7sC0LaoLdApuyReYLeApmxDwp5IDIZITIZITIZwV7mZLMFgC2sFvF5TjCXOYbin4hEGMtEkdhE5gCMYLXH4C9h7s+tl1pLsfbGD6DL625cve5nMLFzuBbtB9iHQLX9J3ypF/t35zvVUWuG30mDhGQiRigN2GIGJQloVyaLUdNX7zvLPDAvMv+KkVduUEabXLd0BkE2mdw0k+3OeFgBqsNS04p1laVtmel+fvhynp5MRRWkJRQYPD9LjsnUwui8KZt0vnNmtsuMlu/YFnFGkpTZ7J+Rp71LZnoEsk+WiePh/4bzVUVxx89FmjJNqcUWBKerTLKGbn3K9NcmTWQ6kH1Sly4vA47JJIGO7nW9yQwzc2iSk6kDRvYev39Mpt7LrLjIfC8yvfFUSEtmLBNN4BpBVb8uZzYTqUwiqz5x9iqzOaQ1B57hBacjU4ts2XP8OdPXTQV+7mSjPTyZpsbdwJuHo61MdpRZ90kbOlPTkSmcjMhkhMhkhMhkhMhkhMhkhMhkhMhkRCBTftGeJ9FftMtdkzyJ3jWRW2D50XoLDJH7mfmAnlrvZ1rQNKau7KFpgl7QD81ISyBTyBeRyYYSfgHRPj4YxbzXRgAAAABJRU5ErkJggg==" InformativeScreenshot="a6bc636ecb2f24e98f100342f30daa25.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
-                                            <uix:TargetAnchorable.Anchors>
-                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                                <uix:Target DesignTimeRectangle="1473, 639, 131, 42" FriendlyName="'Biểu đồ'" FullSelectorArgument="&lt;webctrl aria-role='tablist' parentid='vcbMainContent' tag='DIV' visibleinnertext=' Biểu đồ' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='tablist' parentid='vcbMainContent' tag='DIV' visibleinnertext=' Biểu đồ' type='' class='nav nav-tabs tabMap' aaname='                                                                                                                                                ' check:text='Biểu đồ&amp;#xA;                                    &amp;#xA;                                    &amp;#xA;                 ' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
-                                              </scg:List>
-                                            </uix:TargetAnchorable.Anchors>
-                                          </uix:TargetAnchorable>
-                                        </uix:NClick.Target>
-                                      </uix:NClick>
-                                    </Sequence>
-                                  </ActivityAction>
-                                </ui:GetLastDownloadedFile.Body>
-                                <ui:GetLastDownloadedFile.DownloadFolder>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">userProfilePath + "\\Downloads"</CSharpValue>
-                                  </InArgument>
-                                </ui:GetLastDownloadedFile.DownloadFolder>
-                                <ui:GetLastDownloadedFile.File>
-                                  <OutArgument x:TypeArguments="si:FileInfo">
-                                    <CSharpReference x:TypeArguments="si:FileInfo" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">downloadedFile</CSharpReference>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Ngày giao dịch'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,227" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable Accuracy="0.4" BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=0AE8A1D9D6E485D2198090D7253ECF78" DesignTimeRectangle="695, 762, 111, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ctl00_Content_Tra…'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='startDate dateTimeTransaction form-control mb-3 d-inline-block' aaname='' /&gt;" Guid="629adcb6-90af-46ec-90f6-72e376d6fbb9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVHhe7duxCcJQFIXhdI4jCHYOYSO2biDYOYI7WLiBuEBqJ9Joc+UUCdHn63MP/w+nS/fxkiaveb67YB4D02gF5qW9xeq4i9lmGc16ziY2uchHTr92X5j78ykWh21c7208Xl3Q9JKLfOQkr7HfgClpPQBijuQkr/EJHTB1dCVOeZKX3ApMvYs5lbmSl9wKTH1cKV9yA9MkMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCN+ovJH+35qv7Rzl2TfFXvmnALLFdyqt4C07ifOf3kIh85Ve9n9pO0jq7exfq4smlNLvIZn8h+BSbLOzBt1sUHg37m5+Z1M7AAAAAASUVORK5CYII=" InformativeScreenshot="b4eb7963f2d857bec1ad0460560ee764.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="695, 824, 130, 42" ElementType="Text" FriendlyName="'Ngày giao dịch'" FullSelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' aaname='Ngày giao dịch' colName='Ngày giao dịch' innertext='Ngày giao dịch' rowName='Ngày giao dịch' visibleinnertext='NGÀY GIAO DỊCH' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' aaname='Ngày giao dịch' colName='Ngày giao dịch' innertext='Ngày giao dịch' rowName='Ngày giao dịch' visibleinnertext='NGÀY GIAO DỊCH' class='' check:text='Ngày giao dịch' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAAuCAYAAADtNmESAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMKSURBVHhe7ZbLbeQwDIbT0V6mkNQRV+I0MikkmCYCTA2+bbAXr0TJMkX99CsHe7H/4QMyepP8ZOXl95/vkRALxSCQIsYwDIQUKAaBUAwCoRgEQjEIhGIQCMUgEIpBIBSDQCgGgVAMAqEYBHK6GM+Pbrzd+vEB+sh5XOKLEeXoPp6wj5wDnxIC2SXG4/0GP/vyHLw/qrbhsw9j4/gJ/7lA66YnphvvX/XYYXiO97cw3u6nSHPV3m/38anHyNmcOOCeE4+x1+uuPIHNOTL9px6X1qzb2rnVF/XrPnbonF77AQ6IYQ4ZkCBUoVCC/aTHxPRjH9a2yZH9jACyji20AknWtEExonBdOIfzrEnSzRmz/PbcE/CszZxWjDaGNKac65JihOTZzSsxUAKFdNM9qWAS7VprgUvSPfnUOkiM2Bb3R33O2SNLonp9dbs5mxejPpc3Zi0/O9gvRihiEmQOeCpu+dtJVEtKuCTFCUqvN+2v+zVr/QVQ/Dg3Fb69wYsJX+hzc1HtX++3KX9XFQMGkwuyuTgRCWQu0FwcPS7f1vClam+yxr/VDY0YMZ45oToePF4DRMq4Ra4KWM/flD+ZH8ZBThUj/FbJWhTDBqESFedVhYxrujcMJ38GiJHnFcDZy+/mzKb/cmIAAbz2AxwXIxci/tZiuMlo+lJCqsJlmiRvDHgpqZ7UJQ5wjiLZ0v4LfW4uqv1rMZbyV7i2GIF8kPiffGmXtg03KCYHJAAWd2vAknA8zhVD1m6/BnWB/GdqqZBen5yltJsvjherbt8yRrcf4GdiBCT4eMNUe2ozB5RizAmJa8H/B6rblNkRsJzRzG/OqPaQPitixO4pv43wOSZ0CSJQjGZO+xS1McxfZ/n9L4hRngTbnhMpBcms3gohrVdJszfgScKCmVvEaIsyY4oh5FgLRmBDEbLCxoHPYOduysdZYpD/B4pxAdxn9UQoBoFQDAKhGARCMQiEYhAIxSAQikEgFINAKAaBUAwCoRgEQjEIhGIQSBHj5fUXITMUg0AmMQjRUAwC+B7/Aog8D7u+crM5AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.Text>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_114">dayBegin + "/" + currentMonth + "/" + currentYear</CSharpValue>
+                                    </InArgument>
+                                  </uix:NTypeInto.Text>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uix:NTypeInto>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Số tham chiếu'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,227" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                  <uix:NTypeInto.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=0AE8A1D9D6E485D2198090D7253ECF78" DesignTimeRectangle="824, 762, 111, 35" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT ctl00_Content_Tra…'" FullSelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$TxtToDate' tag='INPUT' type='text' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$TxtToDate' tag='INPUT' type='text' class='endDate dateTimeTransaction form-control mb-3 d-inline-block' aaname='' /&gt;" Guid="20b2850e-9967-4392-87a4-ba163e117723" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAERSURBVHhe7duxCcJQFIXhdI4jCHYOYSO2biDYOYI7WLiBuEBqJ9Joc+UUCdHn63MP/w+nS/fxkiaveb67YB4D02gF5qW9xeq4i9lmGc16ziY2uchHTr92X5j78ykWh21c7208Xl3Q9JKLfOQkr7HfgClpPQBijuQkr/EJHTB1dCVOeZKX3ApMvYs5lbmSl9wKTH1cKV9yA9MkMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCNAtMoMI0C0ygwjQLTKDCN+ovJH+35qv7Rzl2TfFXvmnALLFdyqt4C07ifOf3kIh85Ve9n9pO0jq7exfq4smlNLvIZn8h+BSbLOzBt1sUHg37m5+Z1M7AAAAAASUVORK5CYII=" InformativeScreenshot="2cd4ee37d593b90531adf6437a4edf94.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="825, 824, 120, 42" ElementType="Text" FriendlyName="'Số tham chiếu'" FullSelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl aaname='Số tham chiếu' tableRow='1' tag='TH' colName='Số tham chiếu' innertext='Số tham chiếu' visibleinnertext='SỐ THAM CHIẾU' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tbTranHis' tag='TABLE' /&gt;&lt;webctrl aaname='Số tham chiếu' type='' tag='TH' colName='Số tham chiếu' innertext='Số tham chiếu' visibleinnertext='SỐ THAM CHIẾU' class='' check:text='Số tham chiếu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAuCAYAAADqWH1CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK/SURBVHhe7ZzLccMgEIbdUS4uJHVYlciN2IV41ERmVINvyeRCYAGJx4Lek8T7H76ZGGHY3W9BPuX0+f2lgBwgXBin5/OpgBwgXBgQLgwIFwaECwPChQHhwoBwYUC4MCBcGBAuDAgXxuHC+3ujzudWdcwzkPBoda0adftgnu3EocK761kncFbtg38OAki2rte145/vxHHCTQKXm+o/bqrBCZ+gUy2d7F7dLscekMXC7RVtT265I00CwZzaNeU7m8U2Ct0UzD78uNu7NF8/ywvq4524Tql57RqEaejhuV2jtPYwTvn6A5DWKcCvTXsycZXGJ1gknHsfZ0V3RYkSd1InOzcqxsgi4WaNa6sLya/TXHQO3Heo0NONGeZA+w/S1wuv1uU3hbMFpo19AvZKau59PEdDzRKdCIbNwv2VyMdBwnUzpK8YE5sdLxWwlFco7AWFT/7irgUxJ8CtwoPm4xqMhN+75D1pZOq4Hhtjf0XhvtOz94ynIMwyI7macL9nSiCcJA+fzX5xQazwPp5nCmfyqBWwmpfH5sfGqKkJr87/XeEBtKEL0BfvSOHhSWbH3UllBGefvWQ9NsjfSXieXzLOCK/W5M8I9zjxFHQtiDkBbhFO39WfM8b1xgYwhTax2Btrl9iPEl6aMyumnAXCfZG4cR9Q6ccN/07N2CB8lBnOiYsVzqG/wx9w1QKW8grHS/KS8b2EF2o1xaITTgVONiGR4RgVLgnQnb56YprVwk1ReFnhd0myl+ZiGtadOjFMDnHuRwnn6m4bjavJFIuvdJukCcDBnlqbyDgvl8iyUnj19qA1rchIeFrsOVeka2Y+9/XCxzqFxHWw0gNWyDZsf4eDfwWECwPChQHhwoBwYUC4MCBcGBAuDAgXBoQLA8KFAeHCgHBhQLgwIFwYp9P7mwKCYAfB68L9e0bwukC4KL7UD4GoU6H7O/ZvAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NTypeInto.Target>
+                                  <uix:NTypeInto.Text>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">dayEnd + "/" + currentMonth + "/" + currentYear</CSharpValue>
+                                    </InArgument>
+                                  </uix:NTypeInto.Text>
+                                </uix:NTypeInto>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Excel'" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=5B9D82B19046D0962D0A3043CA67E9C63214FFEA3E54B43E1CFBF3168CBC44E5C4B694DB3114EB639C7FB071FAAB27A7&amp;cc=5B81C4943D8CF8C4600A5CB6F22736DD" DesignTimeRectangle="1344, 762, 111, 38" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Excel'" FullSelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' class='btn dropdown-toggle btn-light' aaname='Excel' check:innerText='Excel' /&gt;" Guid="801d0b16-405f-44d1-800e-9aba71b3b6c3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAqCAYAAACAwmTZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJXSURBVHhe7du9bhNBFAVgSzwQCe+AaCMjQQE9SpEi6UyDC9eWS5QWUlBZCnKLUqWIKBzBO1iW3GPxo8ue+dnM7uxYwra8O5dzpFtMZuy19vPcnRTu/fi5FpaOIqaiijAnnz/K8cVLedQ/lt7JY1bHCi7wgVPdroL5evJWng1P5eb7V/n157cw3Qtc4AMneIV+JSaksYDJJ/AKd2iJia0LcSafwAtuESZ6MVtrXoEX3CJMPFyZ/AI3YioJMRWFmIpCTEUhpqIQU1H2inl7+UR6z9PVn63cygNkPi6uOZZbN/wfsn/MwVQWbtxqiEnMnNMC5r2M0HYr61ZyNUArDm++W1dWHaY2X78uMQ+0M5dT6RcAo7kdLmZnxY0/k6ulHfv58Blr13gcB3l5b0aIfV4HeB3HHH56X3w+90VsKMz/a/aP2fDBbAVYRUqcFNyGL0UV1scCl++Twc5MgW4DibSzM02CNtnUcoNdV0163lzf/z2TNlsH3RYSaRHT77CHdmtjsdL/xvjna6Iyw0Q86C6QSHuYrr1ahPCmb78zK+EB6FCYDsSsTRxmNrxP83xtRxPzQJjmRgcHIjMO2m3Doaj6mvgLEB2KiLkHTNM2EwVo315rbdK+NjzxBgckU9XTcDxfgyPmbphMuyGmohBTUYipKMRUFGIqCjEVhZiKQkxFacTkD4fyS/KHQ0fnL+TLtzu3jMkh8IJbhDm+/iBP371xy5gcAi+4RZioV+OBWQBxttxuBi7wgRO8Qr8KJgrS2LroxXi4srpVcIFPuCN9RZisfIuYamotfwEgLM+46I7b8QAAAABJRU5ErkJggg==" InformativeScreenshot="f78d1d24c702fd3cee13e04973599d84.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="1357, 769, 72, 24" ElementType="Text" FriendlyName="'Excel'" FullSelectorArgument="&lt;webctrl class='filter-option-inner-inner' parentid='bdsdList' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='filter-option-inner-inner' parentid='bdsdList' tag='DIV' type='' aaname='Excel' check:innerText='Excel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAcCAYAAADLGVncAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFCSURBVGhD7ZbBDcIwDEWZiVHKHAzQO2cG4N5zT12hZzoFQmIHk8RJcZKmyByARv9JOZikjfyIne4IqIAwJRCmBMKUQJgSCFMCYUoiYeNlT7tDeTTDw6/8Atez2fNMow//hVxY29PNxz8FwpTUI2yiky3RaN2DutaWrUzQr5tHmnwyn+5b1Qm799SYJE9XDm/D0SR3pO7OcZiXPY/XBAFe1mVykYX7pxC0GWHhH8+GEGKYBZTkrIiP5QVY4vye+nqYKKml8hSnJ6Y87/YPv9fY9PmkvEqTYSHlT5DQ7wqjWmG+FDlRmdjnJyyiLmE+abe20MBX3rM8n5zMqoS5ZMQl4GJRmgsXQfxMLjm7CDYjzJVYYViZoRSTkuJn5U0qLgU34ls2n0/kbEEYeA+EKYEwJRCmBMKUQJgSCFMCYUogTAXRExgY64MzJ0o5AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <uix:NClick ClickType="Single" DisplayName="Click 'Excel FDB'" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="NClick_30" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=1E80C11BF18D24E8613B77BC8186385B3DC0748A4E4066E1F9EEE7D4F43EEADF1B16093BDF6DD1355D1040A0086883F1&amp;cc=89D40A66B060966B2140467FD0AD61C8" DesignTimeRectangle="1369, 922, 61, 42" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Excel FDB'" FullSelectorArgument="&lt;webctrl tag='SPAN' innertext='Excel FDB' parentclass='dropdown-item' aaname='Excel FDB' visibleinnertext='Excel FDB' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' innertext='Excel FDB' parentclass='dropdown-item' aaname='Excel FDB' visibleinnertext='Excel FDB' type='' class='text' check:text='Excel FDB' /&gt;" Guid="b5d13abc-f242-45d3-809d-5f77c79bfd20" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEEAAAAuCAYAAAB3VXTKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHZSURBVGhD7ZhBSsNQEIa9igsX3sGF4AUURdeC4FIQ3AniUsQziLhTvId6BfUKXdblOH/oPIbXl5cKsZnY/4PQNDN5zXyZvCZZEyKUoFCCQgkKJSiUoFCCQglKkjCdfsvZ+YWsb2wWl9e391lm/0wmE9k7OPrT36gxJ2GIAxmVhI/PL9na3pGn55fZFmnWUQAKATe3d6l7/HaAXIthHIwHRtcJiFtxKGJ3/zAVgyIxBsbKv+cxP044CXam/OLPqOVdXl03nygO1ApB7PjkNMky0DXYP5yERQ7ELgt/ZvOu8Fh+SfDoJfgO6ZLQFgOjk2B59w+PzSdaGtQK6SpydBL8BGcdYfvUJj/EbB34wsNJKF23WHDGcZBY9webF+f/Iv3fIPAxP04YCasMJSiUoFCCQgkKJSiUoFCCQgkKJShJQu222W6L7bY5X/zzAlg0LwpzEmr374iVCsEzgd9eyrPx7akzEr1IsH3xMAXa8hD/txKAL7CUh3W8kmt7sTIknXOCfxyuSfAxrOfj2IJYNHrrhFxCKS+fO6KwtMsBoKNq7xqHYqkTI4rHq3d7CxWFXiTkbV7Ls26JxK8llCa7vLC2vJKYCCQJqwwlKJSgUIJCCQolKJSgUIKI/AClWc+S6hUHSQAAAABJRU5ErkJggg==" InformativeScreenshot="96ec699e11cc723f869dfef7abebc812.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target DesignTimeRectangle="1344, 762, 111, 38" ElementType="Button" FriendlyName="'Excel'" FullSelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' parentid='bdsdList' tag='BUTTON' type='button' class='btn dropdown-toggle btn-light' aaname='Excel' check:innerText='Excel' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAqCAYAAACAwmTZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJHSURBVHhe7dsxTgJBGIZhr2Jh4WkMiYcgwcIYL0DCKSQcwWgHFRQuSCf2isfQ2Pzut7O7zuzMUCCys3++4i1wdoDwMLNjwcnn95cwHRFTUR7m9mMr2TKT2Wwm0+mUJRZc4AOnpp2DuXndyGq1kvV6LYvFQubzOUssuMAHTvCy/WpMSOOC0BOwNIOXvUJrTCxdiIcmsTSDF9w8TOzF3Fq7Fbzg5mHi5hqawNIObsRUEjEVRUxFEVNRxFQUMRV1UMzx4FxOz+JdjB6D8/6lu6v8Na9kHBpT2uExeyN5CIwdPWISs8u1gDmRPrZd57pHGfawFdsffnldXROmMd58XWIeaWXej+QiB+jfmccPo8v8g7+U4b07bt9jzTUVTgk5mNTj5n5t4SWOeX1zm7+/8osYCOOhebs6PGbgjZksrLwaJwa340vhwlYZ4Pp5OrAyY6D7QKJ2VmaRtU2Gtlxr1bnFx4vXr/7ekW22CbovJGoRs1phv9utyWDF/42p7q+ROoaJKtC/QKL2MMvt1SDYH/r+K9OJB6BjYZYgxbWRw8yO5wmPN1Y0MY+EWXzQ1oGoeGxtt4FDkTvH/wJ4hyJiHgCz2DYjAbraXhvbpJlrn3itA1KRexr2xxtwxPwbJms3YiqKmIoipqKIqShiKoqYiiKmooipqCAmfzjUvaI/HHrKMnlePwcnsTSDF9w8zLftu2TLZXASSzN4wc3DRC+bl+ICiHPLTTO4wAdO8LL9HEwEaSxd7MW4ubK0ggt87BVZ5WGy7kZMNX3JDwpLaJw07U86AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <ui:GetLastDownloadedFile DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="434,553" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_6" IgnoreFiles="crdownload" Timeout="14400000">
+                                  <ui:GetLastDownloadedFile.Body>
+                                    <ActivityAction>
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,288" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <uix:NClick ClickType="Single" DisplayName="Click 'Xuất file'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_31" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cd92503a-ee08-4627-b94a-9f5691cf60fd" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://www.vietcombank.com.vn/IbankingCorp/Accounts/TransactionDetail.aspx?AID=D4F162E15BEEA37ACE6F89A642DE6FE02316DE5F47855A58558AD16E2BE42A8399EB206A5B155ABE29C6E4FC7E452939&amp;cc=CB9726F846E02DA031BA7DF7F5BFF069" DesignTimeRectangle="1473, 705, 111, 35" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Xuất file'" FullSelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$ExportButton' tag='INPUT' type='submit' aaname='Xuất file' /&gt;" FuzzySelectorArgument="&lt;webctrl name='ctl00$Content$TransactionDetail$ExportButton' tag='INPUT' type='submit' aaname='Xuất file' class='btn btnPrimary fs-16 mb-3 d-inline-block font-weight-normal' check:text='Xuất file' /&gt;" Guid="f602af83-330e-4ec4-a442-ac1009b0e1dc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAAnCAYAAAA8XHcHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJISURBVHhe7ZvNTgIxEIB9Mz37BD6Lz6AnEw4+ggdPPAAXEmPkwsErkHghcRMSIm7kMHa67e70Z2ENG7Ydp8kXaAvVzLcz7YFefP+UIPBAZDIikPn68QSPbzdwP72Cu+mlkBjoBf2gJ9+dI/P5/RYeXq6jiwhpgZ7QF/VXy0TTIjIv0BfN0Fompm7sC0LaoLdApuyReYLeApmxDwp5IDIZITIZITIZwV7mZLMFgC2sFvF5TjCXOYbin4hEGMtEkdhE5gCMYLXH4C9h7s+tl1pLsfbGD6DL625cve5nMLFzuBbtB9iHQLX9J3ypF/t35zvVUWuG30mDhGQiRigN2GIGJQloVyaLUdNX7zvLPDAvMv+KkVduUEabXLd0BkE2mdw0k+3OeFgBqsNS04p1laVtmel+fvhynp5MRRWkJRQYPD9LjsnUwui8KZt0vnNmtsuMlu/YFnFGkpTZ7J+Rp71LZnoEsk+WiePh/4bzVUVxx89FmjJNqcUWBKerTLKGbn3K9NcmTWQ6kH1Sly4vA47JJIGO7nW9yQwzc2iSk6kDRvYev39Mpt7LrLjIfC8yvfFUSEtmLBNN4BpBVb8uZzYTqUwiqz5x9iqzOaQ1B57hBacjU4ts2XP8OdPXTQV+7mSjPTyZpsbdwJuHo61MdpRZ90kbOlPTkSmcjMhkhMhkhMhkhMhkhMhkhMhkhMhkRCBTftGeJ9FftMtdkzyJ3jWRW2D50XoLDJH7mfmAnlrvZ1rQNKau7KFpgl7QD81ISyBTyBeRyYYSfgHRPj4YxbzXRgAAAABJRU5ErkJggg==" InformativeScreenshot="a6bc636ecb2f24e98f100342f30daa25.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Vietcombank - IB@nking - Ngân hàng trực tuyến' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                                              <uix:TargetAnchorable.Anchors>
+                                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                  <uix:Target DesignTimeRectangle="1473, 639, 131, 42" FriendlyName="'Biểu đồ'" FullSelectorArgument="&lt;webctrl aria-role='tablist' parentid='vcbMainContent' tag='DIV' visibleinnertext=' Biểu đồ' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='tablist' parentid='vcbMainContent' tag='DIV' visibleinnertext=' Biểu đồ' type='' class='nav nav-tabs tabMap' aaname='                                                                                                                                                ' check:text='Biểu đồ&amp;#xA;                                    &amp;#xA;                                    &amp;#xA;                 ' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                                </scg:List>
+                                              </uix:TargetAnchorable.Anchors>
+                                            </uix:TargetAnchorable>
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </ui:GetLastDownloadedFile.Body>
+                                  <ui:GetLastDownloadedFile.DownloadFolder>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_94">userProfilePath + "\\Downloads"</CSharpValue>
+                                    </InArgument>
+                                  </ui:GetLastDownloadedFile.DownloadFolder>
+                                  <ui:GetLastDownloadedFile.File>
+                                    <OutArgument x:TypeArguments="si:FileInfo">
+                                      <CSharpReference x:TypeArguments="si:FileInfo" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">downloadedFile</CSharpReference>
+                                    </OutArgument>
+                                  </ui:GetLastDownloadedFile.File>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:GetLastDownloadedFile>
+                                <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True">
+                                  <ui:CopyFile.Destination>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_129">khoFolderPath</CSharpValue>
+                                    </InArgument>
+                                  </ui:CopyFile.Destination>
+                                  <ui:CopyFile.Path>
+                                    <InArgument x:TypeArguments="x:String">
+                                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">downloadedFile.FullName</CSharpValue>
+                                    </InArgument>
+                                  </ui:CopyFile.Path>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CopyFile>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
+                                  <ui:LogMessage.Message>
+                                    <InArgument x:TypeArguments="x:Object">
+                                      <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">"File da duoc tai xuong"</CSharpValue>
+                                    </InArgument>
+                                  </ui:LogMessage.Message>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:LogMessage>
+                              </Sequence>
+                              <Assign sap:VirtualizedContainerService.HintSize="496,70" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">
+                                    <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">loopIndex</CSharpReference>
                                   </OutArgument>
-                                </ui:GetLastDownloadedFile.File>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:GetLastDownloadedFile>
-                              <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="433.6,62.4" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True">
-                                <ui:CopyFile.Destination>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">khoFolderPath + downloadedFile.Name</CSharpValue>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">loopIndex + 1</CSharpValue>
                                   </InArgument>
-                                </ui:CopyFile.Destination>
-                                <ui:CopyFile.Path>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_98">downloadedFile.FullName</CSharpValue>
-                                  </InArgument>
-                                </ui:CopyFile.Path>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:CopyFile>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,62.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
-                                <ui:LogMessage.Message>
-                                  <InArgument x:TypeArguments="x:Object">
-                                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">"File da duoc tai xuong"</CSharpValue>
-                                  </InArgument>
-                                </ui:LogMessage.Message>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:LogMessage>
+                                </Assign.Value>
+                              </Assign>
                             </Sequence>
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ForEach.Body>
-                      <ui:ForEach.CurrentIndex>
-                        <OutArgument x:TypeArguments="x:Int32">
-                          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">count</CSharpReference>
-                        </OutArgument>
-                      </ui:ForEach.CurrentIndex>
-                      <ui:ForEach.Values>
-                        <InArgument x:TypeArguments="sc1:IEnumerable">
-                          <CSharpValue x:TypeArguments="sc1:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">bankAccounts</CSharpValue>
-                        </InArgument>
-                      </ui:ForEach.Values>
-                    </ui:ForEach>
-                    <Assign sap:VirtualizedContainerService.HintSize="574.4,69.6" sap2010:WorkflowViewState.IdRef="Assign_6">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Int32">
-                          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">loopIndex</CSharpReference>
-                        </OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Int32">
-                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_119">loopIndex + 1</CSharpValue>
-                        </InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Sequence>
-                </ui:InterruptibleWhile.Body>
-                <ui:InterruptibleWhile.Condition>
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_126">loopIndex &lt; loopIndexMaxLength</CSharpValue>
-                </ui:InterruptibleWhile.Condition>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:InterruptibleWhile>
+                          </ui:InterruptibleWhile.Body>
+                          <ui:InterruptibleWhile.Condition>
+                            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_126">loopIndex &lt; loopIndexMaxLength</CSharpValue>
+                          </ui:InterruptibleWhile.Condition>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InterruptibleWhile>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEach.Body>
+                <ui:ForEach.CurrentIndex>
+                  <OutArgument x:TypeArguments="x:Int32">
+                    <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">count</CSharpReference>
+                  </OutArgument>
+                </ui:ForEach.CurrentIndex>
+                <ui:ForEach.Values>
+                  <InArgument x:TypeArguments="sc1:IEnumerable">
+                    <CSharpValue x:TypeArguments="sc1:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">bankAccounts</CSharpValue>
+                  </InArgument>
+                </ui:ForEach.Values>
+              </ui:ForEach>
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
