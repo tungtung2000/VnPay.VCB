@@ -5,7 +5,7 @@
     <x:Property Name="in_folderLastMonth" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1165,2300</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1021,2240</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -102,7 +102,7 @@
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="compareOutlookAndVcb" sap:VirtualizedContainerService.HintSize="752,2235" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="compareOutlookAndVcb" sap:VirtualizedContainerService.HintSize="752,2175" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:HashSet(x:String)" Name="soPhuHashSet" />
       <Variable x:TypeArguments="x:String" Name="a" />
@@ -112,7 +112,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="List&lt;String&gt; soPhuList = inout_soPhuDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToList();&#xA;Console.WriteLine(soPhuList.Count.ToString());&#xA;&#xA;if(!inout_khoTopupDt.Columns.Contains(&quot;Check doi chieu lan 2 voi So Phu&quot;)){&#xA;&#x9;inout_khoTopupDt.Columns.Add(&quot;Check doi chieu lan 2 voi So Phu&quot;,typeof(string));&#xA;}&#xA;&#xA;foreach(DataRow row in inout_khoTopupDt.Rows){&#xA;&#x9;int index = soPhuList.IndexOf(row[&quot;Tham chieu&quot;].ToString());&#xA;&#x9;if(index != -1 ){row[&quot;Check doi chieu lan 2 voi So Phu&quot;] = inout_soPhuDt.Rows[index][&quot;Transaction ID&quot;];}&#xA;&#x9;else {row[&quot;Check doi chieu lan 2 voi So Phu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="690,174" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="List&lt;String&gt; soPhuList = inout_soPhuDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToList();&#xD;&#xA;&#xD;&#xA;if(!inout_khoTopupDt.Columns.Contains(&quot;Check doi chieu lan 2 voi So Phu&quot;)){&#xD;&#xA;&#x9;inout_khoTopupDt.Columns.Add(&quot;Check doi chieu lan 2 voi So Phu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;foreach(DataRow row in inout_khoTopupDt.Rows){&#xD;&#xA;&#x9;int index = soPhuList.IndexOf(row[&quot;Tham chieu&quot;].ToString());&#xD;&#xA;&#x9;if(index != -1 ){row[&quot;Check doi chieu lan 2 voi So Phu&quot;] = inout_soPhuDt.Rows[index][&quot;Transaction ID&quot;];}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu lan 2 voi So Phu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="690,165" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inout_soPhuDt">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">in_soPhuTable</CSharpReference>
@@ -122,7 +122,7 @@
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="690,1899" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="690,1859" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="tmpTable" />
       </Sequence.Variables>
@@ -132,14 +132,14 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="628,69" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="628,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <ui:BuildDataTable.DataTable>
           <OutArgument x:TypeArguments="sd:DataTable">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">tmpTable</CSharpReference>
           </OutArgument>
         </ui:BuildDataTable.DataTable>
       </ui:BuildDataTable>
-      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="628,1668" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="628,1648" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Name="count" />
           <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -150,7 +150,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="566,70" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign sap:VirtualizedContainerService.HintSize="566,61" sap2010:WorkflowViewState.IdRef="Assign_7">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">
               <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">count</CSharpReference>
