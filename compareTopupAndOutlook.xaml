@@ -7,7 +7,7 @@
     <x:Property Name="in_folderLastMonth" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1021,2851</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>856,2924.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="82">
@@ -124,20 +124,20 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="compareTopupAndOutlook" sap:VirtualizedContainerService.HintSize="780,2786" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="compareTopupAndOutlook" sap:VirtualizedContainerService.HintSize="761.6,2860" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="718,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="718.4,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Tong tien outlook la: " + in_outlookTopupMoney + " va tong tien kho Vnpay: " + in_khoTopupMoney</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="HashSet&lt;string&gt; outlookHashSet = in_outlookDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;HashSet&lt;string&gt; khoHashSet = in_khoTopupDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;Console.WriteLine( &quot;so luong hashset outlook : &quot; + outlookHashSet.Count.ToString());&#xD;&#xA;Console.WriteLine( &quot;so luong hashset kho: &quot; + khoHashSet.Count.ToString());&#xD;&#xA;&#xD;&#xA;if(! in_outlookDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9; in_outlookDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;if(!in_khoTopupDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9;in_khoTopupDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in  in_outlookDt.Rows){&#xD;&#xA;&#x9;if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_khoTopupDt.Rows){&#xD;&#xA;&#x9;if(outlookHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="718,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="/*HashSet&lt;string&gt; outlookHashSet = in_outlookDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;HashSet&lt;string&gt; khoHashSet = in_khoTopupDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;Console.WriteLine( &quot;so luong hashset outlook : &quot; + outlookHashSet.Count.ToString());&#xD;&#xA;Console.WriteLine( &quot;so luong hashset kho: &quot; + khoHashSet.Count.ToString());&#xD;&#xA;*/&#xD;&#xA;//------------------------------------------------------&#xD;&#xA;Dictionary&lt;string,List&lt;string&gt;&gt; khoDict = new Dictionary&lt;string,List&lt;string&gt;&gt;();&#xD;&#xA;Dictionary&lt;string,List&lt;string&gt;&gt; outlookDict = new Dictionary&lt;string,List&lt;string&gt;&gt;();&#xD;&#xA;&#xD;&#xA;foreach(DataRow row in in_khoTopupDt.Rows ){&#xD;&#xA;  &#xD;&#xA;    if(!khoDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;    khoDict.Add(row[&quot;Tham chieu&quot;].ToString(), new List&lt;string&gt;());&#xD;&#xA;    khoDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());&#xD;&#xA;  }&#xD;&#xA;  else{khoDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_outlookDt.Rows ){&#xD;&#xA;  &#xD;&#xA;    if(!outlookDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;    outlookDict.Add(row[&quot;Tham chieu&quot;].ToString(), new List&lt;string&gt;());&#xD;&#xA;    outlookDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());&#xD;&#xA;  }&#xD;&#xA;  else{outlookDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());}&#xD;&#xA;}&#xD;&#xA;//------------------------------------------------------&#xD;&#xA;&#xD;&#xA;if(! in_outlookDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9; in_outlookDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;if(!in_khoTopupDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9;in_khoTopupDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in  in_outlookDt.Rows){&#xD;&#xA;&#x9;/*if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}*/&#xD;&#xA;&#x9;if(khoDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;for(int i=0;  i&lt;khoDict[row[&quot;Tham chieu&quot;].ToString()].Count; i++){&#xD;&#xA;&#x9;&#x9;&#x9;if(Math.Abs(Convert.ToInt32(khoDict[row[&quot;Tham chieu&quot;].ToString()][i])-Convert.ToInt32(row[&quot;Ngay&quot;]))&lt;=2){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Co cai nit&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else{row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_khoTopupDt.Rows){&#xD;&#xA;&#x9;/*if(outlookHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}*/&#xD;&#xA;&#x9;if(outlookDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;for(int i=0;  i&lt;outlookDict[row[&quot;Tham chieu&quot;].ToString()].Count; i++){&#xD;&#xA;&#x9;&#x9;&#x9;if(Math.Abs(Convert.ToInt32(outlookDict[row[&quot;Tham chieu&quot;].ToString()][i])-Convert.ToInt32(row[&quot;Ngay&quot;]))&lt;=2){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Co cai nit&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else{row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="718.4,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_outlookDt">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">inout_outlookDt</CSharpReference>
@@ -147,7 +147,7 @@
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="718,1936" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="718.4,2010.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="count" />
         <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -159,28 +159,28 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="656,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="656,69.6" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <ui:BuildDataTable.DataTable>
           <OutArgument x:TypeArguments="sd:DataTable">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">tmpTable</CSharpReference>
           </OutArgument>
         </ui:BuildDataTable.DataTable>
       </ui:BuildDataTable>
-      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="656,1725" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="656,1777.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,1209" sap2010:WorkflowViewState.IdRef="Sequence_32">
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="593.6,1249.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="532,61" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign sap:VirtualizedContainerService.HintSize="512,69.6" sap2010:WorkflowViewState.IdRef="Assign_13">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_26">count</CSharpReference>
@@ -192,7 +192,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="532,61" sap2010:WorkflowViewState.IdRef="Assign_14">
+          <Assign sap:VirtualizedContainerService.HintSize="512,69.6" sap2010:WorkflowViewState.IdRef="Assign_14">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_27">i</CSharpReference>
@@ -202,23 +202,23 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="532,896" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="512,907.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,730" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,730.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="ClearDataTable_4">
+                <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_4">
                   <ui:ClearDataTable.DataTable>
                     <InOutArgument x:TypeArguments="sd:DataTable">
                       <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_28">tmpTable</CSharpReference>
                     </InOutArgument>
                   </ui:ClearDataTable.DataTable>
                 </ui:ClearDataTable>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,62.4" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info">
                   <ui:LogMessage.Message>
                     <InArgument x:TypeArguments="x:Object">
                       <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">i</CSharpValue>
