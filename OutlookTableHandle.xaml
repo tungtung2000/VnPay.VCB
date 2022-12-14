@@ -4,7 +4,7 @@
     <x:Property Name="inout_outlookTable" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1021,518</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>856,472.79999999999995</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -115,7 +115,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="out_totalMoney = 0;&#xD;&#xA;if(!in_outlookTable.Columns.Contains(&quot;Tham chieu&quot;)){&#xD;&#xA;&#x9;in_outlookTable.Columns.Add(&quot;Tham chieu&quot;, typeof(String));&#xD;&#xA;&#x9;in_outlookTable.Columns.Add(&quot;Ngay&quot;, typeof(String));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_outlookTable.Rows){&#xD;&#xA;&#x9;if(!string.IsNullOrEmpty(row[&quot;Column0&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;out_totalMoney += Convert.ToInt64(row[&quot;Column8&quot;]);&#xD;&#xA;&#x9;&#x9;row[&quot;Tham chieu&quot;] = '\''+ row[&quot;Column20&quot;].ToString().TrimStart('0') + row[&quot;Column7&quot;].ToString() + row[&quot;Column8&quot;].ToString();&#xD;&#xA;&#x9;&#x9;row[&quot;Ngay&quot;] = row[&quot;Column12&quot;].ToString().Substring(0,2).TrimStart('0');&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="338,165" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="out_totalMoney = 0;&#xD;&#xA;if(!in_outlookTable.Columns.Contains(&quot;Tham chieu&quot;)){&#xD;&#xA;&#x9;in_outlookTable.Columns.Add(&quot;Tham chieu&quot;, typeof(String));&#xD;&#xA;&#x9;in_outlookTable.Columns.Add(&quot;Ngay&quot;, typeof(String));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_outlookTable.Rows){&#xD;&#xA;&#x9;if(!string.IsNullOrEmpty(row[&quot;Column0&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;out_totalMoney += Convert.ToInt64(row[&quot;Column8&quot;]);&#xD;&#xA;&#x9;&#x9;row[&quot;Tham chieu&quot;] = '\''+ row[&quot;Column20&quot;].ToString().TrimStart('0') + row[&quot;Column7&quot;].ToString() + row[&quot;Column8&quot;].ToString();&#xD;&#xA;&#x9;&#x9;row[&quot;Ngay&quot;] = row[&quot;Column12&quot;].ToString().Substring(0,2).TrimStart('0');&#xD;&#xA;&#x9;}&#xD;&#xA;}" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="356.8,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_outlookTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">inout_outlookTable</CSharpValue>
@@ -125,7 +125,7 @@
         </OutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="356.8,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Tong tien outlook: "+ out_totalMoney</CSharpValue>

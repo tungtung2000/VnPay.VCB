@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="VcbTableHandle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="VcbTableHandle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_vcbMoney" Type="OutArgument(x:Int64)" />
     <x:Property Name="out_hoantraTable" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="inout_soPhuTable" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1021,1271</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>727.2,1683.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="66">
@@ -107,7 +107,7 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="VcbTableHandle" sap:VirtualizedContainerService.HintSize="496,1206" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="VcbTableHandle" sap:VirtualizedContainerService.HintSize="476.8,1618.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="soPhuTable" />
       <Variable x:TypeArguments="x:String" Name="soPhu" />
@@ -119,14 +119,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,62.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">inout_soPhuTable.RowCount()</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:FilterDataTable DisplayName="Filter Data Table hoan tra" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DisplayName="Filter Data Table hoan tra" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="433.6,172" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
       <ui:FilterDataTable.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">inout_soPhuTable</CSharpValue>
@@ -159,14 +165,14 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">out_hoantraTable.RowCount() + "Hoàn trả"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="433.6,172" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
       <ui:FilterDataTable.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">inout_soPhuTable</CSharpValue>
@@ -198,6 +204,18 @@
               </InArgument>
             </ui:FilterOperationArgument.Operand>
           </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">"Mô tả"</CSharpValue>
+              </InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">"HOAN TRA"</CSharpValue>
+              </InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
         </scg:List>
       </ui:FilterDataTable.Filters>
       <ui:FilterDataTable.OutputDataTable>
@@ -217,7 +235,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">inout_soPhuTable.RowCount()</CSharpValue>
@@ -230,7 +248,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="if(!inout_vcbTable.Columns.Contains(&quot;Tham chieu&quot;)){&#xD;&#xA;  inout_vcbTable.Columns.Add(&quot;Tham chieu&quot;,typeof(string));&#xD;&#xA;  inout_vcbTable.Columns.Add(&quot;Ngay&quot;,typeof(string));&#xD;&#xA;}      &#xD;&#xA;if(!inout_vcbTable.Columns.Contains(&quot;Transaction ID&quot;)){&#xD;&#xA;  inout_vcbTable.Columns.Add(&quot;Transaction ID&quot;,typeof(string));&#xD;&#xA;} &#xD;&#xA;out_Money = 0;&#xD;&#xA;long hoantra_Money = 0;&#xD;&#xA;foreach(DataRow row in inout_vcbTable.Rows){&#xD;&#xA;    //if(!String.IsNullOrEmpty(row[&quot;Số tham chiếu&quot;].ToString())){&#xD;&#xA;      string[] s = row[&quot;Mô tả&quot;].ToString().Split(' ');&#xD;&#xA;      string[] x = row[&quot;Mô tả&quot;].ToString().Split('.');&#xD;&#xA;      row[&quot;Transaction ID&quot;]  = '\'' + x[1];&#xD;&#xA;      string sdt = s[s.Length - 2];&#xD;&#xA;      string traceNum = row[&quot;Số tham chiếu&quot;].ToString().Substring(7,5);&#xD;&#xA;      string tien = row[&quot;Số tiền ghi có&quot;].ToString();&#xD;&#xA;      row[&quot;Tham chieu&quot;] =  '\''+ traceNum.TrimStart('0')+ sdt + tien;&#xD;&#xA;      //row[&quot;Ngay&quot;]= DateTime.ParseExact(row[&quot;Ngày giao dịch&quot;].ToString(), &quot;d/M/yyyy&quot;,null).Day.ToString();&#xD;&#xA;&#x9;  row[&quot;Ngay&quot;] = row[&quot;Ngày giao dịch&quot;].ToString().Substring(0,2).TrimStart('0');&#xD;&#xA;&#xD;&#xA;      out_Money += Convert.ToInt64(tien);    &#xD;&#xA;  //  }&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_hoantraTable.Rows){&#xD;&#xA;  hoantra_Money += Convert.ToInt64(row[&quot;Số tiền ghi nợ&quot;]);&#xD;&#xA;}&#xD;&#xA;out_Money -= hoantra_Money;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="434,165" sap2010:WorkflowViewState.IdRef="InvokeCode_3" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="if(!inout_vcbTable.Columns.Contains(&quot;Tham chieu&quot;)){&#xD;&#xA;  inout_vcbTable.Columns.Add(&quot;Tham chieu&quot;,typeof(string));&#xD;&#xA;  inout_vcbTable.Columns.Add(&quot;Ngay&quot;,typeof(string));&#xD;&#xA;}      &#xD;&#xA;if(!inout_vcbTable.Columns.Contains(&quot;Transaction ID&quot;)){&#xD;&#xA;  inout_vcbTable.Columns.Add(&quot;Transaction ID&quot;,typeof(string));&#xD;&#xA;} &#xD;&#xA;out_Money = 0;&#xD;&#xA;long hoantra_Money = 0;&#xD;&#xA;foreach(DataRow row in inout_vcbTable.Rows){&#xD;&#xA;    //if(!String.IsNullOrEmpty(row[&quot;Số tham chiếu&quot;].ToString())){&#xD;&#xA;      string[] s = row[&quot;Mô tả&quot;].ToString().Split(' ');&#xD;&#xA;      string[] x = row[&quot;Mô tả&quot;].ToString().Split('.');&#xD;&#xA;      row[&quot;Transaction ID&quot;]  = '\'' + x[1];&#xD;&#xA;      string sdt = s[s.Length - 2];&#xD;&#xA;      string traceNum = row[&quot;Số tham chiếu&quot;].ToString().Substring(7,5);&#xD;&#xA;&#x9;  string tien;&#xD;&#xA;&#x9;  if(!string.IsNullOrEmpty(row[&quot;Số tiền ghi có&quot;].ToString())){     &#xD;&#xA;&#x9;&#x9;   tien = row[&quot;Số tiền ghi có&quot;].ToString();&#xD;&#xA;}&#xD;&#xA;&#x9;  else{&#x9;&#x9; &#xD;&#xA;&#x9;&#x9;   tien = row[&quot;Số tiền ghi nợ&quot;].ToString();&#xD;&#xA;}&#xD;&#xA;      row[&quot;Tham chieu&quot;] =  '\''+ traceNum.TrimStart('0')+ sdt + tien;&#xD;&#xA;      row[&quot;Ngay&quot;]= DateTime.ParseExact(row[&quot;Ngày giao dịch&quot;].ToString(), &quot;d/M/yyyy hh:mm:ss&quot;,null).Day.ToString();&#xD;&#xA;      out_Money += Convert.ToInt64(tien);    &#xD;&#xA;  //  }&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_hoantraTable.Rows){&#xD;&#xA;  hoantra_Money += Convert.ToInt64(row[&quot;Số tiền ghi nợ&quot;]);&#xD;&#xA;}&#xD;&#xA;out_Money -= hoantra_Money;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_3" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inout_vcbTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">inout_soPhuTable</CSharpReference>
@@ -243,12 +261,52 @@
         </InArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info">
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
           <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">"Tong tien So phu VCB: " + out_vcbMoney</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
+    <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Ghi file hoan tra" sap:VirtualizedContainerService.HintSize="433.6,359.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None">
+      <ueab:ExcelApplicationCard.Body>
+        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476.79999999999995,260.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="433.6,169.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False">
+              <ueab:WriteRangeX.Destination>
+                <InArgument x:TypeArguments="ue:IReadWriteRangeRef">
+                  <CSharpValue x:TypeArguments="ue:IReadWriteRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_56">Excel.Sheet["Sheet1"]</CSharpValue>
+                </InArgument>
+              </ueab:WriteRangeX.Destination>
+              <ueab:WriteRangeX.Source>
+                <InArgument x:TypeArguments="sd:DataTable">
+                  <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_57">out_hoantraTable</CSharpValue>
+                </InArgument>
+              </ueab:WriteRangeX.Source>
+            </ueab:WriteRangeX>
+          </Sequence>
+        </ActivityAction>
+      </ueab:ExcelApplicationCard.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelApplicationCard.WorkbookPath>
+        <InArgument x:TypeArguments="x:String">
+          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_58">in_folderLastMonth.LocalPath+@"\hoantra.xlsx"</CSharpValue>
+        </InArgument>
+      </ueab:ExcelApplicationCard.WorkbookPath>
+    </ueab:ExcelApplicationCard>
   </Sequence>
 </Activity>

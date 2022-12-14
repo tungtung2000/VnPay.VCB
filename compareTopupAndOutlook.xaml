@@ -1,13 +1,11 @@
-﻿<Activity mc:Ignorable="sap sap2010" x:Class="compareTopupAndOutlook" this:compareTopupAndOutlook.in_khoTopupMoney="1" this:compareTopupAndOutlook.in_outlookTopupMoney="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="compareTopupAndOutlook" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_khoTopupMoney" Type="InArgument(x:Int64)" />
-    <x:Property Name="in_outlookTopupMoney" Type="InArgument(x:Int64)" />
     <x:Property Name="inout_khoTopupDt" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="inout_outlookDt" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_folderLastMonth" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>856,2924.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>732,3004.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="82">
@@ -124,20 +122,13 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="compareTopupAndOutlook" sap:VirtualizedContainerService.HintSize="761.6,2860" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="compareTopupAndOutlook" sap:VirtualizedContainerService.HintSize="742.4,2940" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="718.4,102.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
-      <ui:LogMessage.Message>
-        <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"Tong tien outlook la: " + in_outlookTopupMoney + " va tong tien kho Vnpay: " + in_khoTopupMoney</CSharpValue>
-        </InArgument>
-      </ui:LogMessage.Message>
-    </ui:LogMessage>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="/*HashSet&lt;string&gt; outlookHashSet = in_outlookDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;HashSet&lt;string&gt; khoHashSet = in_khoTopupDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;Console.WriteLine( &quot;so luong hashset outlook : &quot; + outlookHashSet.Count.ToString());&#xD;&#xA;Console.WriteLine( &quot;so luong hashset kho: &quot; + khoHashSet.Count.ToString());&#xD;&#xA;*/&#xD;&#xA;//------------------------------------------------------&#xD;&#xA;Dictionary&lt;string,List&lt;string&gt;&gt; khoDict = new Dictionary&lt;string,List&lt;string&gt;&gt;();&#xD;&#xA;Dictionary&lt;string,List&lt;string&gt;&gt; outlookDict = new Dictionary&lt;string,List&lt;string&gt;&gt;();&#xD;&#xA;&#xD;&#xA;foreach(DataRow row in in_khoTopupDt.Rows ){&#xD;&#xA;  &#xD;&#xA;    if(!khoDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;    khoDict.Add(row[&quot;Tham chieu&quot;].ToString(), new List&lt;string&gt;());&#xD;&#xA;    khoDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());&#xD;&#xA;  }&#xD;&#xA;  else{khoDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_outlookDt.Rows ){&#xD;&#xA;  &#xD;&#xA;    if(!outlookDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;    outlookDict.Add(row[&quot;Tham chieu&quot;].ToString(), new List&lt;string&gt;());&#xD;&#xA;    outlookDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());&#xD;&#xA;  }&#xD;&#xA;  else{outlookDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());}&#xD;&#xA;}&#xD;&#xA;//------------------------------------------------------&#xD;&#xA;&#xD;&#xA;if(! in_outlookDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9; in_outlookDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;if(!in_khoTopupDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9;in_khoTopupDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in  in_outlookDt.Rows){&#xD;&#xA;&#x9;/*if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}*/&#xD;&#xA;&#x9;if(khoDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;for(int i=0;  i&lt;khoDict[row[&quot;Tham chieu&quot;].ToString()].Count; i++){&#xD;&#xA;&#x9;&#x9;&#x9;if(Math.Abs(Convert.ToInt32(khoDict[row[&quot;Tham chieu&quot;].ToString()][i])-Convert.ToInt32(row[&quot;Ngay&quot;]))&lt;=2){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Co cai nit&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else{row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_khoTopupDt.Rows){&#xD;&#xA;&#x9;/*if(outlookHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}*/&#xD;&#xA;&#x9;if(outlookDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;for(int i=0;  i&lt;outlookDict[row[&quot;Tham chieu&quot;].ToString()].Count; i++){&#xD;&#xA;&#x9;&#x9;&#x9;if(Math.Abs(Convert.ToInt32(outlookDict[row[&quot;Tham chieu&quot;].ToString()][i])-Convert.ToInt32(row[&quot;Ngay&quot;]))&lt;=2){&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Co cai nit&quot;);&#xD;&#xA;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else{row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="718.4,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="/*HashSet&lt;string&gt; outlookHashSet = in_outlookDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xA;HashSet&lt;string&gt; khoHashSet = in_khoTopupDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xA;Console.WriteLine( &quot;so luong hashset outlook : &quot; + outlookHashSet.Count.ToString());&#xA;Console.WriteLine( &quot;so luong hashset kho: &quot; + khoHashSet.Count.ToString());&#xA;*/&#xA;//------------------------------------------------------&#xA;Dictionary&lt;string,List&lt;string&gt;&gt; khoDict = new Dictionary&lt;string,List&lt;string&gt;&gt;();&#xA;Dictionary&lt;string,List&lt;string&gt;&gt; outlookDict = new Dictionary&lt;string,List&lt;string&gt;&gt;();&#xA;&#xA;foreach(DataRow row in in_khoTopupDt.Rows ){&#xA;  &#xA;    if(!khoDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xA;    khoDict.Add(row[&quot;Tham chieu&quot;].ToString(), new List&lt;string&gt;());&#xA;    khoDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());&#xA;  }&#xA;  else{khoDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());}&#xA;}&#xA;foreach(DataRow row in in_outlookDt.Rows ){&#xA;  &#xA;    if(!outlookDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xA;    outlookDict.Add(row[&quot;Tham chieu&quot;].ToString(), new List&lt;string&gt;());&#xA;    outlookDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());&#xA;  }&#xA;  else{outlookDict[row[&quot;Tham chieu&quot;].ToString()].Add(row[&quot;Ngay&quot;].ToString());}&#xA;}&#xA;//------------------------------------------------------&#xA;&#xA;if(! in_outlookDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xA;&#x9; in_outlookDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xA;}&#xA;if(!in_khoTopupDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xA;&#x9;in_khoTopupDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xA;}&#xA;foreach(DataRow row in  in_outlookDt.Rows){&#xA;&#x9;/*if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;}&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}*/&#xA;&#x9;if(khoDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;for(int i=0;  i&lt;khoDict[row[&quot;Tham chieu&quot;].ToString()].Count; i++){&#xA;&#x9;&#x9;&#x9;if(Math.Abs(Convert.ToInt32(khoDict[row[&quot;Tham chieu&quot;].ToString()][i])-Convert.ToInt32(row[&quot;Ngay&quot;]))&lt;=2){&#xA;&#x9;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Co cai nit&quot;);&#xA;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;else{row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;foreach(DataRow row in in_khoTopupDt.Rows){&#xA;&#x9;/*if(outlookHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;}&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}*/&#xA;&#x9;if(outlookDict.ContainsKey(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;for(int i=0;  i&lt;outlookDict[row[&quot;Tham chieu&quot;].ToString()].Count; i++){&#xA;&#x9;&#x9;&#x9;if(Math.Abs(Convert.ToInt32(outlookDict[row[&quot;Tham chieu&quot;].ToString()][i])-Convert.ToInt32(row[&quot;Ngay&quot;]))&lt;=2){&#xA;&#x9;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;&#x9;&#x9;&#x9;break;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;Console.WriteLine(&quot;Co cai nit&quot;);&#xA;&#x9;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;else{row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="699.2,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_outlookDt">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">inout_outlookDt</CSharpReference>
@@ -147,7 +138,7 @@
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="718.4,2010.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="699.2,2210.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="count" />
         <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -159,21 +150,21 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="656,69.6" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="636.8,69.6" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <ui:BuildDataTable.DataTable>
           <OutArgument x:TypeArguments="sd:DataTable">
             <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">tmpTable</CSharpReference>
           </OutArgument>
         </ui:BuildDataTable.DataTable>
       </ui:BuildDataTable>
-      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="656,1777.6" sap2010:WorkflowViewState.IdRef="Sequence_18">
+      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="636.8,1847.2" sap2010:WorkflowViewState.IdRef="Sequence_18">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="593.6,1249.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.4,1279.2" sap2010:WorkflowViewState.IdRef="Sequence_32">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -202,9 +193,9 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="512,907.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="512,936.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,730.4" sap2010:WorkflowViewState.IdRef="Sequence_26">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,760" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -231,7 +222,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <Assign sap:VirtualizedContainerService.HintSize="434,65" sap2010:WorkflowViewState.IdRef="Assign_15">
+                <Assign sap:VirtualizedContainerService.HintSize="433.6,73.6" sap2010:WorkflowViewState.IdRef="Assign_15">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">
                       <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_29">tmpTable</CSharpReference>
@@ -244,20 +235,20 @@
                     </InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1">
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_1">
                   <ui:CreateDirectory.Path>
                     <InArgument x:TypeArguments="x:String">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">in_folderLastMonth+ @"\ket_qua_so_sanh_Vntopup_Outlook(File outlook)"</CSharpValue>
                     </InArgument>
                   </ui:CreateDirectory.Path>
                 </ui:CreateDirectory>
-                <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None">
+                <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="433.6,91.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None">
                   <ueab:ExcelApplicationCard.Body>
                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                       </ActivityAction.Argument>
-                      <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,159" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False">
+                      <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="433.6,169.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False">
                         <ueab:WriteRangeX.Destination>
                           <InArgument x:TypeArguments="ue:IReadWriteRangeRef">
                             <CSharpValue x:TypeArguments="ue:IReadWriteRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">Excel.Sheet["Sheet1"]</CSharpValue>
@@ -314,14 +305,14 @@
             </sap:WorkflowViewStateService.ViewState>
           </ui:InterruptibleWhile>
         </Sequence>
-        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,365" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="574.4,404.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_17">
+          <Assign sap:VirtualizedContainerService.HintSize="337.6,69.6" sap2010:WorkflowViewState.IdRef="Assign_17">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_31">count</CSharpReference>
@@ -333,7 +324,7 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_18">
+          <Assign sap:VirtualizedContainerService.HintSize="337.6,69.6" sap2010:WorkflowViewState.IdRef="Assign_18">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">
                 <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_32">i</CSharpReference>
@@ -343,23 +334,23 @@
               <InArgument x:TypeArguments="x:Int32">0</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="337.6,62.4" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_7">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="530,1055" sap2010:WorkflowViewState.IdRef="Sequence_28">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="511.2,1085.6" sap2010:WorkflowViewState.IdRef="Sequence_28">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="468,80" sap2010:WorkflowViewState.IdRef="ClearDataTable_5">
+                <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="468,90.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_5">
                   <ui:ClearDataTable.DataTable>
                     <InOutArgument x:TypeArguments="sd:DataTable">
                       <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">tmpTable</CSharpReference>
                     </InOutArgument>
                   </ui:ClearDataTable.DataTable>
                 </ui:ClearDataTable>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,52" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="468,62.4" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info">
                   <ui:LogMessage.Message>
                     <InArgument x:TypeArguments="x:Object">
                       <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">i</CSharpValue>
@@ -372,7 +363,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <Assign sap:VirtualizedContainerService.HintSize="468,65" sap2010:WorkflowViewState.IdRef="Assign_19">
+                <Assign sap:VirtualizedContainerService.HintSize="468,73.6" sap2010:WorkflowViewState.IdRef="Assign_19">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">
                       <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_34">tmpTable</CSharpReference>
@@ -385,14 +376,14 @@
                     </InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="468,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_2">
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="468,90.4" sap2010:WorkflowViewState.IdRef="CreateDirectory_2">
                   <ui:CreateDirectory.Path>
                     <InArgument x:TypeArguments="x:String">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_93">in_folderLastMonth+ @"\ket_qua_so_sanh_Vntopup_Outlook(File Kho)"</CSharpValue>
                     </InArgument>
                   </ui:CreateDirectory.Path>
                 </ui:CreateDirectory>
-                <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="468,437" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_6" ResizeWindow="None">
+                <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="468,447.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_6" ResizeWindow="None">
                   <ueab:ExcelApplicationCard.Body>
                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                       <ActivityAction.Argument>
@@ -456,8 +447,15 @@
           </ui:InterruptibleWhile>
         </Sequence>
       </Sequence>
+      <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="636.8,90.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_7">
+        <ui:ClearDataTable.DataTable>
+          <InOutArgument x:TypeArguments="sd:DataTable">
+            <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_36">tmpTable</CSharpReference>
+          </InOutArgument>
+        </ui:ClearDataTable.DataTable>
+      </ui:ClearDataTable>
     </Sequence>
-    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="718,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="699.2,172" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
       <ui:FilterDataTable.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">inout_khoTopupDt</CSharpValue>
@@ -490,7 +488,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="718,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="699.2,172" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" SelectColumnsMode="Keep">
       <ui:FilterDataTable.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">inout_outlookDt</CSharpValue>
