@@ -10,7 +10,7 @@
     <x:Property Name="lastMonthYear" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1165,8578</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1021,12179</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -118,7 +118,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="812,8513" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap:VirtualizedContainerService.HintSize="1012,12114" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="test" />
       <Variable x:TypeArguments="x:String" Name="firstDayOfMonth" />
@@ -146,46 +146,49 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="750,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
+    <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="950,62" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
       <ui:GetEnvironmentFolder.FolderPath>
         <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">test</CSharpReference>
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">
+            <CSharpReference.Result>
+              <OutArgument x:TypeArguments="Location(x:String)" />
+            </CSharpReference.Result>test</CSharpReference>
         </OutArgument>
       </ui:GetEnvironmentFolder.FolderPath>
     </ui:GetEnvironmentFolder>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: HỆ THỐNG QUẢN LÝ KHO VNPAY" sap:VirtualizedContainerService.HintSize="750,8280" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" IsIncognito="False" OpenMode="IfNotOpen" ScopeGuid="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: HỆ THỐNG QUẢN LÝ KHO VNPAY" sap:VirtualizedContainerService.HintSize="950,11901" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" IsIncognito="False" OpenMode="IfNotOpen" ScopeGuid="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="716,8054" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,11684" sap2010:WorkflowViewState.IdRef="Sequence_12">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Đăng nhập'" sap:VirtualizedContainerService.HintSize="654,61" sap2010:WorkflowViewState.IdRef="NCheckState_2" Mode="WaitDisappear" Timeout="10" Version="V1">
+            <uix:NCheckState DisplayName="Check App State 'Đăng nhập'" sap:VirtualizedContainerService.HintSize="854,808" sap2010:WorkflowViewState.IdRef="NCheckState_2" Mode="WaitDisappear" Timeout="10" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="400,215" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Target disappears" sap:VirtualizedContainerService.HintSize="400,197" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="338,91" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Url="http://server525.vnpay.local/vnpstock/default.aspx" Version="V3" />
+                  <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="338,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_3" Url="http://server525.vnpay.local/vnpstock/default.aspx" Version="V3" />
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="400,618" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Target does not disappear" sap:VirtualizedContainerService.HintSize="400,591" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên đăng nhập:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Tên đăng nhập:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Login.aspx" DesignTimeRectangle="1528, 292, 290, 39" ElementType="InputBox" FriendlyName="'INPUT txtUsName'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="be1a531e-5a95-4881-98c6-58a501ae9f71" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASYAAAArCAYAAADVLSWwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANhSURBVHhe7dlNcqpAFEDht/8duAA3wBJYBWsITtCRitWP29z+FYgawU7lfFVURcEGBn2qIf8MABSGMAEozl2Yrter6brOtG1rvr6+2NjY2FbZpDHSmr7vtT5BEiaJ0uFwMOfz2dxuN/0WAN5PGiOtkUBJe2I+TC5KALA1aU+8cvJhkiWV1AsAtibtkQY5PkyynOLxDcAnyGopfmLzYZKXUQDwKXGDCBOAIhAmAMUhTACKQ5gAFIcwASgOYQJQHMIEoDgbhak19X5ndvt6+OvNmsrsaxlVzlGZZvz245pquN9dOdcD/CY/DtM4Aae2MCnbem92VWOPHSPygrY2+3h8HzmN3vDdy2M/a4jhYmTlWof9jd43gOe8ccXUmGqIw+rzUCf9Rgma9m2Y2rAv/hvAQzYIU1jRyOb32xVQZapoxTUbNQmBO6ZOw2RXY7pvt9ubcdE0nrOqwu+SlUs8nhwzFZml69Mw1X5f/MiW3q8fW8er/fW6awWQWz1M9lHPfWmDoBPSTtTw+GWPWwhEaEJ0nB0v22fPpXFIjnMhiK8zOy62dH0atmQMvcfkfuNz6Xhunw3q1HkBrB2m/DtdyfiJGq0adBWST1T3fsqT381M6HDseJ7wzkmuQ8+Vn2fmvIvXZ8N0/w7t3sL9xtcEILFJmPxjjW42GHaiRo9AC2FKXmonYdLVSjx+FKZwLSECdyuVxTDNXF/2myRM9nfpNYUwReNF1wQgtUGYZibfE2GaWzHlkQnHzofp7jxvDVO+UltYMeWfAXgrh0nmsFvFDOxknFlBLAYiTOD4XU8apvH834Ypuc7xuPnz/jBMclxyv2FfHlUAwephcpPVPdb4SftomIROcDvJk//KaYzsNozlx1gKk3x04w3f1TPnfSlMg+ha5TsJqb1nHS/8ly8aG0DijWH6ndL/oq0oDx2AWX8vTPpI5Vc1U6ulN5BVVHjXNCBMwMP+/IoJQHkIE4DiECYAxSFMAIpDmAAUhzABKA5hAlAcwgSgOIQJQHEmw9S2rbndbvoJALbT9705HA76KQpT13XmfD7rJwDYjrRHGuT4MOXFAoCtSHukQY4Pk3BxulwuPNYBWJU0RlqTR0kkYRJywOl0sgfLyyg2Nja2NTZpzPF4nFwE3YUJAD6NMAEojDH/AaAJ89pQ1xCCAAAAAElFTkSuQmCC" InformativeScreenshot="aaacb8259bc9033d253e884d25bd76dd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -197,11 +200,14 @@
                     </uix:NTypeInto.Target>
                     <uix:NTypeInto.Text>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">account</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">
+                          <CSharpValue.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </CSharpValue.Result>account</CSharpValue>
                       </InArgument>
                     </uix:NTypeInto.Text>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Into 'Mật Khẩu:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DeselectAfter="True" DisplayName="Type Into 'Mật Khẩu:'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_10" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Login.aspx" DesignTimeRectangle="1528, 364, 290, 39" ElementType="InputBoxPassword" FriendlyName="'INPUT txtPwd'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' aaname='' /&gt;" Guid="5db81588-a815-4822-9cf9-eb6b9c9e527a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASYAAAArCAYAAADVLSWwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALYSURBVHhe7dndjaMwGEbh7b8DCqABSqAKagjccBcEyOPXGDD5YZDGIWZ1HslSMAzsTY4+sv8MACSGMAFIzlOY+r43bduauq7N7XZjsVisjyw1Rq0ZhsHXZ7UJk6LUNI3pus6M4+h3ASA+NUatUaDUntASpjlKAHA2tSecnJYwaaRSvQDgbGqPGjRbwqRxitc3AN+gaSl8Y1vCpB+jAOBbwgYRJgBJIEwAkkOYACSHMAFIDmECkBzCBCA5/3eYqsIUlf8M4DLOD1NdmjzLTF7WfuNDznoOgOj+HiYfgCwvzTYBtSlzu5/lJmxDVWR2iqlMEe67exTmebiZ7vE89bzbX718DoBLiBSm3OT5QwC0b/d0bt2vTf3qc/QwvXkOgEuIFKbClKWNUFCm2h2X24mlKuwEpSlqWlNYNNXMe49xegiQ+3vdz+/b+7tpza7NK9vL5/j9YLLTvzF7XzcAXxItTNXmS69wKCDBq5SfrOZ+uCjM1x+ZmJ7ub6MzHy/B0qmd5xAm4BLihclNPkEcXAB2fuMJI/FbmNxkFJ6f9tcp6eBzCBNwCRHDpO/9NN2sX/htMHQ+fMU6GiZdV/p7T4JJyjn4HMIEXELUMLkvfmEjskQjCIbOhfEJI/HbxKQTm2t2wrT3nPCzO7TRIkxAcuKGyX3WlDKH4V0w1knocJgshWR6fTsapofnuHPzZKW/IUxAiuKGaQ7B8mUPgjGfc+Gye1X4dz4ST3F6F6CdMO0+x165vOZN/5NImID0/D1MABDZF8Kk6eZxMgKAFRMTgOQQJgDJIUwAkkOYACSHMAFIDmECkBzCBCA5hAlAcggTgOS8DFNd12YcR38EAOcZhsE0TeOPgjC1bWu6rvNHAHAetUcNmi1heiwWAJxFb2xq0GwJk/R97y5QvcKLACA2NeZ+v7uBSO0JbcIkulgjlS7Wj1EsFov1iaXGqDWvhqCnMAHAtxEmAIkx5gdn2FvJJddg1AAAAABJRU5ErkJggg==" InformativeScreenshot="d2ea16f569cebe24c094d5f90c95826a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -213,7 +219,10 @@
                     </uix:NTypeInto.Target>
                     <uix:NTypeInto.Text>
                       <InArgument x:TypeArguments="x:String">
-                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">password + "[k(enter)]"</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">
+                          <CSharpValue.Result>
+                            <OutArgument x:TypeArguments="x:String" />
+                          </CSharpValue.Result>password + "[k(enter)]"</CSharpValue>
                       </InArgument>
                     </uix:NTypeInto.Text>
                   </uix:NTypeInto>
@@ -224,12 +233,12 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Tra cứu giao dịch'" sap:VirtualizedContainerService.HintSize="654,166" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Tra cứu giao dịch'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/default.aspx" DesignTimeRectangle="18, 259, 225, 46" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Tra cứu giao dịch'" FullSelectorArgument="&lt;webctrl id='Transaction' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='Transaction' tag='A' type='' class='dcjq-parent active' aaname='Tra cứu giao dịch' check:text='Tra cứu giao dịch' /&gt;" Guid="f864174e-bb98-4473-9f21-da8b0f6c4969" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOUAAAAyCAYAAACj8hyBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO2SURBVHhe7Zk9axRBGID9L8kmPy0gIpZqm8LKQgtTpNAUdiGKhZVYWEjAIHhYhUsfCMglReDgYNyZ2dmdj3c3d7e3uTnyDDyEm3nnY5f3uXf38mh370QBQD4gJUBmBFIWL76p7XcjtfXhXG1/vACAATGelb5p73wPaymLl6WQwkQAGB7tXyrlwUgMBoDh0f4lUm4d8cgKsC60f4mUUiAA3B9ICZAZSAmQGUgJkBlICZAZSAmQGUgJkBlICZAZSAmQGUgJkBlICZAZSAmQGctL+f6HKp58VjsVxeu/chwALMTyUh5+VzvVHM3Oqz9yHAAshHNqWCkvpqq9TdWxNGfFHE/0VrdqXxjrz5U6LS/x+vJKGFsd+5ez+hrM9UxuxLgac9/v5/7C6nBOLfFO+VMV1RzN3JVyHYlydquuBxNSg5SwOpxTvaUs3kgxAiTK0vhSSuMJ3OuNxDm1Xil133SqxnpIzdTpme631adpXcl1o8ZVlG7jC9uvq0lQvcw+ZVK7v0KF66xAuuLaLerz2rnxOt1nN3K51imZv85MjSftldJ8ds31V/f61Ntv6GoO/XFOrV/KsjmZNCZx66RL5WmIxow4VuxWKfWcyaJSRrHVme3ncKzz7MH12zF5v7gyVl88gpRhnLdfcMZyzHx2X3qQK86pJaQs3yGff7H/Enn2VW0fSjECQVJ29AXYhKyTy8eTMB6TpdQVLqzGfkyrlMk+/tx0nYbw7Mn6rdeerunL16zTsXe8dse9guF4O/rXihTfQ8olmVdK0+faTF3Pm3geopStYjVzRCmTfTqkbD27IFDr+a3M/tODiU2kFOL8eH9tpNwIekj5WxVP7ZzdvU+qOJBiBKQkTPri5BWS2bFApQwf8zTpuq1Szl0pu8+erN8qZXo2KuXDoIeUq36nTKWsk9eMtyRekpRN5ZDetUIpq+Su++xcUcp4n+BM/tgdZw+uNYqNMOePYxMp0y+beiy+r0i5ETinlpDylyoeOylXXSldX9XKBEsqTEAlU9ViQW0rk/GyXDOS0iaqa9UvlW37+LGT20TEULyqCWe3slUtPk+EmVu18aQ5f7ymH1eviZQbSQ8pHzpWRPFdDqAHSDk3uup6VcZUoTVWHb3/HVUWNhOkXIDgsbNsVEkYAqQEyAykBMgMpATIDKQEyAykBMgMpATIDKQEyAykBMgMpATIDKQEyAykBMiMRMqto3MxEACGR/uXSFkcjMRgABge7V8ipRQIAPcHUgJkBlICZAZSAmSGdfFE/Qd04PvLjYTmXQAAAABJRU5ErkJggg==" InformativeScreenshot="686cba707f053ba0cd7e560cd4cb257d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Trang chủ' url='http://server525.vnpay.local/vnpstock/default.aspx' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -249,7 +258,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Chi tiết Giao Dịch Viễn Thông'" sap:VirtualizedContainerService.HintSize="654,61" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Chi tiết Giao Dịch Viễn Thông'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/default.aspx" DesignTimeRectangle="28, 260, 215, 35" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Chi tiết'" FullSelectorArgument="&lt;webctrl parentid='TelcoDetailTrans' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='TelcoDetailTrans' tag='A' type='' class='' aaname='Chi tiết giao dịch Viễn thông' check:text='Chi tiết giao dịch Viễn thông' /&gt;" Guid="4f28ab14-71ef-4d97-9d91-dbbfe3ab88ed" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANsAAAAnCAYAAACG0z0iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQpSURBVHhe7Zg7bhsxEIZzlyTI0XIQHSJ1inSGz+HCVcpA6gW4kV0YECCAWb6WM8MZarWyCO36H+CDvSJFzusnF/ry7c/OAQBuw9ff/9yPn48BiA2AG/L911+IDYBeQGwAdAJiA6ATEBsAnYDYAOgExAZAJyA2ADoBsQHQCYgNgE5AbAB0AmIDoBMQGwCdgNgA6ATEBkAnIDYAOnGHYntxT0fn3OFNGQNgudyf2HaD0o7vbqONgUk8HIbDarDtbuc2+5N73b+o80Bf7vBmA9fx5rbu6B6G/6PoTu7pWZsHetMQmy8atVjAPB4KabzqtcYY/hYT6/qT2Js/ldncWcRX0luf7MHndBtPiv353b1OEkF6pdZu+rCGz5MWY6rdR70hKHWqSP7grcRGF1tKHC1gFEFJ+DyxxSYYhSSLmJtw5/8qn198Qi9dbHXe68/rGLMP/u+82M/USSHu9dYl30tFFZveMLyok5qqQhSxyYvb5GacLbY+ULFp4xWXxBPmypxNP0Q2zz3ERmo1MG/P9aOIbZogotjeQ9GjleZpiTVbWF8UMZ7Wycbmjf5EMxo0NWSw49Ftx0aUTcl9kA2k769B1zm57aGITcaurpnFtifOmAdX2ouOM7HKGGm+aB3TvMOx5EoVEM8RrdMTiYULff6eIV/JtsM83ad1UItt4qkbkyQEZjRcoXFiCuGxNZo+iWYL6+RnPhYaf/RL+17ePzWcIQB+k6VG02K3YsqHA4uPNiknCrasw/encYiYFFGWdVoxanWSuTLEroyZe2o5J3GujevERgpFG2CO2Px3xoJ5gh8p8S2fqjFafNEIjOhLHqt8Zo1Aqde0YjfzUPks8iJh8+X+5JnmLFHyWvtt+teoU3im/lyY/2Z+zJyvg1ps5wqfkIm6TmyxKLVZBSVUBWoUO8zNdnKv1jx13YySHz+3il1ZM1PFcy7nZK1Wc7P4iBn+XF6n9Ex9qPJE92ntWY/ZOV8HitjsItDP5ZwPv9koLbG1mq9ZeP5c+WwWvm6Sm99sA3mPB7JXHCP+hHWtZq39nlOn8Ez9n5z/ON7Mz2cUW0wgT1JMREmqTNS1YpOJDuvl56qgFFHQsI5W7Pj/6Bebl5/z/mKugPmW52qxazH5eVU858WWa+KN1UWJsYzHdfWxmXXyMP/FumGuMTZg5yfOZfusDF1sgZjwYjwJ88SWxgYLBdCacTTajLkQRkOSRsy/kKoNFvZLNvinxpCN3R41OQ5v4Vc0I3YeU4p1jtjGHNDvlc9LQ4u6jb7IefPrZPmfrcRxfs+Sx2G98OvspxTbUokFbjcuuEu8qM8ccktmBWLzpyo5ZcMpLE//jqy8YT6ScOuLm9e6adfAKm42/qqGW205iFfelR9SqxAbAEsAYgOgExAbAJ2A2ADoBMQGQCcgNgA6EcX26P4Dr5lcIyp0CssAAAAASUVORK5CYII=" InformativeScreenshot="a8183f97ce27f449b6d10a6fbd217a0f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Trang chủ' url='http://server525.vnpay.local/vnpstock/default.aspx' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -261,12 +270,12 @@
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Online45'" sap:VirtualizedContainerService.HintSize="654,61" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Online45'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="557, 291, 515, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Online45'" FullSelectorArgument="&lt;webctrl aria-role='textbox' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='textbox' tag='SPAN' type='' class='select2-selection__rendered' aaname='Online45' check:innerText='Online45' /&gt;" Guid="adbc21fc-ce17-4d1c-bac8-064209059ea7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgcAAAAgCAYAAACGl9ucAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK3SURBVHhe7dxBbuIwFAbgOVyPk4N0lxv0AN1SiRV3qCrugFiyQd15eAZSO5lkaEo35PukJwWbuNm9P3bbPwkAoNCFg+PxmLbbbVqv1+n19VUppZRSC6jo+9H/Iwdc5XAQA5vNJk8eDoc8AQA8vuj70f8jB1wDQg4HMRgFACxTmQVyOIgtBTsGALBckQMiD4QcDuLMAQBYtmseEA4AgEw4AAAqwgEAUBEOAIDKj8LBbtWkp6enrprV7jJzg/f2dE+b3vPl6f42ru5nuOZ7aotn/fbzAsBCzA4Hufk2q/TVXndp1fTHJvxmOMhr99bcrVJz+XkAwLh54aBo7LXz2/lNfX50jZ+KkNKkJoJK+SDx824NLgCwYLPCwdSbfjl3vm6L7fwmdTv5IzsHk/eEvAMwMncSRx1xXNB/xnwEMvLMAPCI3t7e0vPz8z8r5sbMCAfn44Ox8/rchC9v6LlBFw08f76+vU+Fg7F7+jsTg92HmB+uGc7rFmUXAYAFeHl5GQSDGJvy++Gg//Z+SziYuqdq6udnuX497i2vv9a5/D7E6GcAeEyfn5+pbdsuGMR1jE2ZEQ6GDbz0rUb/zXCQr8u3/0vloBLHDUVwmHrGbLDrAACPab/fd+Egrv9nVjgYb6z1tv+9w0G+pwgApbHgMPb9qbUA4NF8fHzkusW8cHCSm3jVXC9b9cXY3cNBL3ycJvMvJxZf79Tr9P+K4vzZ/zkAgKHZ4SD039b7zfb+4eCk+muF8QbfX+c0kgNB97zVHABw9aNwAAA8HuEAAKgIBwBARTgAACrCAQBQqcLBer1Oh8MhDwAAyxM5IPJAyOFgu93mAgCWqcwCORwcj8e02WzyoB0EAFiO6PvR/yMHRB4IORyEGIjJ2FKIMwellFJKPX5F34/+fw0GoQsHAABBOAAAKsIBAFBI6S8QMeO8I2w/AgAAAABJRU5ErkJggg==" InformativeScreenshot="814cbacc352dc965da08febe94eb9040.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -278,12 +287,12 @@
               </uix:NClick.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Online45'" sap:VirtualizedContainerService.HintSize="654,166" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Online45'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="557, 446, 515, 31" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'Tất cả'" FullSelectorArgument="&lt;webctrl aria-role='option' id='select2-MainContent_drDb-result-bxma--1' tag='LI' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='option' id='select2-MainContent_drDb-result-bxma--1' tag='LI' type='' class='select2-results__option select2-results__option--selectable select2-results__option--highlighted' aaname='Tất cả' check:innerText='Tất cả' /&gt;" Guid="0bd8dd96-20f6-4720-abf4-88d94e43a6da" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgcAAAAjCAYAAAAAA6kyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIeSURBVHhe7dxBbuIwAEDRuVOulaNwEpBAyoYVd6g4AUIVGw6AxMaDnUBjBBmGcUYC3pOslrS4S//aCb/CyXQ6jV8AgA927gFxAAAk4gAAyIgDACAjDgCAjDgAADLiAADIiAMAIDNSHKzDpKpC3ey71wDAqxglDvZNHarJunsFALySkXYOAIBX9XgcrCehqqo7YxL6+wTrSXu91OZB2om48XcAgPKe2zlIoXBnod43oY4/u/qdtMDXTXj2LoQ2OOrgNgYAGNcIcbDvBcDp++7Fv8YBAPB/FI6DfWjq81FD7xigfyRxLxDSjsP5ff0dgjtzAgCjKBoH+VMK7aJ+fpxxeOegffTx8tbe/ENzAgDlFd456Ms/62AwDh6aL/L5CQAwtrJxkK7/HA3UD+4c/Dkcbs8JAJRXMA6ut/z/4ljh7s7B8JwAQHnF4+Byf0D3H/9DcdAdF/zcWhBvTow3JQ7PCQCUVzAOTrrFO43Tgp4+m+C8sF+eRri1Q3CSPa1wfXNid/16TgCguOfiAAB4W+IAAMiIAwAgIw4AgIw4AAAy4gAAyIgDACAjDgCATBYH8/k8HI/HdAEA+DyxA2IPRCkOlstl2G636QIA8HliB8QeiFIcfH2tQ9M0YbPZhMPhkH4AALy/uO7H9X82m6UeiFIcbLffYbfbhdVqFRaLRTpzMAzDMAzj/Udc9+P6Hzsg9kAWBwDAZxMHAECm7YEQfgNzNJwy4ngWHQAAAABJRU5ErkJggg==" InformativeScreenshot="32dadfd232f152e28f7e707a4e61adec.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -300,7 +309,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Bank Code" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="654,227" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Bank Code" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="854,218" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="557, 335, 515, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Tất cả'" FullSelectorArgument="&lt;webctrl aria-role='textbox' idx='3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='textbox' type='' tag='SPAN' class='select2-selection__rendered' aaname='Tất cả' /&gt;" Guid="1e142ae5-7a00-4891-b000-8c5b0e7d8a1e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAgcAAAAgCAYAAACGl9ucAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJjSURBVHhe7dxBbuJAEAXQORzH8UGy8w1ygGxBYsUdUMQdUJZsELseqrEdm2CHTGhpEr8nlQTt0Czrp9rmTwIA6OnCwfF4TLvdLq3X6/Ty8qKUUkqpGVT0/ej/kQNaORzEwmazyRcPh0O+AAD8ftH3o/9HDmgDQg4HsRgFAMxTPwvkcBAjBRMDAJivyAGRB0IOB3HmAADMW5sHhAMAICscDrapXixStdw37wGA/13RcLBfVmlRb5t3AMBPUHhyAAD8NF8PB9s6LRaLkapTf06wrS/rjxoe5EnEje8BAB7ne5ODHBRGGvV+maq4dvU3ucFXy/SvdyFcAkeV3MYAAGUUDAf7XgA4v27efDccAABlFQoH+7Ss2qOG3jFA/0hiLCDkiUP7uf6EYGRPAOCm1WqVnp6eblZcG1MkHAyfUrg09fZxxunJweXRx+6jvf2n9gQAbnt+fv4QDGJtSqHJQd/wtw4mw8Fd+wW/nwAA9zidTqmu6y4YxOtYm1ImHOT196OB6s7JwefB4faeAMC4t7e3LhzE688UCAfXI/8vHCuMTg6m9wQApr2+vua6R7Fw0N0f0PzHf1c4aI4L3m8tiJsT46bE6T0BgMcpEA7Omuad69zQ828TtI29exrh1oTgbPC0wvXNic369Z4AwMN8LxwAAL+OcAAADAgHAMCAcAAADAgHAMDAIBys1+t0OBzyAgAwP5EDIg+EHA52u10uAGCe+lkgh4Pj8Zg2m01eNEEAgPmIvh/9P3JA5IGQw0GIhbgYI4U4c1BKKaXU76/o+9H/22AQunAAABCEAwBgQDgAAHpS+gvVhF+B935m2AAAAABJRU5ErkJggg==" InformativeScreenshot="611f261fc5603257ccdad799fc9798f2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -312,7 +321,7 @@
               </uix:NTypeInto.Target>
               <uix:NTypeInto.Text>
                 <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23" xml:space="preserve">bankCode  + "[k(tab)]"</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_307">bankCode + "[k(tab)]"</CSharpValue>
                 </InArgument>
               </uix:NTypeInto.Text>
               <sap:WorkflowViewStateService.ViewState>
@@ -322,26 +331,32 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NTypeInto>
-            <Assign sap:VirtualizedContainerService.HintSize="654,71" sap2010:WorkflowViewState.IdRef="Assign_17">
+            <Assign sap:VirtualizedContainerService.HintSize="854,62" sap2010:WorkflowViewState.IdRef="Assign_17">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">
-                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">daysInLastMonth</CSharpReference>
+                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_66">
+                    <CSharpReference.Result>
+                      <OutArgument x:TypeArguments="Location(x:Int32)" />
+                    </CSharpReference.Result>daysInLastMonth</CSharpReference>
                 </OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:Int32">
-                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_145">DateTime.DaysInMonth(Int32.Parse(lastMonthYear), Int32.Parse(lastMonth));</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_145">
+                    <CSharpValue.Result>
+                      <OutArgument x:TypeArguments="x:Int32" />
+                    </CSharpValue.Result>DateTime.DaysInMonth(Int32.Parse(lastMonthYear), Int32.Parse(lastMonth));</CSharpValue>
                 </InArgument>
               </Assign.Value>
             </Assign>
-            <Sequence DisplayName="Nhap ngay 1" sap:VirtualizedContainerService.HintSize="654,885" sap2010:WorkflowViewState.IdRef="Sequence_52">
+            <Sequence DisplayName="Nhap ngay 1" sap:VirtualizedContainerService.HintSize="854,849" sap2010:WorkflowViewState.IdRef="Sequence_52">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_16" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -353,7 +368,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_307">"1/" +lastMonth +"/"+lastMonthYear+ "[k(tab)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_308">"1/" +lastMonth +"/"+lastMonthYear + "[k(tab)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -363,13 +378,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_17" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_147">time + "[k(tab)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_309">time + "[k(tab)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -379,7 +394,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_18" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -391,7 +406,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_218">"04/"+ lastMonth.ToString()+"/"+ lastMonthYear.ToString()+ "[k(enter)][k(enter)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_310">"4/" +lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -402,14 +417,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
             </Sequence>
-            <Sequence DisplayName="Nhap ngay 2" sap:VirtualizedContainerService.HintSize="654,885" sap2010:WorkflowViewState.IdRef="Sequence_53">
+            <Sequence DisplayName="Nhap ngay 2" sap:VirtualizedContainerService.HintSize="854,849" sap2010:WorkflowViewState.IdRef="Sequence_53">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_19" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_19" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -421,7 +436,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_219">"05/"+lastMonth +"/"+ lastMonthYear</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_311">"5/" +lastMonth +"/"+lastMonthYear</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -431,16 +446,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_20" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_20" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">
-                      <CSharpValue.Result>
-                        <OutArgument x:TypeArguments="x:String" />
-                      </CSharpValue.Result>"000000"+"[k(tab)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_312">"000000"+"[k(tab)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -450,7 +462,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_21" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_21" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -462,7 +474,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_220">"09/"+lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_313">"9/" +lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -473,14 +485,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
             </Sequence>
-            <Sequence DisplayName="Nhap ngay 3" sap:VirtualizedContainerService.HintSize="654,885" sap2010:WorkflowViewState.IdRef="Sequence_54">
+            <Sequence DisplayName="Nhap ngay 3" sap:VirtualizedContainerService.HintSize="854,849" sap2010:WorkflowViewState.IdRef="Sequence_54">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -492,7 +504,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_221">"10/"+lastMonth+"/"+lastMonthYear</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_314">"10/" +lastMonth +"/"+lastMonthYear</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -502,7 +514,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
@@ -521,7 +533,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -533,7 +545,10 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_222">"14/"+ lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_222">
+                      <CSharpValue.Result>
+                        <OutArgument x:TypeArguments="x:String" />
+                      </CSharpValue.Result>"14/"+ lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -544,14 +559,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
             </Sequence>
-            <Sequence DisplayName="Nhap ngay 4" sap:VirtualizedContainerService.HintSize="654,719" sap2010:WorkflowViewState.IdRef="Sequence_55">
+            <Sequence DisplayName="Nhap ngay 4" sap:VirtualizedContainerService.HintSize="854,849" sap2010:WorkflowViewState.IdRef="Sequence_55">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -563,7 +578,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_223">"15/"+ lastMonth +"/"+ lastMonthYear</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_315">"15/" +lastMonth +"/"+lastMonthYear</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -573,26 +588,23 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NTypeInto_26" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_26" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_158">
-                      <CSharpValue.Result>
-                        <OutArgument x:TypeArguments="x:String" />
-                      </CSharpValue.Result>"000000"+"[k(tab)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_316">"000000"+"[k(tab)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_27" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -604,7 +616,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_224">"19/"+lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_317">"19/"+ lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -615,14 +627,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
             </Sequence>
-            <Sequence DisplayName="Nhap ngay 5" sap:VirtualizedContainerService.HintSize="654,719" sap2010:WorkflowViewState.IdRef="Sequence_56">
+            <Sequence DisplayName="Nhap ngay 5" sap:VirtualizedContainerService.HintSize="854,849" sap2010:WorkflowViewState.IdRef="Sequence_56">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_28" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_28" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -634,7 +646,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_225">"20/"+lastMonth +"/"+lastMonthYear</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_318">"20/"+ lastMonth +"/"+lastMonthYear</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -644,26 +656,23 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">
-                      <CSharpValue.Result>
-                        <OutArgument x:TypeArguments="x:String" />
-                      </CSharpValue.Result>"000000"+"[k(tab)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_319">"000000"+"[k(tab)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_30" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -675,7 +684,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_226">"24/"+lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_320">"24/"+ lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -686,14 +695,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
             </Sequence>
-            <Sequence DisplayName="Nhap ngay 6" sap:VirtualizedContainerService.HintSize="654,719" sap2010:WorkflowViewState.IdRef="Sequence_57">
+            <Sequence DisplayName="Nhap ngay 6" sap:VirtualizedContainerService.HintSize="854,849" sap2010:WorkflowViewState.IdRef="Sequence_57">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_31" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_31" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -705,7 +714,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_227">"25/"+lastMonth +"/"+lastMonthYear</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_321">"25/"+ lastMonth +"/"+lastMonthYear</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -715,26 +724,23 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NTypeInto_32" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_32" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_164">
-                      <CSharpValue.Result>
-                        <OutArgument x:TypeArguments="x:String" />
-                      </CSharpValue.Result>"000000"+"[k(tab)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_322">"000000"+"[k(tab)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_33" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_33" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -746,7 +752,7 @@
                 </uix:NTypeInto.Target>
                 <uix:NTypeInto.Text>
                   <InArgument x:TypeArguments="x:String">
-                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_228">"28/"+lastMonth +"/"+lastMonthYear+ "[k(enter)][k(enter)]"</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_323">"28/"+ lastMonth +"/"+lastMonthYear + "[k(enter)][k(enter)]"</CSharpValue>
                   </InArgument>
                 </uix:NTypeInto.Text>
                 <sap:WorkflowViewStateService.ViewState>
@@ -757,27 +763,30 @@
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NTypeInto>
             </Sequence>
-            <If sap:VirtualizedContainerService.HintSize="654,1115" sap2010:WorkflowViewState.IdRef="If_5">
+            <If sap:VirtualizedContainerService.HintSize="854,1235" sap2010:WorkflowViewState.IdRef="If_5">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
-                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_229">daysInLastMonth &gt; 28</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_229">
+                    <CSharpValue.Result>
+                      <OutArgument x:TypeArguments="x:Boolean" />
+                    </CSharpValue.Result>daysInLastMonth &gt; 28</CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="462,839" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                <Sequence sap:VirtualizedContainerService.HintSize="462,956" sap2010:WorkflowViewState.IdRef="Sequence_81">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Nhap ngay 7" sap:VirtualizedContainerService.HintSize="400,717" sap2010:WorkflowViewState.IdRef="Sequence_58">
+                  <Sequence DisplayName="Nhap ngay 7" sap:VirtualizedContainerService.HintSize="400,845" sap2010:WorkflowViewState.IdRef="Sequence_58">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_34" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Từ ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_34" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="556, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='txtFrom datepicker form-control' aaname='' /&gt;" Guid="b73c3d72-697c-4cc2-9e90-3139ec04761d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="7af026b126c1f278f36dcf319cfb7b85.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -789,7 +798,7 @@
                       </uix:NTypeInto.Target>
                       <uix:NTypeInto.Text>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_230">"29/"+lastMonth +"/"+lastMonthYear</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_324">"29/"+ lastMonth +"/"+lastMonthYear</CSharpValue>
                         </InArgument>
                       </uix:NTypeInto.Text>
                       <sap:WorkflowViewStateService.ViewState>
@@ -799,26 +808,23 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NTypeInto_35" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '00:00:00'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_35" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="830, 335, 243, 34" ElementType="InputBox" FriendlyName="'00:00:00'" FullSelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtFromTime' tag='INPUT' type='text' class='txtFromTime timepicker form-control' aaname='' /&gt;" Guid="ef50f1f9-8b80-4967-bcaf-3664c4c9fb79" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAORSURBVHhe7d3hiqpAGMbxc5PdTJfSnXQPiWJJYUTiHjYrltMaS6Ad3uOr4+TomHaq3ZTnB/Mhp5L98He0FfxFANBLiBugp5S4z+czHQ6f9P4ekO//xsDA6MDgXrlb7rdIxs0TQbBN3xRFkdgKAK+Oe+Vuud/z+a/YWoibJ3kAQDd9foZKwzJuXtqxYgN0VxTFacc5GTefuwNAtxU7RtwAPYK4AXoKcQP0FOIG6CnEDfAqogMF/prcuUOO49Bi5VNw+P//WiFugB93pMC1yZhMaKIZhu3SJozFe9tD3AA/KQ7JcwwZsmlPkxXbI89b0WJqk5lHbti02t8W+IPintFoMKCBGMPxVmwXZiM5NxgMqTyt2tJ4ePmuwWgmtuea5ksa9r0dDwvzo+QvAfguMe1dS8a73F1OwaOvI5245WhHS1vEby4ouKHvB8SdxXYJOgtdNrcd07AYVRpbfUSzUTHY8nc3zyua9l16nYY+HCffCvANTh5N05XZJFdZlT/INSfk+OJlvCfXylZwa3kQG5vdH7cm1jQSEaAaI8uCzDcpQZVjZPz9bedLB5br+9YdGPjz1dUd4BnClZ2tyFOPTmJbphR3In6bZ9fk1pL+iG1N7o5bu9rJ4PUrazU6QXOgUIJumlc07bt0hpHSfwbgGXwnW43ttZq2Lm6K81XeoeLmax4TdznUNLhL3NVpzWeYsgrnCqtp07yiad/6z3H8iBu+Qx63jPjk09w0yDCya2wl7iRpB3HnEDe8tmCRRWy6H9mG+A9tPP6lPBtB8fI6XJHNcRtz2ohNTR4TN07LAW4mr6Nb/Ar+4ZrpgaB6fV7v7rh1wRVX5mrI+hU1pQu1uFo3zZdc37cu5LqzAIBn2NEiubbmaC13R3X3osV7lywOe2LQfNP+f2H3x12JpLQiloPUrb4FapDVAJvmFU37Lr3WnoUAPNElXHEnWvF2U74dde3IG1mM5CK87arNHhA3y4LObwapxJZGlM+rK2M1qCxY+X5l5WXX5jWn2lf2zdL9y/n6gw7AsxyT03N5J1o6+Ee14uvkunz+Rkfx/rYeFDcA3CMOd7R2rMr95YY1peUmpBtuTJMQN8CLib5CCsOv2mvwthA3QE8hboCeQtwAPYW4AXoKcQP0FOIG6Clt3HicEEC31T5OCA8CBOi22gcB4hG+AN10eYTvTv8IX4aH72NgdG9wr9xt7cP3AaBfEDdALxH9A31m9+1nMF+IAAAAAElFTkSuQmCC" InformativeScreenshot="59e94a2617333c87b1ab372bc511efa8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                       </uix:NTypeInto.Target>
                       <uix:NTypeInto.Text>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_167">
-                            <CSharpValue.Result>
-                              <OutArgument x:TypeArguments="x:String" />
-                            </CSharpValue.Result>"000000"+"[k(tab)]"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_325">"000000"+"[k(tab)]"</CSharpValue>
                         </InArgument>
                       </uix:NTypeInto.Text>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_36" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Đến ngày'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_36" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                       <uix:NTypeInto.Target>
                         <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Transaction/telco_detail_trans.aspx" DesignTimeRectangle="1376, 335, 243, 34" ElementType="InputBox" FriendlyName="'06/11/2022'" FullSelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_txtTo' tag='INPUT' type='text' class='txtTo datepicker form-control' aaname='' /&gt;" Guid="d9ff398b-5bb7-4508-a1e0-018316c9f61a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPcAAAAmCAYAAAAY7g3ZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQMSURBVHhe7Z0PiqMwFIf3kr1Mj+JNvINSqZWRlmWKLNN2oXS2ZVnoDLzNS2JMYqx2/0xH+X3wGE1SEwe/vOiU8QsBACYJ5AZgojhyv7+/0+vrD3p52VNVfUMgECMJdpbdZYdrjNxcuN8fZIPr9apLAQBjgJ1ld9nhWnAjN1dwAADGi+2xkZvTOjI2AOOGHWaXGSM3r9sBAOOndhlyAzAxIDcAEwVyAzBRIDcAj+TtRNunJS0WS3ranuhNF0sue9rkGaVZTpv9RRcOB3ID8EiqgpJUyLvJKU0KqnQxc9pklGQlbddLShdrOuryoUBuAB7B9Ui77Za2pRCYxT2uaZFkVHKZjk2eUlII3bmOJwBRVn0/u9n9BpAbgAdQFQkliQ4jt1VWRy23Kctoc9IH6eGfyH2I5zSbzXREtNLligPF87ouVC84xDSfx6KlzYqi2Zxit1CximjWas9wX81nVtGtfr1xRd6oeEzmszOaewNxz7ljnAB04MhtluVWWR31styULWg9cH3+93KzaJY48qK3xJOCWft+PcNlrjwsdoc0sj/3mAZrkujrV9YboZXoZgxa7MZ3NZ56X4ltTRbe7wCAPhy574oPk9uTQmJlXClJX1YLZ9t5FHmfbYSPovYEwTSThCujomdc1mqgawJSk0HonFWZ2x8A3bDcC2NpRQUvvzXH9bp5sCaW5IXd7uPkDknUXPwhSVpY2ZZZxXq7JeCKYr0TPq47SbSwjxfKtD0TkZvpfUK/BwC6GYncbSFYBCO3uOLlT5l1RfhSsmghK27IFpabx9K9NHbktLJ0Q/hcJD3iD5rEALBgudN8o5+Ml5TxvbV5Sp43T83FvXhmt/tUcguh7SWslMwSgfeDGe9eubsmCYHs079HHiq3HIe/DG9Q59gtPgAhZOYud3Q+n0U8U54/6+0z7cqSnvX2eVdSbrf7VMtyXzhH2hvZ9k65uyaJltjM0GU5xAb/iREsy0MPl6wMGMqQtkQ3sm1QNk1b7tAkocbWztCC0LH9scoJoPs+OjhpADCQEcgt8LKgK15bfimFrue2XVnxLrm5rSex3U8IWW/M9cYp++4WW2VsiA3+HHnPneVC6kKE+m652i4ozzJa6u0iz2hht/tQuQXqYudMFspmOoPW9Y74YXkld8jdmiS0nM2YmmiE9cZlmayyciBkn+pWJFTfOVEB4DGOzA0AuBvIDcBE2T2llCQppakKe5u/amq2U/5WWlOXJEv6etYH6QFyA/AI3n7Rpf5z1z3xc/g/L4XcAEwUyA3ARIHcAEwUyA3ARIHcAEyUltx4nRAA4yf4OiG8CBCA8RN8ESBe4QvAeGFn2d3gK3wZLuQGnNZ53Y5AIMYR7Cy7W4vNOHIDAKYD5AZgkhD9Bv0biRHmZ1FkAAAAAElFTkSuQmCC" InformativeScreenshot="3f8a484c2295bd767031e5f4f52b11cc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -830,7 +836,7 @@
                       </uix:NTypeInto.Target>
                       <uix:NTypeInto.Text>
                         <InArgument x:TypeArguments="x:String">
-                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_248">daysInLastMonth + "/" +lastMonth +"/"+lastMonthYear+ "[k(enter)][k(enter)]"</CSharpValue>
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_326">daysInLastMonth + "/" +lastMonth +"/"+lastMonthYear+ "[k(enter)][k(enter)]"</CSharpValue>
                         </InArgument>
                       </uix:NTypeInto.Text>
                       <sap:WorkflowViewStateService.ViewState>
@@ -844,7 +850,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_82">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -853,7 +859,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="654,91" sap2010:WorkflowViewState.IdRef="NGoToUrl_6" Url="http://server525.vnpay.local/vnpstock/Stock/Administrator/Notif.aspx" Version="V1">
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="854,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_6" Url="http://server525.vnpay.local/vnpstock/Stock/Administrator/Notif.aspx" Version="V1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -861,53 +867,56 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NGoToUrl>
-            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="654,97" sap2010:WorkflowViewState.IdRef="Delay_2" />
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="654,91" sap2010:WorkflowViewState.IdRef="NGoToUrl_5" Url="http://server525.vnpay.local/vnpstock/Stock/Administrator/Notif.aspx" Version="V1" />
-            <Sequence DisplayName="Tải File Activities" sap:VirtualizedContainerService.HintSize="654,90" sap2010:WorkflowViewState.IdRef="Sequence_132">
+            <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="854,90" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="854,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_5" Url="http://server525.vnpay.local/vnpstock/Stock/Administrator/Notif.aspx" Version="V1" />
+            <Sequence DisplayName="Tải File Activities" sap:VirtualizedContainerService.HintSize="854,2458" sap2010:WorkflowViewState.IdRef="Sequence_132">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If sap:VirtualizedContainerService.HintSize="544,488" sap2010:WorkflowViewState.IdRef="If_8">
+              <If sap:VirtualizedContainerService.HintSize="732,1599" sap2010:WorkflowViewState.IdRef="If_8">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_278">daysInLastMonth &gt; 28</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_278">
+                      <CSharpValue.Result>
+                        <OutArgument x:TypeArguments="x:Boolean" />
+                      </CSharpValue.Result>daysInLastMonth &gt; 28</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="462,212" sap2010:WorkflowViewState.IdRef="Sequence_112">
+                  <Sequence sap:VirtualizedContainerService.HintSize="654,1320" sap2010:WorkflowViewState.IdRef="Sequence_112">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="File 7" sap:VirtualizedContainerService.HintSize="400,90" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                    <Sequence DisplayName="File 7" sap:VirtualizedContainerService.HintSize="592,1209" sap2010:WorkflowViewState.IdRef="Sequence_111">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:OnUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" ContinueOnError="True" DisplayName="On Element Appear 'TD'" sap:VirtualizedContainerService.HintSize="510,797" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_25" RepeatForever="False" WaitVisible="True">
+                      <ui:OnUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" ContinueOnError="True" DisplayName="On Element Appear 'TD'" sap:VirtualizedContainerService.HintSize="530,812" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_25" RepeatForever="False" WaitVisible="True">
                         <ui:OnUiElementAppear.Body>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,611" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,635" sap2010:WorkflowViewState.IdRef="Sequence_110">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:GetLastDownloadedFile DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="434,521" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_23" IgnoreFiles="crdownload" Timeout="100000000">
+                            <ui:GetLastDownloadedFile DisplayName="Wait for Download" sap:VirtualizedContainerService.HintSize="434,524" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_23" IgnoreFiles="crdownload, tmp" Timeout="100000000">
                               <ui:GetLastDownloadedFile.Body>
                                 <ActivityAction>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,256" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_109">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <uix:NClick ClickType="Single" DisplayName="Click 'FileExport/Chi_tiet_gia…'" sap:VirtualizedContainerService.HintSize="358,166" sap2010:WorkflowViewState.IdRef="NClick_37" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
+                                    <uix:NClick ClickType="Single" DisplayName="Click 'FileExport/Chi_tiet_gia…'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_37" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a8f8708-f624-44d6-b7bc-de9d77bd31dd" Version="V1">
                                       <uix:NClick.Target>
                                         <uix:TargetAnchorable BrowserURL="http://server525.vnpay.local/vnpstock/Stock/Administrator/Notif.aspx" DesignTimeRectangle="807, 696, 612, 34" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'FileExport/Chi_tiet_gia…'" FullSelectorArgument="&lt;webctrl id='MainContent_grvNotif' tag='TABLE' /&gt;&lt;webctrl tableRow='8' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='MainContent_grvNotif' tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='UnRead text-success' aaname='                                         FileExport/Chi_tiet_giao_dich_vien_thong_tu*.xlsx                                     ' /&gt;" Guid="3381dbbb-14a4-4f45-9db5-fd51034f04ff" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAmgAAAAmCAYAAABwImd8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA4mSURBVHhe7Z3LcRw5EobXsF2T5qKJWBfmoFN7QCekI2/rAW9jwUTIh94CkAnkCwlUd5NqSv8XgRCrACTyBXSyyKL+dQUAAAAAAE8FCjQAAAAAgCcDBRoAAAAAwJOBAg0AAAAA4MkYBdo/369f/vuf679d+/P67R/R//JWh/94/bP2X9plytuLlcmNZD8Lb5dDp8u1mxT4RNq78kGz+zYbz/j3sbxdL8XWr9+vP+jOx/Dj+u1r8Rf53+Rbypmxp/hZvviZ8f942NbW/H6R58eXVx2JeR/n07rPr0lxj/rqGSHmypyz58XNeWP2wjuT+ZfhMVE+tj6r640+PFD5oPryuEk7Sju3dxY5YXU+mpfPMmw+rQl9qNZ8r1zYP+NaXHLb3Ll1qw08T8Z/GoMdG5J8dOhc8HtCytL9q7PsLL5Am33ImX4XiISWfPcr+1gOJ5uAVj3ZfkqGyPl8b+WDs3a/vYyxZ/xbKON3x+bsb9jHYj6UfrsCTefj2fh/NA/LNxU7kwPlTvUD7Qvak7xu1qc+8GiN2b5VclgHioX+4LT5QNeh7lrOObwf3ovMhx2Okesj+2uTut7qw3IpdDgTN3tez2yZkOeEvw6hNZfjFBMfGtu1Dx+JjUcE52NpuW3KjzfbINYTZ/o8Bisbsnz0qH5jQ5dFerWxpBPvk8lZdgv7BZrBJnSGMuIpiALaHNoCYQ6NCWd8sOIeHz1Sj5/HHQl9MnefD5+PzxzT99RN7wN9sOp9mfV5f1a5ar8L5Ie7PZDTD/o8Z2/f03fshVNkPhw0O1rrfuA9d9j3xep6hw/bWizL6meQcbPceyYo2Tvx4DGlbcY88aHbYzT28XvO7xUN9Xcdc9uk3jfbQL6vrccvi8HChlP5uDg70rma2/f/4HFP0LifmjRgqSgHhJzAstmhPP/y0u7LvgYnETUVKHb45XqpAf7j+tdfYmzXq42reqvNOafr+XXoJf23GyCWw62s6/x7WDQOgKPxOjKZ5f0MOaf7hRPfJqhZ19pj4r61PiP1ePmuN2CQj9ZPLveOOAxdssOUIdtkvqh1/WbV/pa+GGO/1bi3JvdBTOzfVW4VWn7peUzPvVfpYzmf9KW5vLeW+kb55mIV+G0LGw+S0+XK/o0+sX7zR5wT7Me638k+m1vhWcB2Zx8aJi5Tsr1Q6Gu1JuO0jvWMzIcE6cV5qPxSx3H+Cl1v9qFffztuhn5WbPnBo2VzLEeza7b14iKGZdUmfZv40J3/zodWJ+2j6VnpGHslPrdKf5Pd80zls9TjcuTg0HttQwTrQ2d5j5+1N/DFzIYz+ShkdelVZvMBx3m9p4O9dKByYUPOYwq0sG8srpUSzTnhkPdKsoI+dqgOvHWoTXYOrHSGD0ILogyCCOgEHhf65KDpvRNMP1bLMjaZBNvVt2Fs7x8Mxl/U3/SK+3zOBH6dstAjy7cD5S8eO5mbYeW2a45DrCP7PfTNbG6KH8t67eZW3G91HeP1Neu+l0N2rfvygAnmOLliH2R9x1Vs37C/0/Ou9a1tY3i9qI/XP9ot8d/aCzaW81hPWfiwXx/9zi8dO4f1u8WHPgemtpi4KXi9o+3ks8PKDv0vZTe9i/+tvvqa7Jv6Yfhwtma7pvHsp4V+eT7YvRHoQkRyQvt47dSGmDbmWNvMzW3MbbD+sLIssU3tuvVdjm9oy7+tjTxgaI7Z+1ru3M+S9UsCGw6aOeDcgTGCa8e6+VIX2kzKSepe5Cx/r9pA186eCW4crXv6oDywY5Vsl1B6g+7qWzE6dlk9USJ/8Rhqal1tX3QvZKWHsnmRzM4/8QYJidbp87QcF880zxY6Kyb52GUfKH/R+G5vQd9L82lnvQQ39h7/G5TsWd4Xn2Z96ro0fkJo8pJ8WhvJWdtW0LJtrjfft7bjz9VemOk0O2e2Y7nyYdWryZ3LtH6f67v2oc8bt+cKQdw6vJaRs00mmzH2NHub/VrfmT3DVw3vw4rS5SgKnE4kv48pfRNZU/bPAh+LjblLGyRNXs3rMGcEqj/XYy8fJTo35dnRfDDfexK9rtdxh4c8QeOvXaOxmRGSLscYkSXG39b5BUoK9WGmZPp7dQ22Xc2f4wJv5u3aXbBjlWz2vWttEzo9EvxYu6G1b5peR6u+ifq0fbu6LPVYbECFy93FeEOz41iX5Iy4T3xhWpxnZw5Kr6/zj8wtZ28h0nWRT2L+btwKbuyd/lcoWSSnyyWfVrlZn6fHmK77OrWJ++Rna5s8C2QeyPsF9k1twr8Z3vc6d5RM2Uh+GuuUff/OZQZ5frMPfQy341YhnWvbO3cVqWyJ8I2xTcdC6iOb1S3woUWtw+PpmvWusaI1t/deMH7y+WfzTK/bSHPP+MqiYh3I1ogYrGzYyMcMqVezT/hg4quKtGFpT8xDC7QwKAcusBEsn5o0OE0M6/yCuhclrL3XrseaMvhznN0mWFt2E3askr2Izcr/CpdQ9nCQvon9xNdtXW1fdC9kpYeyeXGAOf9YvRewLvX3bKTuWk4eT7vmxqHb8frmuUXjVT7oe2k+7ayX4Mbe638JyWp2kg+7HGlj1meZjK3NxEetf0B+Z1vZ9tJG7hI0trZQjwmLvbCKTR7rjMSH0hbTtN1a18odPmy2sKwTcet6lGb3qJxX1vxbjD1ajVUm2yDyXdpi2+WNZHb9ZwQ+tEgf2v2mrnNZWt8yxus4yx9//u3Prag8sDH5n7pWLfKfsnmhR5qPVg+7kslBk8t87ecdqHW9jgOZu0fjuB684++gDSPyD7YCK1jGsMPG+DZ/Jt8abhM0coxxetXf6Bc4ntfle9ZOO2dt96DJGmO1bGOTjZVNmhTjD5ob+4tj0fpYJ+2347rnTOTrGQs9Fjml/HWXHgW2U8ooxDrG8bVr2jzMMPlY7hh7V7llx5/rH/Zv5ZDLt9hPW/7fsouuzbrzvni/6Hl6nYGORdPH7I3SVJ4UeM0xd5+J/zb3wirWGZl/JXOZUZ7f6sMDqQPZbc/bMG7dZ3t2W3Zkaz2i3GFbR5++NnHuBD40a1Y5PI/zQfn3aJP8yPTtOvXxUTwb1rZCaB/LymxYYc/0NAYrG7J8tJi55uzoa5Feyv7IXuGv+HqmR+MxBVqB+6mxkoWmSNzKfJbV55Ch2qGHYeItJSn/GNEDJOc1qM8kBq9Z2uV7kRs4ythUx4pBzgeLAKXItQ4fO9k9cahFNrr7E9i/pbk3xoy/5NhjTPvlSOEr66NZ/kQom40e3CfkyZiV5nKvj41jnsE5KuMbylH+kOPt2PlBF6Hy8Ziwyq2C3lc6z2zu+XwSOXPoKN++WiPmkr1S/y+v30/5X8fV7xdpp973WZ+0T/aZfRSOkXOFPib2ox0xtvugt1v2//otTp8HWaxzMv8yc5mzPL/BhzRE5UPf03ncpA2qbZ1H65zQOTr3rY1FQesWnQexD/WaSR+/iS/2266+PU79bf7S4pyNbBu6l+bPkcyGlDPn/5YNk3wMkWOjPTGXpXX06+hcWOkhC7QnJk4M8Bhog21+mIJfk3awYI8BAMCzgALtd6N/J87fzdB3A1vfaYJfg/FdL38X2vbYie9wAQAAvCso0D6C6Y8/Wps/fr6B6Y8QSms+tI+K3+Xp2YYeH4F+pGzaRz01fBJfKFxOsh7zH/fUdraQf0bbP5qf5YOPPHcAAA/nUxRoAAAAAAC/EyjQAAAAAACeDBRoAAAAAABPBgo0AAAAAIAnAwUaAAAAAMCToQo093afeMPIvg2n3wDSf9gt63Nvgak3jexr/uaNMjnXvKE0+wOLFXqLyv7RwdlbTDtvjUp/qLXtm1M3vim40hEAAAAAvy6qQGtFR/C3kEyBw9eteDB/6FT1sUwqdqwcLt5q4eX/YGqdS9e6YOHCrem6LGYeXKC1+dqmSK9+fUORhgINAAAA+H0RBRoVSzvFBD8lKoWV/LpCRYl9UlawY00xpwofGqueTs1whZ/hoQWaLbryP/S6KvZmoEADAAAAfl9GgWZ/NJcUB1w8pAVaVOhlBVlB9puxGU4O61D0Kvfp//B0BdqrsFno24sq8X9/DvtsQZY9JeMf70YFmuljP5IcV6DZ+PT1hq1tLMvFX4UHAAAAPiujQDNPmaZPfkSh0AoCLhCoIOj9ukBwBceBW0PowEXX5aXNk7pJIj31WqOAsQVaL7JC2/34Km9WkAYFEcuJi7cDWnf858jDjtAGlmP0lcXdN1pT+hkAAAAAnwv1O2gKWwQU5FMcVXTwU5vSLkdR1f71NQKNo7nrAu3op0JIFywGVTQFBZOxxcta6CXlbxZovThT63jkOOnrsECr43QxynR/ldZ1AwAAAMBnZF6gUSEyigZZhMVFQsM87THI4qcVFb5Aq0WJ/LrgCiOJLJJ0sVVZFmi6yHIFmpJJX9sCTax3qlhiu4xPnY5kg2xD/8KIj74PAAAAgM/G5hO09ROcgS1gNK34oadNpghTBZstEHcKtFok6WKrsizQdFHnCjS1ti3IjL2ykFoVZ11XakGRFxVb46nbsHHc0/cBAAAA8PnoBZotCKJCSvYPdHHTxnJxY4olV2TJ4sYWPvpa6xetOSvARhFk+2fze7FDelrftGuykebatYYdAmM/yy3r8pqxDcZeXsfoX+R227qPAQAAAPDZUE/Q9FOY8QRJ3xeNiwAuPKhxIdOg4oKbLRzUXPvkRxQ8R1NyzZpc2DBD58OO2VucL1TYlCb0anPzFxSkT3qf0Wk08qUs0PjrXnSxn9pYXaAVjB+7r/g+Xw+f6TgAAAAA4LMw/xEnAAAAAAD4KaBAAwAAAAB4MlCgAQAAAAA8GSjQAAAAAACeDBRoAAAAAABPBgo0AAAAAICn4nr9PzXfYNjWmeguAAAAAElFTkSuQmCC" InformativeScreenshot="649078199b9a8cb83885d529fc7b3703.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='HỆ THỐNG QUẢN LÝ KHO VNPAY' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                                           <uix:TargetAnchorable.Anchors>
@@ -960,7 +969,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:OnUiElementAppear>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,61" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Trace">
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="530,52" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Trace">
                         <ui:LogMessage.Message>
                           <InArgument x:TypeArguments="x:Object">
                             <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_280">
@@ -976,15 +985,21 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:LogMessage>
-                      <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="510,163" sap2010:WorkflowViewState.IdRef="CopyFile_15" Overwrite="True">
+                      <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,154" sap2010:WorkflowViewState.IdRef="CopyFile_15" Overwrite="True">
                         <ui:CopyFile.Destination>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_281">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_281">
+                              <CSharpValue.Result>
+                                <OutArgument x:TypeArguments="x:String" />
+                              </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                           </InArgument>
                         </ui:CopyFile.Destination>
                         <ui:CopyFile.Path>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_282">downloadedFile.FullName</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_282">
+                              <CSharpValue.Result>
+                                <OutArgument x:TypeArguments="x:String" />
+                              </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                           </InArgument>
                         </ui:CopyFile.Path>
                       </ui:CopyFile>
@@ -992,7 +1007,7 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="400,113" sap2010:WorkflowViewState.IdRef="Sequence_113">
+                  <Sequence sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_113">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1001,7 +1016,7 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <Sequence DisplayName="File 6" sap:VirtualizedContainerService.HintSize="544,90" sap2010:WorkflowViewState.IdRef="Sequence_116">
+              <Sequence DisplayName="File 6" sap:VirtualizedContainerService.HintSize="732,81" sap2010:WorkflowViewState.IdRef="Sequence_116">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1097,17 +1112,23 @@
                 <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="CopyFile_16" Overwrite="True">
                   <ui:CopyFile.Destination>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_285">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Destination>
                   <ui:CopyFile.Path>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">downloadedFile.FullName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_286">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Path>
                 </ui:CopyFile>
               </Sequence>
-              <Sequence DisplayName="File 5" sap:VirtualizedContainerService.HintSize="544,90" sap2010:WorkflowViewState.IdRef="Sequence_119">
+              <Sequence DisplayName="File 5" sap:VirtualizedContainerService.HintSize="732,81" sap2010:WorkflowViewState.IdRef="Sequence_119">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1203,17 +1224,23 @@
                 <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="CopyFile_17" Overwrite="True">
                   <ui:CopyFile.Destination>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_289">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_289">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Destination>
                   <ui:CopyFile.Path>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_290">downloadedFile.FullName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_290">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Path>
                 </ui:CopyFile>
               </Sequence>
-              <Sequence DisplayName="File 4" sap:VirtualizedContainerService.HintSize="544,90" sap2010:WorkflowViewState.IdRef="Sequence_122">
+              <Sequence DisplayName="File 4" sap:VirtualizedContainerService.HintSize="732,81" sap2010:WorkflowViewState.IdRef="Sequence_122">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1309,17 +1336,23 @@
                 <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="CopyFile_18" Overwrite="True">
                   <ui:CopyFile.Destination>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_293">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_293">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Destination>
                   <ui:CopyFile.Path>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_294">downloadedFile.FullName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_294">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Path>
                 </ui:CopyFile>
               </Sequence>
-              <Sequence DisplayName="File 3" sap:VirtualizedContainerService.HintSize="544,90" sap2010:WorkflowViewState.IdRef="Sequence_125">
+              <Sequence DisplayName="File 3" sap:VirtualizedContainerService.HintSize="732,81" sap2010:WorkflowViewState.IdRef="Sequence_125">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1415,12 +1448,18 @@
                 <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="CopyFile_19" Overwrite="True">
                   <ui:CopyFile.Destination>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_297">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_297">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Destination>
                   <ui:CopyFile.Path>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_298">downloadedFile.FullName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_298">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Path>
                 </ui:CopyFile>
@@ -1521,12 +1560,18 @@
                 <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="CopyFile_20" Overwrite="True">
                   <ui:CopyFile.Destination>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_301">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_301">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Destination>
                   <ui:CopyFile.Path>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_302">downloadedFile.FullName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_302">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Path>
                 </ui:CopyFile>
@@ -1627,18 +1672,24 @@
                 <ui:CopyFile ContinueOnError="{x:Null}" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="530,163" sap2010:WorkflowViewState.IdRef="CopyFile_21" Overwrite="True">
                   <ui:CopyFile.Destination>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_305">khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_305">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>khoFolderPath + "\\" + downloadedFile.Name.Substring(0, downloadedFile.Name.IndexOf("-")) + "_" + kenh +".xlsx"</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Destination>
                   <ui:CopyFile.Path>
                     <InArgument x:TypeArguments="x:String">
-                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_306">downloadedFile.FullName</CSharpValue>
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_306">
+                        <CSharpValue.Result>
+                          <OutArgument x:TypeArguments="x:String" />
+                        </CSharpValue.Result>downloadedFile.FullName</CSharpValue>
                     </InArgument>
                   </ui:CopyFile.Path>
                 </ui:CopyFile>
               </Sequence>
             </Sequence>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="654,101" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Trace">
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
                   <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_205">
