@@ -4,10 +4,10 @@
     <x:Property Name="in_fileFolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>727.2,2088</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>677.6,2044.8000000000002</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="66">
+    <scg:List x:TypeArguments="x:String" Capacity="35">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="112">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="57">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -105,17 +105,19 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="compareDoiQua" sap:VirtualizedContainerService.HintSize="688,2023.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="compareDoiQua" sap:VirtualizedContainerService.HintSize="688,1980" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="vcbQuaTable" />
       <Variable x:TypeArguments="x:Int64" Name="quaMoney" />
+      <Variable x:TypeArguments="sd:DataTable" Name="hoàntraTable" />
+      <Variable x:TypeArguments="sd:DataTable" Name="hoantraTable" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="644.8,69.6" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Ngày_x0020_giao_x0020_dịch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_tham_x0020_chiếu&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_tiền_x0020_ghi_x0020_nợ&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_tiền_x0020_ghi_x0020_có&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mô_x0020_tả&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="644.8,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Ngày_x0020_giao_x0020_dịch&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_tham_x0020_chiếu&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_tiền_x0020_ghi_x0020_nợ&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Số_x0020_tiền_x0020_ghi_x0020_có&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Mô_x0020_tả&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <ui:BuildDataTable.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">vcbQuaTable</CSharpReference>
@@ -128,14 +130,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="644.8,90.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_1">
+    <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="644.8,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_1">
       <ui:ClearDataTable.DataTable>
         <InOutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">vcbQuaTable</CSharpReference>
         </InOutArgument>
       </ui:ClearDataTable.DataTable>
     </ui:ClearDataTable>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="644.8,91.2" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" sap:VirtualizedContainerService.HintSize="644.8,81.6" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -144,13 +146,13 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="616,1500.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="616,1457.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="572.8,1377.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="572.8,1368" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
@@ -278,18 +280,20 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachFileX>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VcbTableHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="644.8,123.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VcbTableHandle.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VcbTableHandle.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="644.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="VcbTableHandle.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Int64" x:Key="out_vcbMoney">
           <CSharpReference x:TypeArguments="x:Int64" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">quaMoney</CSharpReference>
         </OutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_hoantraTable" />
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_hoantraTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">hoantraTable</CSharpReference>
+        </OutArgument>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inout_soPhuTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">vcbQuaTable</CSharpReference>
         </InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeCode ContinueOnError="{x:Null}" Code="HashSet&lt;string&gt; vcbHashSet = in_vcbQuaTable.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xA;HashSet&lt;string&gt; khoHashSet = in_khoGiftDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xA;&#xA;if(!in_vcbQuaTable.Columns.Contains(&quot;Check doi chieu&quot;)){&#xA;&#x9;in_vcbQuaTable.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xA;}&#xA;if(!in_khoGiftDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xA;&#x9;in_khoGiftDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xA;}&#xA;foreach(DataRow row in in_vcbQuaTable.Rows){&#xA;&#x9;if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;}&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;foreach(DataRow row in in_khoGiftDt.Rows){&#xA;&#x9;if(vcbHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xA;&#x9;}&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xA;}&#xA;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="644.8,174.4" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" Code="HashSet&lt;string&gt; vcbHashSet = in_vcbQuaTable.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;HashSet&lt;string&gt; khoHashSet = in_khoGiftDt.AsEnumerable().Select(row =&gt; row.Field&lt;string&gt;(&quot;Tham chieu&quot;)).ToHashSet();&#xD;&#xA;&#xD;&#xA;if(!in_vcbQuaTable.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9;in_vcbQuaTable.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;if(!in_khoGiftDt.Columns.Contains(&quot;Check doi chieu&quot;)){&#xD;&#xA;&#x9;in_khoGiftDt.Columns.Add(&quot;Check doi chieu&quot;,typeof(string));&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_vcbQuaTable.Rows){&#xD;&#xA;&#x9;if(khoHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;foreach(DataRow row in in_khoGiftDt.Rows){&#xD;&#xA;&#x9;if(vcbHashSet.Contains(row[&quot;Tham chieu&quot;].ToString())){&#xD;&#xA;&#x9;&#x9;row[&quot;Check doi chieu&quot;] = &quot;Ton tai&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else {row[&quot;Check doi chieu&quot;] = &quot;Khong ton tai&quot;;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="644.8,164.8" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="in_vcbQuaTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">vcbQuaTable</CSharpReference>
@@ -299,14 +303,14 @@
         </InOutArgument>
       </ui:InvokeCode.Arguments>
     </ui:InvokeCode>
-    <Sequence sap:VirtualizedContainerService.HintSize="644.8,1052.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence sap:VirtualizedContainerService.HintSize="644.8,1068.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="582.4,929.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence DisplayName="Ghi ra file kết quả" sap:VirtualizedContainerService.HintSize="582.4,956.8" sap2010:WorkflowViewState.IdRef="Sequence_16">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Name="count" />
           <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -318,20 +322,20 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="520,675.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" KeepExcelFileOpen="True" ResizeWindow="None">
+        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="520,844.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" KeepExcelFileOpen="True" ResizeWindow="None">
           <ueab:ExcelApplicationCard.Body>
             <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486.4,396" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486.4,575.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="443.2,169.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False">
+                <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="443.2,160" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False">
                   <ueab:WriteRangeX.Destination>
                     <InArgument x:TypeArguments="ue:IReadWriteRangeRef">
                       <CSharpValue x:TypeArguments="ue:IReadWriteRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">Excel.Sheet["Sheet1"]</CSharpValue>
@@ -349,7 +353,25 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ueab:WriteRangeX>
-                <ueab:SaveExcelFileX DisplayName="Save Excel File" sap:VirtualizedContainerService.HintSize="443.2,95.2" sap2010:WorkflowViewState.IdRef="SaveExcelFileX_2">
+                <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="443.2,160" sap2010:WorkflowViewState.IdRef="WriteRangeX_4" IgnoreEmptySource="False">
+                  <ueab:WriteRangeX.Destination>
+                    <InArgument x:TypeArguments="ue:IReadWriteRangeRef">
+                      <CSharpValue x:TypeArguments="ue:IReadWriteRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">Excel.Sheet["Hoan Tra"]</CSharpValue>
+                    </InArgument>
+                  </ueab:WriteRangeX.Destination>
+                  <ueab:WriteRangeX.Source>
+                    <InArgument x:TypeArguments="sd:DataTable">
+                      <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">hoantraTable</CSharpValue>
+                    </InArgument>
+                  </ueab:WriteRangeX.Source>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ueab:WriteRangeX>
+                <ueab:SaveExcelFileX DisplayName="Save Excel File" sap:VirtualizedContainerService.HintSize="443.2,85.6" sap2010:WorkflowViewState.IdRef="SaveExcelFileX_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -377,68 +399,9 @@
             </InArgument>
           </ueab:ExcelApplicationCard.WorkbookPath>
         </ueab:ExcelApplicationCard>
-        <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="520,91.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" KeepExcelFileOpen="True" ResizeWindow="None">
-          <ueab:ExcelApplicationCard.Body>
-            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
-              </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="487.2,384.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ueab:WriteRangeX DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="444,169.6" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False">
-                  <ueab:WriteRangeX.Destination>
-                    <InArgument x:TypeArguments="ue:IReadWriteRangeRef">
-                      <CSharpValue x:TypeArguments="ue:IReadWriteRangeRef" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">Excel.Sheet["Sheet2"]</CSharpValue>
-                    </InArgument>
-                  </ueab:WriteRangeX.Destination>
-                  <ueab:WriteRangeX.Source>
-                    <InArgument x:TypeArguments="sd:DataTable">
-                      <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">in_khoGiftDt</CSharpValue>
-                    </InArgument>
-                  </ueab:WriteRangeX.Source>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ueab:WriteRangeX>
-                <ueab:SaveExcelFileX DisplayName="Save Excel File" sap:VirtualizedContainerService.HintSize="444,84" sap2010:WorkflowViewState.IdRef="SaveExcelFileX_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ueab:SaveExcelFileX.Workbook>
-                    <InArgument x:TypeArguments="ue:IWorkbookQuickHandle">
-                      <CSharpValue x:TypeArguments="ue:IWorkbookQuickHandle" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">Excel</CSharpValue>
-                    </InArgument>
-                  </ueab:SaveExcelFileX.Workbook>
-                </ueab:SaveExcelFileX>
-              </Sequence>
-            </ActivityAction>
-          </ueab:ExcelApplicationCard.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ueab:ExcelApplicationCard.WorkbookPath>
-            <InArgument x:TypeArguments="x:String">
-              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">in_fileFolderPath+ "\\ket_qua_so_sanh_doi_qua.xlsx"</CSharpValue>
-            </InArgument>
-          </ueab:ExcelApplicationCard.WorkbookPath>
-        </ueab:ExcelApplicationCard>
       </Sequence>
     </Sequence>
-    <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="644.8,90.4" sap2010:WorkflowViewState.IdRef="ClearDataTable_2">
+    <ui:ClearDataTable DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="644.8,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_2">
       <ui:ClearDataTable.DataTable>
         <InOutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">vcbQuaTable</CSharpReference>
